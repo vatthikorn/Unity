@@ -37,6 +37,7 @@ public class Room : MonoBehaviour {
     {
         transform.parent.GetComponent<RoomTracker>().resetAll();
 
+        //Updates the room status accordingly
         if (roomType == RoomState.boss)
             roomType = RoomState.bossBattle;
         else if (roomType == RoomState.defeatedOutside)

@@ -17,7 +17,7 @@ using System.Collections;
 public class DoorWay : MonoBehaviour {
 
     //Signals to the room it has been entered, calls its entered()
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {

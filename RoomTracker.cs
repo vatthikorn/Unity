@@ -18,7 +18,6 @@ public class RoomTracker : MonoBehaviour {
     //Intializes all the rooms status in list
     void Start()
     {
-
         for (int i = 0; i < rooms.Count; i++)
         {
             roomStatus.Add(rooms[i].GetComponent<Room>().roomType);
