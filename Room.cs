@@ -1,9 +1,15 @@
 ﻿/*
+    Nathan Cruz
+
     Keeps track of the status of the room.
     This is attached to a single room.
+    The status of the room is updated every time the player enters (collides with DoorWay of this room) or exits (collides with a DoorWay of another room) the room.
+
+    Dependency:
+    RoomTracker.cs
 
     Required:
-    Attached to a room GameObject
+    Attached to a room GameObject (empy GameObject)
     The room GameObject has doorways
     The room GameObject has a parent (The Zone)
 
@@ -11,7 +17,7 @@
     Set up the roomType beforehand
     Set up the playerIsIn and found to true for rooms the player starts in
     Set up room status from Unity
-    Place one at the entrance of every doorway
+    Place one Doorway Object at every entrance of the room
 */
 using UnityEngine;
 using System.Collections;
