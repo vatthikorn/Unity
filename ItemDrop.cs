@@ -56,7 +56,7 @@ public class ItemDrop : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            GameObject.Find(player).transform.FindChild(inventory).GetComponent<Inventory>().AddItem(itemID);
+            GameObject.Find(player).transform.FindChild(inventory).GetComponent<Inventory>().AddItemFromDrop(itemID);
             Destroy(this.gameObject);
         }
     }
