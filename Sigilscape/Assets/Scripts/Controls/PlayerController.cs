@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour {
     //Determines if the player can jump or is jumping
     bool grounded = false;
     bool jump = false;
+	bool facingRight = true;
 
     //Deteremines what is displayed and if the game is paused or not (Default settings)
     MapState mapState = MapState.mini;
@@ -68,10 +69,11 @@ public class PlayerController : MonoBehaviour {
 
         if(!pauseGame)
         {
-            if (Input.GetAxis("Vertical") > 0 && grounded)
+			if ((Input.GetAxis("Vertical") > 0 && grounded) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) )
             {
                 jump = true;
-            }
+				Debug.Log ("Jump");
+			}
             else if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
             {
                 Debug.Log(1);
@@ -160,6 +162,13 @@ public class PlayerController : MonoBehaviour {
             {
                 rb.AddForce(Vector2.right * h * moveForce);
             }
+
+			if (h < 0f && facingRight) {
+				Flip ();
+			} else if (h > 0f && !facingRight) {
+				Flip ();
+			}
+
 
             if (Mathf.Abs(rb.velocity.x) > maxSpeed)
             {
@@ -266,4 +275,15 @@ public class PlayerController : MonoBehaviour {
                 break;
         }
     }
+
+	void Flip()
+	{
+		// Switch the way the player is labelled as facing
+		facingRight = !facingRight;
+
+		// Multiply the player's x local scale by -1
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+	}
 }
