@@ -6,7 +6,7 @@
     Script for chest. When activated by player while within range, enables the item Drop.
 
     Dependency:
-    N/A when it comes to scripts.
+    ItemDatabase.cs
 
     Required:
     This script is attached to the gameObject intended to be used as a chest.
@@ -30,6 +30,7 @@ public class Chest : MonoBehaviour {
     public ChestState chestState = ChestState.locked;
     public int itemID;
     
+    //Disables the item to be dropped from the chest.
     void Start()
     {
         itemDrop.gameObject.SetActive(false);
@@ -38,6 +39,7 @@ public class Chest : MonoBehaviour {
     //The player has to be in front the chest, to unlock the chest and release the item drop
 	void OnTriggerStay2D(Collider2D other)
     {
+        //CHANGE: THE CONDITION SHOULD BE WHEN THE PLAYER USES "THE KEY" SIGIL
         if(chestState == ChestState.locked && Input.GetKeyDown(KeyCode.E))
         {
             chestState = ChestState.unlocked;

@@ -7,7 +7,7 @@
 
     Dependency:
     Room.cs
-    MapMangager.cs
+    MapMangager.cs (2)
 
     Required:
     Attached to a zone GameObject (empty)
@@ -22,13 +22,14 @@ using System.Collections.Generic;
 
 public class RoomTracker : MonoBehaviour {
     
+    //Needs prior setup
     public GameObject miniMapManager;
     public GameObject largeMapManager;
-
     public List<GameObject> rooms = new List<GameObject>();
+
     public List<Room.RoomState> roomStatus = new List<Room.RoomState>();
 
-    //Intializes all the rooms status in list
+    //Intializes all the rooms status in list and sets up the mapManager for display
     void Start()
     {
         for (int i = 0; i < rooms.Count; i++)

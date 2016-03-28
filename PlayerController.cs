@@ -1,11 +1,15 @@
 ﻿/*
     Nathan Cruz
 
+    NOT COMPLETE. NEEDS A LOT OF REFINEMENT TOO FOR THE THINGS ALREADY IMPLEMENTED. LIKE FOR EXAMPLE:
+    NOT LETING THE PLAYER MASH THAT ATTACK BUTTON. IT DISGRACEFUL AND SHAMEFUL FOR A GAMER TO RESULT TO BUTTON MASHING.
+    SERIOUSLY HAVE SOME CLASS. NEED SOMETHING TO RESTRICT THAT.
+
     Controls (Fight Screen):
-    Attack - Left Click                         NOT IMPLEMENTED
-    Defend - Right Click                        NOT IMPLEMENTED
-    Dodge - Directional Button + Left Shift     NOT IMPLEMENTED
-    Activate Sigil - {1,2,3,4}
+    Attack - Left Click or K                    
+    Defend - Right Click or J                   
+    Dodge - Directional Button + Left Shift     NOT AT ALL IMPLEMENTED
+    Activate Sigil - {1,2,3,4}                  NOT IMPLEMENTED
     Use Healing Potion - Q                      NOT IMPLEMENTED
     Use Sigil Potion - E                        NOT IMPLEMENTED
     Movement - WASD || Up/Left/Down/Right          
@@ -68,9 +72,45 @@ public class PlayerController : MonoBehaviour {
 
         if(!pauseGame)
         {
-            if (Input.GetAxis("Vertical") > 0 && grounded)
+            //Jump
+            if ((Input.GetAxis("Vertical") > 0 || Input.GetKeyDown(KeyCode.Space)) && grounded)
             {
                 jump = true;
+            }
+            //Sigil Buttons
+            else if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                Debug.Log(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                Debug.Log(2);
+            }
+            else if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                Debug.Log(3);
+            }
+            else if (Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                Debug.Log(4);
+            }
+            //Consumables (Health and Sigil potion)
+            else if(Input.GetKeyDown(KeyCode.Q))
+            {
+                Debug.Log("Q");
+            }
+            else if(Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("E");
+            }
+            //Attack and defend
+            else if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K))
+            {
+                this.gameObject.GetComponent<Player>().Attack();
+            }
+            else if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.J))
+            {
+                this.gameObject.GetComponent<Player>().Shield();
             }
         }
 

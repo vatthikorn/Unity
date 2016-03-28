@@ -33,6 +33,7 @@ using UnityEngine.UI;
 public class MapManager : MonoBehaviour {
 
     //All references should be set (Read Required)
+    //All lists should be the same size
     public Image initialMap;
     public List<Image> playerHere;
     public List<Image> roomsDiscovered;

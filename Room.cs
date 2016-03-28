@@ -7,6 +7,7 @@
 
     Dependency:
     RoomTracker.cs
+    DoorWay.cs
 
     Required:
     Attached to a room GameObject (empy GameObject)
@@ -48,7 +49,7 @@ public class Room : MonoBehaviour {
             roomType = RoomState.bossBattle;
         else if (roomType == RoomState.defeatedOutside)
             roomType = RoomState.defeatedInside;
-        else
+        else if (roomType == RoomState.undiscovered || roomType == RoomState.hidden || roomType == RoomState.discovered)
             roomType = RoomState.playerInside;
 
         transform.parent.GetComponent<RoomTracker>().UpdateMap();

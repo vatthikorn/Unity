@@ -1,6 +1,9 @@
 ﻿/*
     Nathan Cruz
 
+    NOT COMPLETE:
+    ENEMY DROPS ITEMS NOT YET IMPLEMENTED
+
     Any items dropped on screen by either chest or enemy (THE ENEMY PART IS NOT YET IMPLEMENTED).
     The item will appear on screen when "dropped" (SetActive by another object), and then fall to the ground.
 
@@ -13,7 +16,7 @@
     The ground needs to be in the "Ground" Layer.
     
     Remember to:
-    The itemDrop gameObject should be placed in front of the chest gameObject.
+    The itemDrop gameObject should be placed in front of the chest gameObject (otherwise it will just look weird).
 */
 
 using UnityEngine;
@@ -29,6 +32,8 @@ public class ItemDrop : MonoBehaviour {
     public string player = "Player";
     public string inventory = "Inventory";
 
+    public const float fallRate = 0.05f;
+
     public int itemID;
     bool grounded;
 
@@ -40,14 +45,14 @@ public class ItemDrop : MonoBehaviour {
         this.gameObject.transform.localScale = new Vector3(.25f, .25f, 1);
     }
 
-    //Allows object to fall to the ground (without a rigid body)
+    //Allows object to fall to the ground (without a rigid body) (we do not want the player to trip over it just because it has a rigidbody)
     void Update()
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
         if(!grounded)
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 0.1f, this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - fallRate, this.transform.position.z);
         }
     }
 
