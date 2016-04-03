@@ -18,15 +18,17 @@
     Menu - ESC
 
     Dependencies:
-    Script-wise none
+    Player.cs
 
     Required:
     Attached to the player object.
     Anything that can be used as a floor is in the "Ground" layer (for jumping).
     pauseScreen, inventoryScreen, largeMap, miniMap (all canvases) are referenced.
+    Player.cs and PlayerController.cs are attached to the same Player GameObject.
 */
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerController : MonoBehaviour {
 
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour {
     public enum MapState { none, mini, large };//If the player has the no map, the miniMap, or largeMap on display
 
     //All of these must be referenced
+    public GameObject player;
     public GameObject pauseScreen;
     public GameObject inventoryScreen;
     public GameObject largeMap;
@@ -45,9 +48,28 @@ public class PlayerController : MonoBehaviour {
     public const float maxSpeed = 5f;//Horizontal Speed
     public const float jumpForce = 2000f;
 
+    //How to place melee attack objects and shield away from player
+    const float smallestMeleeOffsetRight = 0.36f;
+    const float smallMeleeOffsetRight = 0.86f;
+    const float mediumMeleeOffsetRight = 1.29f;
+    const float largeMeleeOffsetRight = 1.5f;
+    const float largestMeleeOffsetRight = 1.73f;
+    const float shieldOffsetRight = 1.8f;
+
+    const float smallestMeleeOffsetLeft = -2.7f;
+    const float smallMeleeOffsetLeft = -3.33f;
+    const float mediumMeleeOffsetLeft = -3.73f;
+    const float largeMeleeOffsetLeft = -3.84f;
+    const float largestMeleeOffsetLeft = -4.22f;
+    const float shieldOffsetLeft = -1.85f;
+
+    //Restricts the actions the player can take for attacking, sigil use, shielding, dodging, using items to allow animation to complete
+    public bool action = true;
+
     //Determines if the player can jump or is jumping
     bool grounded = false;
     bool jump = false;
+    public bool facingRight = true;
 
     //Deteremines what is displayed and if the game is paused or not (Default settings)
     MapState mapState = MapState.mini;
@@ -104,12 +126,14 @@ public class PlayerController : MonoBehaviour {
                 Debug.Log("E");
             }
             //Attack and defend
-            else if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K))
+            else if(action && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K)))
             {
+                action = false;
                 this.gameObject.GetComponent<Player>().Attack();
             }
-            else if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.J))
+            else if (action && (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.J)))
             {
+                action = false;
                 this.gameObject.GetComponent<Player>().Shield();
             }
         }
@@ -162,6 +186,28 @@ public class PlayerController : MonoBehaviour {
         {
             //Left/Right - Move
             float h = Input.GetAxis("Horizontal");
+
+            //Switches the side the weapon and shield is on pending on which direction the player is facing
+            if(h > 0)
+            {
+                facingRight = true;
+                this.GetComponent<Player>().smallestMelee.transform.localPosition = new Vector2(smallestMeleeOffsetRight, 0);
+                this.GetComponent<Player>().smallMelee.transform.localPosition = new Vector2(smallMeleeOffsetRight, 0);
+                this.GetComponent<Player>().mediumMelee.transform.localPosition = new Vector2(mediumMeleeOffsetRight, 0);
+                this.GetComponent<Player>().largeMelee.transform.localPosition = new Vector2(largeMeleeOffsetRight, 0);
+                this.GetComponent<Player>().largestMelee.transform.localPosition = new Vector2(largestMeleeOffsetRight, 0);
+                this.GetComponent<Player>().shield.transform.localPosition = new Vector2(shieldOffsetRight, 0);
+            }
+            else if (h < 0)
+            {
+                facingRight = false;
+                this.GetComponent<Player>().smallestMelee.transform.localPosition = new Vector2(smallestMeleeOffsetLeft, 0);
+                this.GetComponent<Player>().smallMelee.transform.localPosition = new Vector2(smallMeleeOffsetLeft, 0);
+                this.GetComponent<Player>().mediumMelee.transform.localPosition = new Vector2(mediumMeleeOffsetLeft, 0);
+                this.GetComponent<Player>().largeMelee.transform.localPosition = new Vector2(largeMeleeOffsetLeft, 0);
+                this.GetComponent<Player>().largestMelee.transform.localPosition = new Vector2(largestMeleeOffsetLeft, 0);
+                this.GetComponent<Player>().shield.transform.localPosition = new Vector2(shieldOffsetLeft, 0);
+            }
 
             //Limits horizontal speed
             if (h * rb.velocity.x < maxSpeed)

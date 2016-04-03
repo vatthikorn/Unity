@@ -11,5 +11,4 @@ using System.Collections;
 public class EnemyProjectile : MonoBehaviour {
 
     public int damage;
-    public Vector2 hitForce;
 }

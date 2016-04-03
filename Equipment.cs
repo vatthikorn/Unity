@@ -23,12 +23,14 @@ public class Equipment : MonoBehaviour {
     public Item passiveSigil1;
     public Item passiveSigil2;
     public Item passiveSigil3;
-    public int[] healthPotions = new int[3];
+    public int healthPotions;
     public int sigilPotions;
 
     void Start()
     {
         weapon = itemDatabase.GetComponent<ItemDatabase>().items[6];
+        shield = itemDatabase.GetComponent<ItemDatabase>().items[18];
+        armor = itemDatabase.GetComponent<ItemDatabase>().items[15];
     }
 
     public void activateSigil1()
