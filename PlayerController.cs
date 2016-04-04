@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour {
     const float largeMeleeOffsetRight = 1.5f;
     const float largestMeleeOffsetRight = 1.73f;
     const float shieldOffsetRight = 1.8f;
+    public const float rangedOffsetRight = .88f;
 
     const float smallestMeleeOffsetLeft = -2.7f;
     const float smallMeleeOffsetLeft = -3.33f;
@@ -62,6 +63,10 @@ public class PlayerController : MonoBehaviour {
     const float largeMeleeOffsetLeft = -3.84f;
     const float largestMeleeOffsetLeft = -4.22f;
     const float shieldOffsetLeft = -1.85f;
+    public const float rangedOffsetLeft = -.97f;
+
+    public const float rangedOffsetY = 0.32f;
+    public Vector2 rangedSize = new Vector2(0.52f, 0.26f);
 
     //Restricts the actions the player can take for attacking, sigil use, shielding, dodging, using items to allow animation to complete
     public bool action = true;

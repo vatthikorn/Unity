@@ -12,6 +12,12 @@
     WILL BE PART OF A MONSTERMANAGER.CS FOR EASY CLONING
 
     Handles switching to and fro between roaming and hunting.
+    Handles alerting Player.cs when it is in Combat and how many are in combat.
+    Handles aggoring enemy when hit.
+
+    Dependencies:
+    EnemyHuntingDetector.cs
+    Player.cs
 
     Remember to:
     Set the enemy's RigidBody to freeze rotation
@@ -26,6 +32,8 @@ public class Enemy : MonoBehaviour {
     public GameObject itemDrop;
 
     //Must be referenced beforehand
+    public GameObject player;
+
     public GameObject enemyRoamingDetector;
     public GameObject enemyHuntingDetector;
 
@@ -48,14 +56,20 @@ public class Enemy : MonoBehaviour {
     //Damage Receiver
     //Drops an item (if enemy has an item) upon defeat
     //Destroys itself upon defeat
+    //Aggroes enemy when hurt
     public void ReceiveDamage(int damage)
     {
+        if(!hunting)
+        {
+            ExecuteHunting();
+        }
+
         health -= damage;
 
         if (health < 0)
             health = 0;
 
-        //Spawns an item if ther is an item attached, and destroys itself
+        //Spawns an item if ther is an item attached, decrement hunting counter, and destroys itself
         if (health == 0)
         {
             if(itemDrop != null)
@@ -63,13 +77,16 @@ public class Enemy : MonoBehaviour {
                 itemDrop.SetActive(true);
                 this.transform.DetachChildren();   
             }
+            player.GetComponent<Player>().Spared();
             Destroy(this.gameObject);
         }
     }
 
     //Called by EnemyRoamingDetector.cs
+    //Signals player is in combat
     public void ExecuteHunting()
     {
+        player.GetComponent<Player>().Hunted();
         this.GetComponent<Enemy>().hunting = true;
         enemyRoamingDetector.SetActive(false);
         enemyHuntingDetector.GetComponent<EnemyHuntingDetector>().timer = EnemyHuntingDetector.huntingTimer;
@@ -77,8 +94,10 @@ public class Enemy : MonoBehaviour {
     }
 
     //Called by EnemyHuntingDetector.cs
+    //Signals player is spared
     public void GoBackToRoaming()
     {
+        player.GetComponent<Player>().Spared();
         this.GetComponent<Enemy>().hunting = false;
         enemyHuntingDetector.SetActive(false);
         enemyRoamingDetector.SetActive(true);

@@ -2,18 +2,20 @@
     Nathan Cruz
 
     NOT COMPLETE:
-    THE IDEA IS TO DETECT COLLSIONS WITH ENEMIES, DEDUCT HEALTH, DO SIGIL STUFF (MAYBE), ENABLE BLOCKS THAT ACT AS ATTACKS AND SHIELD
+    THE IDEA IS TO DETECT COLLSIONS WITH ENEMIES, DEDUCT HEALTH, DO SIGIL STUFF (MAYBE)
 
     Handles Weapon's range, attackspeed.
     Handles damage dealt to player, and health regeneration.
     Handles health Regeneration.
     Handles damage reduction by shield.
     Handles KnockPlayer to player from an enemy attack.
+    Handles projectiel spawning.
 
     Dependencies:
     Enemy.cs
     Equipment.cs
     PlayerController.cs
+    PlayerRanged.cs
 
     Required:
     Player.cs and PlayerController.cs are attached to the same Player GameObject.
@@ -35,19 +37,21 @@ public class Player : MonoBehaviour {
     public GameObject mediumMelee;
     public GameObject largeMelee;
     public GameObject largestMelee;
+    public GameObject rangedAttack;
 
     public GameObject shield;
 
     //Regenerate healthRegen per regenTime
     public const float regenTime = 5f;
 
-    //Time for delay in attack (attackSpeed), animating attack, shield time
+    //Time for delay in attack (attackSpeed), animating attack, shield time, ranged weapon's speed
     public const float animationAttackTime = 0.15f;
     public const float slowestAttackTime = 0.35f;
     public const float slowAttackTime = 0.27f;
     public const float mediumAttackTime = 0.20f;
     public const float fastAttackTime = 0.12f;
     public const float fastestAttackTime = 0.05f;
+
     public const float shieldTime = 0.2f;
 
     //KnockBack to player by an enemy attack
@@ -56,13 +60,26 @@ public class Player : MonoBehaviour {
     public int health;
     public int maxHealth;
     public int healthRegen;
-    public float timer = 0;    
-    public bool inCombat;
+    public float timer = 0;
+
+    //Determines if player is in combat (combatCounter = number of enemies hunting them)
+    public int combatCounter = 0;
+    public bool inCombat = false;
     
     int direction;//Facing right = 1, Facing left = -1
    
     void Update()
     {
+        //Updates inCombat state
+        if(combatCounter > 0)
+        {
+            inCombat = true;
+        }
+        else
+        {
+            inCombat = false;
+        }
+
         //Regenerate health outside of combat
         if(!inCombat)
         {
@@ -74,6 +91,18 @@ public class Player : MonoBehaviour {
                 regenerateHealth();
             }
         }
+    }
+
+    //Called by Enemy.cs when Enemy switches to hunting mode
+    public void Hunted()
+    {
+        combatCounter++;
+    }
+
+    //Called by Enemy.cs when Enemy switches back to roaming or dies
+    public void Spared()
+    {
+        combatCounter--;
     }
 
     //Called by the playercontroller, when player attacks
@@ -189,6 +218,59 @@ public class Player : MonoBehaviour {
                     break;
             }
         }
+        else if(weapon.weaponType == Item.WeaponType.range)
+        {
+            switch (weapon.attackSpeed)
+            {
+                case Item.AttackSpeed.slowest:
+                    Invoke("EnableRanged", slowestAttackTime);
+                    break;
+                case Item.AttackSpeed.slow:
+                    Invoke("EnableRanged", slowAttackTime);
+                    break;
+                case Item.AttackSpeed.medium:
+                    Invoke("EnableRanged", mediumAttackTime);
+                    break;
+                case Item.AttackSpeed.fast:
+                    Invoke("EnableRanged", fastAttackTime);
+                    break;
+                case Item.AttackSpeed.fastest:
+                    Invoke("EnableRanged", fastestAttackTime);
+                    break;
+            }
+        }
+        else
+        {
+            Debug.Log("The weapon has the weapontype none! Change it!");
+        }
+    }
+
+    void EnableRanged()
+    {
+        //Copies stats to the rangedAttack to be saved for projectile, saves initial direction
+        rangedAttack.GetComponent<PlayerRangedAttack>().damage = equipment.GetComponent<Equipment>().weapon.damage;
+        rangedAttack.GetComponent<PlayerRangedAttack>().criticalChance = equipment.GetComponent<Equipment>().weapon.criticalChance;
+        rangedAttack.GetComponent<PlayerRangedAttack>().range = equipment.GetComponent<Equipment>().weapon.range;
+        rangedAttack.GetComponent<PlayerRangedAttack>().knockback = equipment.GetComponent<Equipment>().weapon.knockback;
+        rangedAttack.GetComponent<PlayerRangedAttack>().direction = this.gameObject.GetComponent<PlayerController>().facingRight ? 1 : -1;
+
+        //Duplicates pojectile
+        GameObject currentAttack = Instantiate(rangedAttack);
+
+        currentAttack.transform.localScale = new Vector3(this.gameObject.GetComponent<PlayerController>().rangedSize.x, this.gameObject.GetComponent<PlayerController>().rangedSize.y, 1);
+
+        //Applies velocity based on direction
+        if (this.gameObject.GetComponent<PlayerController>().facingRight)
+        {
+            currentAttack.transform.localPosition = new Vector2(this.gameObject.transform.position.x + PlayerController.rangedOffsetRight, this.gameObject.transform.position.y + PlayerController.rangedOffsetY);
+        }
+        else
+        {
+            currentAttack.transform.localPosition = new Vector2(this.gameObject.transform.position.x + PlayerController.rangedOffsetLeft, this.gameObject.transform.position.y + PlayerController.rangedOffsetY);
+        }
+
+        currentAttack.SetActive(true);
+        this.GetComponent<PlayerController>().action = true;
     }
 
     //Enables shield, then disables
