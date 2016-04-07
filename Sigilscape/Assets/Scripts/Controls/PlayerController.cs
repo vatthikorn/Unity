@@ -1,9 +1,13 @@
 ﻿/*
     Nathan Cruz
 
+    NOT COMPLETE. NEEDS A LOT OF REFINEMENT TOO FOR THE THINGS ALREADY IMPLEMENTED. LIKE FOR EXAMPLE:
+    NOT LETING THE PLAYER MASH THAT ATTACK BUTTON. IT DISGRACEFUL AND SHAMEFUL FOR A GAMER TO RESULT TO BUTTON MASHING.
+    SERIOUSLY HAVE SOME CLASS. NEED SOMETHING TO RESTRICT THAT.
+
     Controls (Fight Screen):
-    Attack - Left Click or K                    NOT IMPLEMENTED
-    Defend - Right Click or J                   NOT IMPLEMENTED
+    Attack - Left Click or K                    
+    Defend - Right Click or J                   
     Dodge - Directional Button + Left Shift     NOT AT ALL IMPLEMENTED
     Activate Sigil - {1,2,3,4}                  NOT IMPLEMENTED
     Use Healing Potion - Q                      NOT IMPLEMENTED
@@ -14,15 +18,17 @@
     Menu - ESC
 
     Dependencies:
-    Script-wise none
+    Player.cs
 
     Required:
     Attached to the player object.
     Anything that can be used as a floor is in the "Ground" layer (for jumping).
     pauseScreen, inventoryScreen, largeMap, miniMap (all canvases) are referenced.
+    Player.cs and PlayerController.cs are attached to the same Player GameObject.
 */
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerController : MonoBehaviour {
 
@@ -30,21 +36,53 @@ public class PlayerController : MonoBehaviour {
     public enum MapState { none, mini, large };//If the player has the no map, the miniMap, or largeMap on display
 
     //All of these must be referenced
+    public GameObject equipment;
+    public GameObject player;
     public GameObject pauseScreen;
     public GameObject inventoryScreen;
     public GameObject largeMap;
     public GameObject miniMap;
     public Transform groundCheck;//Object that is placed underneath the player
+    public Transform leftWallCheck;
+    public Transform rightWallCheck;
 
     //Limits movement
     public const float moveForce = 300f;//Horizontal Force
     public const float maxSpeed = 5f;//Horizontal Speed
     public const float jumpForce = 2000f;
+    public const float wallJumpForce = 2000f;
+
+    //How to place melee attack objects and shield away from player
+    const float smallestMeleeOffsetRight = 0.36f;
+    const float smallMeleeOffsetRight = 0.86f;
+    const float mediumMeleeOffsetRight = 1.29f;
+    const float largeMeleeOffsetRight = 1.5f;
+    const float largestMeleeOffsetRight = 1.73f;
+    const float shieldOffsetRight = 1.8f;
+    public const float rangedOffsetRight = .88f;
+
+    const float smallestMeleeOffsetLeft = -2.7f;
+    const float smallMeleeOffsetLeft = -3.33f;
+    const float mediumMeleeOffsetLeft = -3.73f;
+    const float largeMeleeOffsetLeft = -3.84f;
+    const float largestMeleeOffsetLeft = -4.22f;
+    const float shieldOffsetLeft = -1.85f;
+    public const float rangedOffsetLeft = -.97f;
+
+    public const float rangedOffsetY = 0.32f;
+    public Vector2 rangedSize = new Vector2(0.52f, 0.26f);
+
+    //Restricts the actions the player can take for attacking, sigil use, shielding, dodging, using items to allow animation to complete
+    public bool action = true;
 
     //Determines if the player can jump or is jumping
-    bool grounded = false;
+    public bool grounded = false;
+    public bool leftWalled = false;
+    public bool rightWalled = false;
     bool jump = false;
-	bool facingRight = true;
+    bool rightJump = false;
+    bool leftJump = false;
+    public bool facingRight = true;
 
     //Deteremines what is displayed and if the game is paused or not (Default settings)
     MapState mapState = MapState.mini;
@@ -66,45 +104,60 @@ public class PlayerController : MonoBehaviour {
 
         //Down - Jump: Checks if the player is on the ground to enable jumping
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        leftWalled = !grounded && Physics2D.Linecast(transform.position, leftWallCheck.position, 1 << LayerMask.NameToLayer("Wall"));
+        rightWalled = !grounded && Physics2D.Linecast(transform.position, rightWallCheck.position, 1 << LayerMask.NameToLayer("Wall"));
 
-        if(!pauseGame)
+        if (!pauseGame)
         {
-			if ((Input.GetAxis("Vertical") > 0 && grounded) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) )
+            //Jump
+            if (((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))) && grounded)
             {
                 jump = true;
-				Debug.Log ("Jump");
-			}
-            else if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
+            }
+            else if((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && leftWalled)
+            {
+                rightJump = true;
+            }
+            else if((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && rightWalled)
+            {
+                leftJump = true;
+            }
+            //Sigil Buttons
+            else if(action && Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
             {
                 Debug.Log(1);
             }
-            else if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
+            else if (action && Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
             {
                 Debug.Log(2);
             }
-            else if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
+            else if (action && Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
             {
                 Debug.Log(3);
             }
-            else if (Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
+            else if (action && Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
             {
                 Debug.Log(4);
             }
-            else if(Input.GetKeyDown(KeyCode.Q))
+            //Consumables (Health and Sigil potion)
+            else if(action && Input.GetKeyDown(KeyCode.Q))
             {
                 Debug.Log("Q");
             }
-            else if(Input.GetKeyDown(KeyCode.E))
+            else if(action && Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("E");
             }
-            else if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K))
+            //Attack and defend (only if the player has a shield equipped)
+            else if(action && ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K))))
             {
-                Debug.Log("Attack");
+                action = false;
+                this.gameObject.GetComponent<Player>().Attack();
             }
-            else if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.J))
+            else if (action && equipment.GetComponent<Equipment>().shield.itemID != 0 && ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.J))))
             {
-                Debug.Log("Block");
+                action = false;
+                this.gameObject.GetComponent<Player>().Shield();
             }
         }
 
@@ -157,28 +210,53 @@ public class PlayerController : MonoBehaviour {
             //Left/Right - Move
             float h = Input.GetAxis("Horizontal");
 
+            //Switches the side the weapon and shield is on pending on which direction the player is facing
+            if(action && h > 0)
+            {
+                facingRight = true;
+                this.GetComponent<Player>().smallestMelee.transform.localPosition = new Vector2(smallestMeleeOffsetRight, 0);
+                this.GetComponent<Player>().smallMelee.transform.localPosition = new Vector2(smallMeleeOffsetRight, 0);
+                this.GetComponent<Player>().mediumMelee.transform.localPosition = new Vector2(mediumMeleeOffsetRight, 0);
+                this.GetComponent<Player>().largeMelee.transform.localPosition = new Vector2(largeMeleeOffsetRight, 0);
+                this.GetComponent<Player>().largestMelee.transform.localPosition = new Vector2(largestMeleeOffsetRight, 0);
+                this.GetComponent<Player>().shield.transform.localPosition = new Vector2(shieldOffsetRight, 0);
+            }
+            else if (action && h < 0)
+            {
+                facingRight = false;
+                this.GetComponent<Player>().smallestMelee.transform.localPosition = new Vector2(smallestMeleeOffsetLeft, 0);
+                this.GetComponent<Player>().smallMelee.transform.localPosition = new Vector2(smallMeleeOffsetLeft, 0);
+                this.GetComponent<Player>().mediumMelee.transform.localPosition = new Vector2(mediumMeleeOffsetLeft, 0);
+                this.GetComponent<Player>().largeMelee.transform.localPosition = new Vector2(largeMeleeOffsetLeft, 0);
+                this.GetComponent<Player>().largestMelee.transform.localPosition = new Vector2(largestMeleeOffsetLeft, 0);
+                this.GetComponent<Player>().shield.transform.localPosition = new Vector2(shieldOffsetLeft, 0);
+            }
+
             //Limits horizontal speed
-            if (h * rb.velocity.x < maxSpeed)
+            if (action && h * rb.velocity.x < maxSpeed)
             {
                 rb.AddForce(Vector2.right * h * moveForce);
             }
-
-			if (h < 0f && facingRight) {
-				Flip ();
-			} else if (h > 0f && !facingRight) {
-				Flip ();
-			}
-
 
             if (Mathf.Abs(rb.velocity.x) > maxSpeed)
             {
                 rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
             }
 
-            if (jump)
+            if (action && jump)
             {
                 rb.AddForce(new Vector2(0f, jumpForce));
                 jump = false;
+            }
+            else if(action && leftJump)
+            {
+                rb.AddForce(new Vector2(-wallJumpForce, jumpForce));
+                leftJump = false;
+            }
+            else if(action && rightJump)
+            {
+                rb.AddForce(new Vector2(wallJumpForce, jumpForce));
+                rightJump = false;
             }
         }        
     }
@@ -275,15 +353,4 @@ public class PlayerController : MonoBehaviour {
                 break;
         }
     }
-
-	void Flip()
-	{
-		// Switch the way the player is labelled as facing
-		facingRight = !facingRight;
-
-		// Multiply the player's x local scale by -1
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
-	}
 }
