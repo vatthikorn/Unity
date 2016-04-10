@@ -1,27 +1,37 @@
 ﻿/*
     Nathan Cruz
 
-    NOT COMPLETE
-
-    Inventory for all the items the player has. Manipulates items by picking up objects from the screen, dragging and dropping in the inventory screen (NOT IMPLEMENTED).
-
-    Handles holding items.
+    Inventory for all the items the player has. Manipulates items by picking up objects from the screen, dragging and dropping in the inventory screen.
+    
+    Holds items.
+    Items can be dragged to be repositioned.
+    Items can be rearranged.
+    Inventory can be expanded when needed.
+    Inventory is scrollable when needed.
+    Items can be switched from invetory and equipment on the fly.
     
     Instructions (on how to set up the image for the item slot):
     create a GUISkin (name it and remember the name)
     Go under custom style of GUISkin
     Go under normal of custom style
     Go to background under normal, and set up the source image to be the image you are using
-    Slice the image. This will makre sure it only scales borders, and not make the slot image look nasty
-    In the code: In DrawInventory in the loop: new Rect (x, null, skin.GetStyle("StyleName")) // where the "StyleName" is the name of the GUISkin you are using
+    Slice the image. This will make sure it only scales borders, and not make the slot image look nasty
+    In the code: In DrawInventory when drawing the slots: new Rect (x, null, skin.GetStyle("StyleName")) // where the "StyleName" is the name of the GUISkin you are using
     Make sure to reference the skin as well!
     
+    Interface:
+    void AddItemFromDrop(int itemID) - to add items to the invetory (for ItemDrop.cs)
+    bool Find(int itemID) - test if the item is in the inventory
+    void OthersRemoveItem(int itemID) - remove the item from the inventory
+
     Dependency:
-    Item.cs
-    ItemDatabase.cs
+    Item.cs - information access (eveything*)
+    ItemDatabase.cs - access information on items (eveything*)
+    PlayerController.cs - to check if the player is on the inventory screen (screenState)
+    Equipment.cs - manipulate the player's equipment (eveything*)
 
     Required:
-    Attached a gameobject "Inventory".
+    Attached to a gameobject "Inventory".
 */
 using System;
 using UnityEngine;
@@ -46,8 +56,11 @@ public class Inventory : MonoBehaviour {
     //To be displayed
     public List<Item> slots = new List<Item>();
 
+    //Skins for slots, player pic, info slot, overall Inventory
     public GUISkin slotSkin;
     public GUISkin inventorySkin;
+    public GUISkin playerSkin;
+    public GUISkin infoSkin;
 
     //Inventory's Screen Dimensions
     public const float screenUpperLeftAnchorX = .05f;
@@ -92,6 +105,10 @@ public class Inventory : MonoBehaviour {
     //passiveSigil1 = 1005, passiveSigil2 = 1006, passiveSigil3 = 1007,
     //weapon = 1008, healthPotion = 1009, armor = 1010, shield = 1011, sigilPotion = 1012
     int prevIndex;
+    int otherIndex;
+
+    //Used to scroll through the inventory
+    int iOffSet = 0;
 
     //Sets up slots
     void Start()
@@ -109,14 +126,113 @@ public class Inventory : MonoBehaviour {
 
     void OnGUI()
     {
+        //Draws inventory screen
         if (player.GetComponent<PlayerController>().screenState == PlayerController.ScreenState.inventory)
         {
             DrawInventoryScreen();
         }
 
+        //Draws item on mouse when player is holding it
         if(draggingItem)
         {
             GUI.DrawTexture(new Rect(Event.current.mousePosition.x - slotWidth/2, Event.current.mousePosition.y - slotHeight/2, slotWidth, slotHeight), draggedItem.icon);
+        }
+
+        //Player closes inventory screen while holding an items, puts that thing back where it came from or so help me god
+        if(draggingItem && player.GetComponent<PlayerController>().screenState != PlayerController.ScreenState.inventory)
+        {
+            switch (prevIndex)
+            {
+                case 1001:
+                    playersEquipment.GetComponent<Equipment>().activeSigil1 = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1002:
+                    playersEquipment.GetComponent<Equipment>().activeSigil2 = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1003:
+                    playersEquipment.GetComponent<Equipment>().activeSigil3 = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1004:
+                    playersEquipment.GetComponent<Equipment>().activeSigil4 = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1005:
+                    playersEquipment.GetComponent<Equipment>().passiveSigil1 = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1006:
+                    playersEquipment.GetComponent<Equipment>().passiveSigil2 = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1007:
+                    playersEquipment.GetComponent<Equipment>().passiveSigil3 = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1008:
+                    playersEquipment.GetComponent<Equipment>().weapon = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1009:
+                    playersEquipment.GetComponent<Equipment>().healthPotions = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1010:
+                    playersEquipment.GetComponent<Equipment>().armor = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1011:
+                    playersEquipment.GetComponent<Equipment>().shield = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                case 1012:
+                    playersEquipment.GetComponent<Equipment>().sigilPotions = draggedItem;
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+                default:
+                    if(displayAll)
+                    {
+                        AddItem(draggedItem, 'a');
+                        items[prevIndex] = draggedItem;
+                    }
+                    else if(displayEquipment)
+                    {
+                        AddItem(draggedItem, 'e');
+                        equipment[prevIndex] = draggedItem;
+                    }
+                    else if(displaySigils)
+                    {
+                        AddItem(draggedItem, 's');
+                        sigils[prevIndex] = draggedItem;
+                    }
+                    else if(displayConsumables)
+                    {
+                        AddItem(draggedItem, 'c');
+                        consumables[prevIndex] = draggedItem;
+                    }
+                    else if(displayKeyItems)
+                    {
+                        AddItem(draggedItem, 'k');
+                        keyItems[prevIndex] = draggedItem;
+                    }
+                    draggingItem = false;
+                    draggedItem = null;
+                    break;
+            }
         }
     }
 
@@ -124,16 +240,22 @@ public class Inventory : MonoBehaviour {
     void DrawInventoryScreen()
     {
         Event e = Event.current;
-        int i = 0;
-        GUI.skin = slotSkin;
+        int i = 0 + iOffSet;//for drawing the slots
 
+        GUI.skin = infoSkin;
         //Style for Info Box
         GUIStyle guiStyle = GUI.skin.box;
         guiStyle.wordWrap = true;
         guiStyle.alignment = TextAnchor.UpperLeft;
+        
+        //Switches to inventory skin
+        GUI.skin = inventorySkin;
 
         //Draws the entire panel
         GUI.Box(new Rect(Screen.width * screenUpperLeftAnchorX, Screen.height * screenUpperLeftAnchorY, Screen.width * inventoryWidth, Screen.height * inventoryHeight), "");
+
+        //Switches skin to slot skin
+        GUI.skin = slotSkin;
 
         //Drawn either at end or in the middle if the player mouses over an item
         Rect infoRect = new Rect(Screen.width * infoLowerLeftAnchorX, Screen.height * infoLowerLeftAnchorY - infoHeight, infoWidth, infoHeight);
@@ -967,10 +1089,11 @@ public class Inventory : MonoBehaviour {
             }
         }
 
-        //Draws Buttons, and Switches tabs
+        //Draws Buttons, and Switches tabs (disables tab switching when player is dragging item)
         Rect buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
-        if (GUI.Button(buttonRect, "All"))
+        if (GUI.Button(buttonRect, "All") && !draggingItem)
         {
+            iOffSet = 0;
             displayAll = true;
             displayEquipment = false;
             displaySigils = false;
@@ -978,8 +1101,9 @@ public class Inventory : MonoBehaviour {
             displayKeyItems = false;
         }
         buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + 95, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
-        if (GUI.Button(buttonRect, "Equipment"))
+        if (GUI.Button(buttonRect, "Equipment") && !draggingItem)
         {
+            iOffSet = 0;
             displayAll = false;
             displayEquipment = true;
             displaySigils = false;
@@ -987,8 +1111,9 @@ public class Inventory : MonoBehaviour {
             displayKeyItems = false;
         }
         buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + tabWidth * 2, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
-        if (GUI.Button(buttonRect, "Sigils"))
+        if (GUI.Button(buttonRect, "Sigils") && !draggingItem)
         {
+            iOffSet = 0;
             displayAll = false;
             displayEquipment = false;
             displaySigils = true;
@@ -996,8 +1121,9 @@ public class Inventory : MonoBehaviour {
             displayKeyItems = false;
         }
         buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + tabWidth * 3, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
-        if (GUI.Button(buttonRect, "Consumables"))
+        if (GUI.Button(buttonRect, "Consumables") && !draggingItem)
         {
+            iOffSet = 0;
             displayAll = false;
             displayEquipment = false;
             displaySigils = false;
@@ -1005,13 +1131,42 @@ public class Inventory : MonoBehaviour {
             displayKeyItems = false;
         }
         buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + tabWidth * 4, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
-        if (GUI.Button(buttonRect, "Key Items"))
+        if (GUI.Button(buttonRect, "Key Items") && !draggingItem)
         {
+            iOffSet = 0;
             displayAll = false;
             displayEquipment = false;
             displaySigils = false;
             displayConsumables = false;
             displayKeyItems = true;
+        }
+
+        //Enables buttons to move up and down inventory screen, when player becomes a hoarder
+        if(displayAll)
+        {
+            buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + slotWidth * slotsX, Screen.height * inventoryGridUpperLeftAnchorY, 20, 20);
+            if (iOffSet < items.Count - 50 && GUI.Button(buttonRect, ""))
+            {
+                iOffSet += slotsX;
+            }
+            buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + slotWidth * slotsX, Screen.height * inventoryGridUpperLeftAnchorY + slotHeight * slotsY - 20, 20, 20);
+            if (iOffSet > 0 && GUI.Button(buttonRect, ""))
+            {
+                iOffSet -= slotsX;
+            }
+        }
+        else if(displayEquipment)
+        {
+            buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + slotWidth * slotsX, Screen.height * inventoryGridUpperLeftAnchorY, 20, 20);
+            if (iOffSet < equipment.Count - 50 && GUI.Button(buttonRect, ""))
+            {
+                iOffSet += slotsX;
+            }
+            buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + slotWidth * slotsX, Screen.height * inventoryGridUpperLeftAnchorY + slotHeight * slotsY - 20, 20, 20);
+            if (iOffSet > 0 && GUI.Button(buttonRect, ""))
+            {
+                iOffSet -= slotsX;
+            }
         }
         
         //Draws grid of inventory
@@ -1044,85 +1199,114 @@ public class Inventory : MonoBehaviour {
                                     prevIndex = i;
                                     draggedItem = slots[i];
                                     items[i] = new Item();
+                                    RemoveItem(draggedItem, 'a');
                                 }
                                 if (e.type == EventType.mouseUp && draggingItem)
                                 {
                                     switch (prevIndex)
                                     {
                                         case 1001:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().activeSigil1 = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1002:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().activeSigil2 = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1003:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().activeSigil3 = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1004:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().activeSigil4 = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1005:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().passiveSigil1 = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1006:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().passiveSigil2 = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1007:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().passiveSigil3 = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1008:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().weapon = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1009:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().healthPotions = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1010:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().armor = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1011:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().shield = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1012:
+                                            AddItem(draggedItem, 'a');
                                             playersEquipment.GetComponent<Equipment>().sigilPotions = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         default:
-                                            items[prevIndex] = items[i];
+                                            switch (draggedItem.itemType)
+                                            {
+                                                case Item.ItemType.weapon:
+                                                case Item.ItemType.armor:
+                                                case Item.ItemType.shield:
+                                                    equipment[otherIndex] = draggedItem;
+                                                    break;
+                                                case Item.ItemType.sigil:
+                                                    sigils[otherIndex] = draggedItem;
+                                                    break;
+                                                case Item.ItemType.consumable:
+                                                    consumables[otherIndex] = draggedItem;
+                                                    break;
+                                                case Item.ItemType.keyItem:
+                                                    keyItems[otherIndex] = draggedItem;
+                                                    break;
+                                            }
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
@@ -1138,6 +1322,28 @@ public class Inventory : MonoBehaviour {
                         {
                             if (e.type == EventType.mouseUp && draggingItem)
                             {
+                                if (prevIndex < 1001)
+                                {
+                                    switch (draggedItem.itemType)
+                                    {
+                                        case Item.ItemType.weapon:
+                                        case Item.ItemType.armor:
+                                        case Item.ItemType.shield:
+                                            equipment[otherIndex] = draggedItem;
+                                            break;
+                                        case Item.ItemType.sigil:
+                                            sigils[otherIndex] = draggedItem;
+                                            break;
+                                        case Item.ItemType.consumable:
+                                            consumables[otherIndex] = draggedItem;
+                                            break;
+                                        case Item.ItemType.keyItem:
+                                            keyItems[otherIndex] = draggedItem;
+                                            break;
+                                    }
+                                }
+                                else
+                                    AddItem(draggedItem, 'a');
                                 items[i] = draggedItem;
                                 draggingItem = false;
                                 draggedItem = null;
@@ -1171,30 +1377,35 @@ public class Inventory : MonoBehaviour {
                                     prevIndex = i;
                                     draggedItem = slots[i];
                                     equipment[i] = new Item();
+                                    RemoveItem(draggedItem, 'e');
                                 }
                                 if (e.type == EventType.mouseUp && draggingItem && (draggedItem.itemType == Item.ItemType.weapon || draggedItem.itemType == Item.ItemType.armor || draggedItem.itemType == Item.ItemType.shield))
                                 {
                                     switch (prevIndex)
                                     {
                                         case 1008:
+                                            AddItem(draggedItem, 'e');
                                             playersEquipment.GetComponent<Equipment>().weapon = equipment[i];
                                             equipment[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1010:
+                                            AddItem(draggedItem, 'e');
                                             playersEquipment.GetComponent<Equipment>().armor = equipment[i];
                                             equipment[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1011:
+                                            AddItem(draggedItem, 'e');
                                             playersEquipment.GetComponent<Equipment>().shield = equipment[i];
                                             equipment[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         default:
+                                            items[otherIndex] = draggedItem;
                                             equipment[prevIndex] = equipment[i];
                                             equipment[i] = draggedItem;
                                             draggingItem = false;
@@ -1211,6 +1422,10 @@ public class Inventory : MonoBehaviour {
                         {
                             if (e.type == EventType.mouseUp && draggingItem && (draggedItem.itemType == Item.ItemType.weapon || draggedItem.itemType == Item.ItemType.armor || draggedItem.itemType == Item.ItemType.shield))
                             {
+                                if (prevIndex < 1001)
+                                    items[otherIndex] = draggedItem;
+                                else
+                                    AddItem(draggedItem, 'e');
                                 equipment[i] = draggedItem;
                                 draggingItem = false;
                                 draggedItem = null;
@@ -1244,54 +1459,63 @@ public class Inventory : MonoBehaviour {
                                     prevIndex = i;
                                     draggedItem = slots[i];
                                     sigils[i] = new Item();
+                                    RemoveItem(draggedItem, 's');
                                 }
                                 if (e.type == EventType.mouseUp && draggingItem && draggedItem.itemType == Item.ItemType.sigil)
                                 {
                                     switch (prevIndex)
                                     {
                                         case 1001:
+                                            AddItem(draggedItem, 's');
                                             playersEquipment.GetComponent<Equipment>().activeSigil1 = sigils[i];
                                             sigils[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1002:
+                                            AddItem(draggedItem, 's');
                                             playersEquipment.GetComponent<Equipment>().activeSigil2 = sigils[i];
                                             sigils[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1003:
+                                            AddItem(draggedItem, 's');
                                             playersEquipment.GetComponent<Equipment>().activeSigil3 = sigils[i];
                                             sigils[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1004:
+                                            AddItem(draggedItem, 's');
                                             playersEquipment.GetComponent<Equipment>().activeSigil4 = sigils[i];
                                             sigils[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1005:
+                                            AddItem(draggedItem, 's');
                                             playersEquipment.GetComponent<Equipment>().passiveSigil1 = sigils[i];
                                             sigils[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1006:
+                                            AddItem(draggedItem, 's');
                                             playersEquipment.GetComponent<Equipment>().passiveSigil2 = sigils[i];
                                             sigils[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1007:
+                                            AddItem(draggedItem, 's');
                                             playersEquipment.GetComponent<Equipment>().passiveSigil3 = sigils[i];
                                             sigils[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         default:
+                                            items[otherIndex] = draggedItem;
                                             sigils[prevIndex] = sigils[i];
                                             sigils[i] = draggedItem;
                                             draggingItem = false;
@@ -1308,6 +1532,10 @@ public class Inventory : MonoBehaviour {
                         {
                             if (e.type == EventType.mouseUp && draggingItem && draggedItem.itemType == Item.ItemType.sigil)
                             {
+                                if (prevIndex < 1001)
+                                    items[otherIndex] = draggedItem;
+                                else
+                                    AddItem(draggedItem, 's');
                                 sigils[i] = draggedItem;
                                 draggingItem = false;
                                 draggedItem = null;
@@ -1341,24 +1569,28 @@ public class Inventory : MonoBehaviour {
                                     prevIndex = i;
                                     draggedItem = slots[i];
                                     consumables[i] = new Item();
+                                    RemoveItem(draggedItem, 'c');
                                 }
                                 if (e.type == EventType.mouseUp && draggingItem && draggedItem.itemType == Item.ItemType.consumable)
                                 {
                                     switch (prevIndex)
                                     {
                                         case 1009:
+                                            AddItem(draggedItem, 'c');
                                             playersEquipment.GetComponent<Equipment>().healthPotions = consumables[i];
                                             consumables[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         case 1012:
+                                            AddItem(draggedItem, 'c');
                                             playersEquipment.GetComponent<Equipment>().sigilPotions = consumables[i];
                                             consumables[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
                                             break;
                                         default:
+                                            items[otherIndex] = draggedItem;
                                             consumables[prevIndex] = consumables[i];
                                             consumables[i] = draggedItem;
                                             draggingItem = false;
@@ -1375,6 +1607,10 @@ public class Inventory : MonoBehaviour {
                         {
                             if (e.type == EventType.mouseUp && draggingItem && draggedItem.itemType == Item.ItemType.consumable)
                             {
+                                if (prevIndex < 1001)
+                                    items[otherIndex] = draggedItem;
+                                else
+                                    AddItem(draggedItem, 'c');
                                 consumables[i] = draggedItem;
                                 draggingItem = false;
                                 draggedItem = null;
@@ -1408,12 +1644,14 @@ public class Inventory : MonoBehaviour {
                                     prevIndex = i;
                                     draggedItem = slots[i];
                                     keyItems[i] = new Item();
+                                    RemoveItem(draggedItem, 'a');
                                 }
                                 if (e.type == EventType.mouseUp && draggingItem && draggedItem.itemType == Item.ItemType.keyItem)
                                 {
                                     switch (prevIndex)
                                     {
                                         default:
+                                            items[otherIndex] = draggedItem;
                                             keyItems[prevIndex] = keyItems[i];
                                             keyItems[i] = draggedItem;
                                             draggingItem = false;
@@ -1430,6 +1668,10 @@ public class Inventory : MonoBehaviour {
                         {
                             if(e.type == EventType.mouseUp && draggingItem && draggedItem.itemType == Item.ItemType.keyItem)
                             {
+                                if(prevIndex < 1001)
+                                    items[otherIndex] = draggedItem;
+                                else
+                                    AddItem(draggedItem, 'k');
                                 keyItems[i] = draggedItem;
                                 draggingItem = false;
                                 draggedItem = null;
@@ -1448,116 +1690,241 @@ public class Inventory : MonoBehaviour {
         containsInfo = false;
     }
 
+    //Displays stats as well
     string DisplayInfo(int itemID)
     {
         string info = "";
         info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].itemName;
         info += "\n";
         info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].itemDesc;
+        switch(itemDatabase.GetComponent<ItemDatabase>().items[itemID].itemType)
+        {
+            case Item.ItemType.weapon:
+                info += "\n";
+                info += "Strength: ";
+                info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].damage;
+                info += "\t";
+                info += "Speed: ";
+                info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].attackSpeed;
+                info += "\t";
+                info += "Critical Chance: ";
+                info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].criticalChance;
+                info += "\n";
+                info += "Range: ";
+                if (itemDatabase.GetComponent<ItemDatabase>().items[itemID].range == Item.Range.longs)
+                    info += "long";
+                else 
+                    info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].range;
+                info += "\t";
+                info += "Knockback: ";
+                info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].knockback;
+                break;
+            case Item.ItemType.armor:
+                info += "\n";
+                info += "Defense: ";
+                info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].defense;
+                break;
+            case Item.ItemType.shield:
+                info += "\n";
+                info += "Damage Mitigation: ";
+                info += (int) 100*itemDatabase.GetComponent<ItemDatabase>().items[itemID].damageMitigation;
+                break;
+        }
         return info;
     }
 
-    int[] FindItem(int itemID)
+    //Updates other lists when an item added to one
+    void AddItem(Item draggedItem, char c)
     {
-        int[] itemLocations = new int[5];
-
-        for (int i = 0; i < items.Count; i++)
+        switch (c)
         {
-            if (items[i].itemID == itemID)
-            {
-                itemLocations[0] = i;
+            case 'a':
+                switch (itemDatabase.GetComponent<ItemDatabase>().items[draggedItem.itemID].itemType)
+                {
+                    case Item.ItemType.weapon:
+                    case Item.ItemType.armor:
+                    case Item.ItemType.shield:
+                        for (int i = 0; i < equipment.Count; i++)
+                        {
+                            if (equipment[i].itemName == null)
+                            {
+                                equipment[i] = draggedItem;
+                                break;
+                            }
+                        }
+                        break;
+                    case Item.ItemType.sigil:
+                        for (int i = 0; i < sigils.Count; i++)
+                        {
+                            if (sigils[i].itemName == null)
+                            {
+                                sigils[i] = draggedItem;
+                                break;
+                            }
+                        }
+                        break;
+                    case Item.ItemType.consumable:
+                        for (int i = 0; i < consumables.Count; i++)
+                        {
+                            if (consumables[i].itemName == null)
+                            {
+                                consumables[i] = draggedItem;
+                                break;
+                            }
+                        }
+                        break;
+                    case Item.ItemType.keyItem:
+                        for (int i = 0; i < keyItems.Count; i++)
+                        {
+                            if (keyItems[i].itemName == null)
+                            {
+                                keyItems[i] = draggedItem;
+                                break;
+                            }
+                        }
+                        break;
+                }
                 break;
-            }
-            else
-            {
-                itemLocations[0] = -1;
-            }
+            case 'e':
+            case 's':
+            case 'c':
+            case 'k':
+                for (int i = 0; i < items.Count; i++)
+                {
+                    if (items[i].itemName == null)
+                    {
+                        items[i] = draggedItem;
+                        break;
+                    }
+                }
+                break;
         }
+    }
 
-        for (int i = 0; i < equipment.Count; i++)
+
+    //Removes Item from other lists too
+    void RemoveItem(Item item, char c)
+    {
+        switch (c)
         {
-            if (equipment[i].itemID == itemID)
-            {
-                itemLocations[1] = i;
+            case 'a':
+                switch(item.itemType)
+                {
+                    case Item.ItemType.weapon:
+                    case Item.ItemType.armor:
+                    case Item.ItemType.shield:
+                        for (int i = 0; i < equipment.Count; i++)
+                        {
+                            if (equipment[i].itemName == item.itemName)
+                            {
+                                equipment[i] = new Item();
+                                otherIndex = i;
+                                break;
+                            }
+                        }
+                        break;
+                    case Item.ItemType.sigil:
+                        for (int i = 0; i < sigils.Count; i++)
+                        {
+                            if (sigils[i].itemName == item.itemName)
+                            {
+                                sigils[i] = new Item();
+                                otherIndex = i;
+                                break;
+                            }
+                        }
+                        break;
+                    case Item.ItemType.consumable:
+                        for (int i = 0; i < consumables.Count; i++)
+                        {
+                            if (consumables[i].itemName == item.itemName)
+                            {
+                                consumables[i] = new Item();
+                                otherIndex = i;
+                                break;
+                            }
+                        }
+                        break;
+                    case Item.ItemType.keyItem:
+                        for (int i = 0; i < keyItems.Count; i++)
+                        {
+                            if (keyItems[i].itemName == item.itemName)
+                            {
+                                keyItems[i] = new Item();
+                                otherIndex = i;
+                                break;
+                            }
+                        }
+                        break;
+                }
                 break;
-            }
-            else
-            {
-                itemLocations[0] = -1;
-            }
-        }
-
-        for (int i = 0; i < sigils.Count; i++)
-        {
-            if (sigils[i].itemID == itemID)
-            {
-                itemLocations[2] = i;
+            case 'e':
+            case 's':
+            case 'c':
+            case 'k':
+                for(int i = 0; i < items.Count; i++)
+                {
+                    if (items[i].itemName == item.itemName)
+                    {
+                        items[i] = new Item();
+                        otherIndex = i;
+                        break;
+                    }
+                }
                 break;
-            }
-            else
-            {
-                itemLocations[0] = -1;
-            }
         }
-
-        for (int i = 0; i < consumables.Count; i++)
-        {
-            if (consumables[i].itemID == itemID)
-            {
-                itemLocations[3] = i;
-                break;
-            }
-            else
-            {
-                itemLocations[0] = -1;
-            }
-        }
-
-        for (int i = 0; i < keyItems.Count; i++)
-        {
-            if (keyItems[i].itemID == itemID)
-            {
-                itemLocations[4] = i;
-                break;
-            }
-            else
-            {
-                itemLocations[0] = -1;
-            }
-        }
-
-        return itemLocations;
     }
 
     //Called by ItemDrop.cs, adds an item the inventory when the player picks up an item
     //Stores item in correct section (All and one of the four other specific categories)
+    //Exapnds inventory when needed
     public void AddItemFromDrop(int itemID)
     {
         Item newItem = itemDatabase.GetComponent<ItemDatabase>().items[itemID];
 
+        bool needMoreSpace = true;
         for(int i = 0; i < items.Count; i++)
         {
             if(items[i].itemName == null)
             {
                 items[i] = newItem;
+                needMoreSpace = false;
                 break;
             }
         }
-
-        items.Add(newItem);
+        if(needMoreSpace)
+        {
+            items.Add(newItem);
+            for(int i = 0; i < slotsX - 1; i++)
+            {
+                items.Add(new Item());
+            }
+            needMoreSpace = false;
+        }
 
         switch(newItem.itemType)
         {
             case Item.ItemType.weapon:
             case Item.ItemType.armor:
             case Item.ItemType.shield:
+                needMoreSpace = true;
                 for (int i = 0; i < equipment.Count; i++)
                 {
                     if (equipment[i].itemName == null)
                     {
                         equipment[i] = newItem;
+                        needMoreSpace = false;
                         break;
                     }
+                }
+                if (needMoreSpace)
+                {
+                    equipment.Add(newItem);
+                    for (int i = 0; i < slotsX - 1; i++)
+                    {
+                        equipment.Add(new Item());
+                    }
+                    needMoreSpace = false;
                 }
                 break;
             case Item.ItemType.sigil:
@@ -1571,13 +1938,24 @@ public class Inventory : MonoBehaviour {
                 }
                 break;
             case Item.ItemType.consumable:
+                needMoreSpace = true;
                 for (int i = 0; i < consumables.Count; i++)
                 {
                     if (consumables[i].itemName == null)
                     {
                         consumables[i] = newItem;
+                        needMoreSpace = false;
                         break;
                     }
+                }
+                if (needMoreSpace)
+                {
+                    consumables.Add(newItem);
+                    for (int i = 0; i < slotsX - 1; i++)
+                    {
+                        consumables.Add(new Item());
+                    }
+                    needMoreSpace = false;
                 }
                 break;
             case Item.ItemType.keyItem:
@@ -1591,5 +1969,42 @@ public class Inventory : MonoBehaviour {
                 }
                 break;
         }
+
+        //Expands slots when needed
+        if(slots.Count < items.Count)
+        {
+            for(int i = 0; i < slotsX; i++)
+            {
+                slots.Add(new Item());
+            }
+        }
+    }
+
+    //Removes the first item it fines of the same name
+    public void OthersRemoveItem(int itemID)
+    {
+        for(int i = 0; i < items.Count; i++)
+        {
+            if (items[i].itemName == itemDatabase.GetComponent<ItemDatabase>().items[itemID].itemName)
+            {
+                items[i] = new Item();
+                RemoveItem(items[i], 'a');
+                break;
+            }
+        }
+    }
+
+    //Finds the item
+    public bool Find(int itemID)
+    {
+        for(int i = 0; i < items.Count; i++)
+        {
+            if(items[i].itemName == itemDatabase.GetComponent<ItemDatabase>().items[itemID].itemName)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

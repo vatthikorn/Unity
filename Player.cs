@@ -9,13 +9,23 @@
     Handles health Regeneration.
     Handles damage reduction by shield.
     Handles KnockPlayer to player from an enemy attack.
-    Handles projectiel spawning.
+    Handles projectile spawning.
+
+    Interface:
+    void ReceiveDamage(int damage) - applies damage from attacks (Enemy.cs, EnemyProjectile.cs)
+    void KnockBackToPlayer(Collision2D other) - applies knockback from attacks (Enemy.cs, EnemyProjectile.cs)
+    void Shield() - allows player to bring up shield (PlayerContoller.cs)
+    void Attack() - allows player to attack (PlayerController.cs)
+    void Spared() - palces player in peace mode (Enemy.cs)
+    void Hunted() - places player in battle mode (Enemy.cs)
+    inCombat - is value to check if the player is in combat for enabling/disabling save
 
     Dependencies:
-    Enemy.cs
-    Equipment.cs
-    PlayerController.cs
-    PlayerRanged.cs
+    Enemy.cs - applies damage from (strength)
+    EnemyProjectile.cs - applies damage from (damage)
+    Equipment.cs - to get information for battle calculations (weapon, shield, armor)
+    PlayerController.cs - to enable/disable action, to get values concerning ranged attacks location (facingRight, action, ranged*)
+    PlayerRangedAttack.cs - sets up ranged attack values (damage, criticalChance, range)
 
     Required:
     Player.cs and PlayerController.cs are attached to the same Player GameObject.
@@ -53,6 +63,8 @@ public class Player : MonoBehaviour {
     public const float fastestAttackTime = 0.05f;
 
     public const float shieldTime = 0.2f;
+
+    public const float playerHurtTime = 0.2f;
 
     //KnockBack to player by an enemy attack
     public Vector2 PlayerKnockBack = new Vector2(2000f, 100f);
@@ -357,15 +369,24 @@ public class Player : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy Projectile")
         {
+            this.gameObject.GetComponent<PlayerController>().action = false;
+            Invoke("DoneHurting", playerHurtTime);
             KnockBackToPlayer(other);
             ReceiveDamage(other.gameObject.GetComponent<EnemyProjectile>().damage);
             Destroy(other.gameObject);
         }
         else if(other.gameObject.tag == "Enemy")
         {
+            this.gameObject.GetComponent<PlayerController>().action = false;
+            Invoke("DoneHurting", playerHurtTime);
             KnockBackToPlayer(other);
             ReceiveDamage(other.gameObject.GetComponent<Enemy>().strength);
         }
+    }
+
+    void DoneHurting()
+    {
+        this.gameObject.GetComponent<PlayerController>().action = true;
     }
 
     //Applies a force depending on point on point of contact to player for KnockBack

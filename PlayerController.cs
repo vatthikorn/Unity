@@ -1,24 +1,29 @@
 ﻿/*
     Nathan Cruz
 
-    NOT COMPLETE. NEEDS A LOT OF REFINEMENT TOO FOR THE THINGS ALREADY IMPLEMENTED. LIKE FOR EXAMPLE:
-    NOT LETING THE PLAYER MASH THAT ATTACK BUTTON. IT DISGRACEFUL AND SHAMEFUL FOR A GAMER TO RESULT TO BUTTON MASHING.
-    SERIOUSLY HAVE SOME CLASS. NEED SOMETHING TO RESTRICT THAT.
+    NEED TO APPLY ACCELERATOR FOR WALL JUMPING
+    NEED TO ALLOW SOME DASHING
 
     Controls (Fight Screen):
     Attack - Left Click or K                    
     Defend - Right Click or J                   
-    Dodge - Directional Button + Left Shift     NOT AT ALL IMPLEMENTED
-    Activate Sigil - {1,2,3,4}                  NOT IMPLEMENTED
-    Use Healing Potion - Q                      NOT IMPLEMENTED
-    Use Sigil Potion - E                        NOT IMPLEMENTED
+    Dodge - Directional Button + Left Shift     NOT IMPLEMENTED
+    Activate Sigil - {1,2,3,4}                  
+    Use Healing Potion - Q                      
+    Use Sigil Potion - E                        
     Movement - WASD || Up/Left/Down/Right          
     Inventory - I  
     Map - M                                     
     Menu - ESC
 
+    Interface:
+    facingRight, action, ranged*  - allows enable/disable action, values concerning ranged attacks location - (Player.cs)
+    screenState  - invetory screen - (Inventory.cs)
+
     Dependencies:
-    Player.cs
+    Player.cs - attacking and blocking (Attack(), Shield())
+    PlayerAttack.cs - get direction of force from attack (facingRight)
+    Equipment.cs - (activateSigil1(), activateSigil2(), activateSigil3(), activateSigil4(), UseHealthPotion(), UseSigilPotion())
 
     Required:
     Attached to the player object.
@@ -36,17 +41,20 @@ public class PlayerController : MonoBehaviour {
     public enum MapState { none, mini, large };//If the player has the no map, the miniMap, or largeMap on display
 
     //All of these must be referenced
+    public GameObject equipment;
     public GameObject player;
     public GameObject pauseScreen;
-    public GameObject inventoryScreen;
     public GameObject largeMap;
     public GameObject miniMap;
     public Transform groundCheck;//Object that is placed underneath the player
+    public Transform leftWallCheck;
+    public Transform rightWallCheck;
 
     //Limits movement
     public const float moveForce = 300f;//Horizontal Force
     public const float maxSpeed = 5f;//Horizontal Speed
     public const float jumpForce = 2000f;
+    public const float wallJumpForce = 2000f;
 
     //How to place melee attack objects and shield away from player
     const float smallestMeleeOffsetRight = 0.36f;
@@ -72,14 +80,18 @@ public class PlayerController : MonoBehaviour {
     public bool action = true;
 
     //Determines if the player can jump or is jumping
-    bool grounded = false;
+    public bool grounded = false;
+    public bool leftWalled = false;
+    public bool rightWalled = false;
     bool jump = false;
+    bool rightJump = false;
+    bool leftJump = false;
     public bool facingRight = true;
 
     //Deteremines what is displayed and if the game is paused or not (Default settings)
-    MapState mapState = MapState.mini;
-    ScreenState screenState = ScreenState.fight;
-    bool pauseGame = false;
+    public MapState mapState = MapState.mini;
+    public ScreenState screenState = ScreenState.fight;
+    public bool pauseGame = false;
     
     private Rigidbody2D rb;
 
@@ -96,47 +108,57 @@ public class PlayerController : MonoBehaviour {
 
         //Down - Jump: Checks if the player is on the ground to enable jumping
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        leftWalled = !grounded && Physics2D.Linecast(transform.position, leftWallCheck.position, 1 << LayerMask.NameToLayer("Wall"));
+        rightWalled = !grounded && Physics2D.Linecast(transform.position, rightWallCheck.position, 1 << LayerMask.NameToLayer("Wall"));
 
-        if(!pauseGame)
+        if (!pauseGame)
         {
             //Jump
-            if ((Input.GetAxis("Vertical") > 0 || Input.GetKeyDown(KeyCode.Space)) && grounded)
+            if (((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))) && grounded)
             {
                 jump = true;
             }
+            else if((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && leftWalled)
+            {
+                rightJump = true;
+            }
+            else if((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && rightWalled)
+            {
+                leftJump = true;
+            }
             //Sigil Buttons
-            else if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
+            else if(action && Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Debug.Log(1);
+                equipment.GetComponent<Equipment>().activateSigil1();
             }
-            else if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
+            else if (action && Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
             {
-                Debug.Log(2);
+                equipment.GetComponent<Equipment>().activateSigil2();
             }
-            else if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
+            else if (action && Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
             {
-                Debug.Log(3);
+                equipment.GetComponent<Equipment>().activateSigil3();
             }
-            else if (Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
+            else if (action && Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
             {
-                Debug.Log(4);
+                equipment.GetComponent<Equipment>().activateSigil4();
             }
             //Consumables (Health and Sigil potion)
-            else if(Input.GetKeyDown(KeyCode.Q))
+            else if(action && Input.GetKeyDown(KeyCode.Q))
             {
-                Debug.Log("Q");
+                equipment.GetComponent<Equipment>().UseHealthPotion();
             }
-            else if(Input.GetKeyDown(KeyCode.E))
+            else if(action && Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("E");
+                equipment.GetComponent<Equipment>().UseSigilPotion();
             }
-            //Attack and defend
-            else if(action && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K)))
+            //Attack and defend (only if the player has a shield equipped)
+            else if(action && ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K))))
             {
                 action = false;
                 this.gameObject.GetComponent<Player>().Attack();
             }
-            else if (action && (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.J)))
+            else if (action && equipment.GetComponent<Equipment>().shield.itemID != 0 && ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.J))))
             {
                 action = false;
                 this.gameObject.GetComponent<Player>().Shield();
@@ -193,7 +215,7 @@ public class PlayerController : MonoBehaviour {
             float h = Input.GetAxis("Horizontal");
 
             //Switches the side the weapon and shield is on pending on which direction the player is facing
-            if(h > 0)
+            if(action && h > 0)
             {
                 facingRight = true;
                 this.GetComponent<Player>().smallestMelee.transform.localPosition = new Vector2(smallestMeleeOffsetRight, 0);
@@ -203,7 +225,7 @@ public class PlayerController : MonoBehaviour {
                 this.GetComponent<Player>().largestMelee.transform.localPosition = new Vector2(largestMeleeOffsetRight, 0);
                 this.GetComponent<Player>().shield.transform.localPosition = new Vector2(shieldOffsetRight, 0);
             }
-            else if (h < 0)
+            else if (action && h < 0)
             {
                 facingRight = false;
                 this.GetComponent<Player>().smallestMelee.transform.localPosition = new Vector2(smallestMeleeOffsetLeft, 0);
@@ -215,7 +237,7 @@ public class PlayerController : MonoBehaviour {
             }
 
             //Limits horizontal speed
-            if (h * rb.velocity.x < maxSpeed)
+            if (action && h * rb.velocity.x < maxSpeed)
             {
                 rb.AddForce(Vector2.right * h * moveForce);
             }
@@ -225,10 +247,20 @@ public class PlayerController : MonoBehaviour {
                 rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
             }
 
-            if (jump)
+            if (action && jump)
             {
                 rb.AddForce(new Vector2(0f, jumpForce));
                 jump = false;
+            }
+            else if(action && leftJump)
+            {
+                rb.AddForce(new Vector2(-wallJumpForce, jumpForce));
+                leftJump = false;
+            }
+            else if(action && rightJump)
+            {
+                rb.AddForce(new Vector2(wallJumpForce, jumpForce));
+                rightJump = false;
             }
         }        
     }
@@ -253,14 +285,12 @@ public class PlayerController : MonoBehaviour {
     {
         DisableMap();
         screenState = ScreenState.inventory;
-        inventoryScreen.GetComponent<Canvas>().enabled = true;
     }
 
     void DisableInventoryScreen()
     {
         EnableMap();
         screenState = ScreenState.fight;
-        inventoryScreen.GetComponent<Canvas>().enabled = false;
     }
 
     //Section deals with the map

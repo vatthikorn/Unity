@@ -6,7 +6,7 @@
     There should be multiple in most rooms.
 
     Dependency:
-    Room.cs
+    Room.cs - (entered())
 
     Required:
     Attached to a cube gameObject (w/o material & w 2D Collider & trigger on)

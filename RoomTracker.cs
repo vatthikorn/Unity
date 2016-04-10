@@ -5,9 +5,13 @@
     This is attached to the entire zone.
     Sends information to the mapManager and signals it to update evertime the player collides with a DoorWay.
 
+    Interface:
+    void UpdateMap() - updates room list status (Room.cs)
+    void ResetAll() -  resets all rooms (Room.cs)
+
     Dependency:
-    Room.cs
-    MapMangager.cs (2)
+    Room.cs - get room status (roomType, exited())
+    MapMangager.cs (2) - (UpdateMapImage(), SortMaps())
 
     Required:
     Attached to a zone GameObject (empty)

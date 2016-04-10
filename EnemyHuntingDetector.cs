@@ -4,7 +4,7 @@
     Signals to the enemy to switch back to roaming if the player is out of range for a certain time
 
     Dependencies:
-    Enemy.cs
+    Enemy.cs - continues hunting mode until player escapes and triggers roaming mode (GoBackToRoaming())
 
     Required:
     Attach this to empty GameObject with a Collider2D

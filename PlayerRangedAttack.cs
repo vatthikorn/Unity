@@ -6,7 +6,8 @@
     Handles ranged weapons in general.
 
     Dependencies:
-    Enemy.cs
+    Enemy.cs - apply daamge & knockback to them - (ReceiveDamage())
+    Equipment.cs & Item.cs - (Range, damage, critical chance, knockback)
 
     Required:
     Attached to the projectile sample
@@ -51,10 +52,6 @@ public class PlayerRangedAttack : AttackVars {
         else if(range == Item.Range.longest && distanceTraveled > longestRange)
         {
             Destroy(this.gameObject);
-        }
-        else
-        {
-            Debug.Log("Invalid range used! longs or longest.");
         }
     }
 

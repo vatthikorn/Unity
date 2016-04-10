@@ -8,7 +8,11 @@
     Handles Critcal Chance.
 
     Dependencies:
-    N/A
+    Enemy.cs - applies damage (ReceiveDamage())
+    PlayerController.cs - to get direction of player (facingRight)
+    Player.cs - to get equipment information (equipment)
+    Equipment.cs - to get weapon information (weapon)
+    Item.cs - (damage, range, criticalChance, knockBack)
 
     Required:
     The enemy GameObjects need to have the "Enemy" tag.

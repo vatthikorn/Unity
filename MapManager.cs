@@ -10,8 +10,8 @@
     Only the initialMap should be a complete image, all other images will just be pieces to lie on top of it.
     Layer Order (top to bottom): bossDefeated, boss, playerHere, roomDiscovered, initialMap
 
-    Dependency:
-    N/A (RoomTacker depends on this script, but that's about it when it comes to scripts)
+    Interface:
+    SortMaps(), UpdateMapImage() - layers map and updates image as player moves (RoomTracker.cs)
 
     Required:
     DO NOT MANIPULATE ANY OF THE INTEGER VALUES, SCRIPT WILL HANDLE THESES

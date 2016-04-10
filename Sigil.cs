@@ -9,18 +9,16 @@
 using UnityEngine;
 using System.Collections;
 
-public class Sigil : Item
-{
+public class Sigil : MonoBehaviour {
 
-	public enum SigilType { passibe, targetAOE, directional };
+	public enum SigilType { passive, targetAOE, directional };
 
     public SigilType sigilType;
     public int coolDown;
     public double timer;
     public int damage;
     public bool enabledSigil;
-    public GameObject sigil;
-    public Animator anim;
+    public GameObject behavior;
 
     /*void Update()
     {

@@ -6,13 +6,14 @@
     Handles KnockBack applied to player when shield interacts with anything enemy.
 
     Dependencies:
-    EnemyProjectile.cs
-    Enemy.cs
-    Player.cs
+    EnemyProjectile.cs - get the damage upon collision (damage)
+    Enemy.cs - get the damage upon collision (strength)
+    Player.cs - apply damage upon collision (KnockBack(), ReceiveDamage())
+    Equipment.cs & Item.cs - get the damage mitigation (shield)
 
     Remember To:
     Set isTrigger to true.
-    Give the shield a RigidBody2D/
+    Give the shield a RigidBody2D
 
 */
 using UnityEngine;

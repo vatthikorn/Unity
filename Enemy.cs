@@ -5,7 +5,6 @@
     THE IDEA IS TO HAVE BE SIMILAR TO PLAYER.CS IN WHICH IT DETECT COLLSIONS FROM PLAYER ATTACKS OR PLAYER BULLETS
     UPON DETECTION, WILL RECEIVE DAMAGE, FORCE, OTHER EFFECTS, ETC.
     BE DESTROYED ONCE HEALTH REACHES ZERO
-    MAYBE DROP AN ITEM AS WELL
     ALSO TO HAVE AN AI ATTACHED TO THIS
 
     This was just created for a test for parts of the game, but expand on it please if you have the time.
@@ -15,9 +14,13 @@
     Handles alerting Player.cs when it is in Combat and how many are in combat.
     Handles aggoring enemy when hit.
 
+    Interface:
+    void ReceiveDamage(int damage) - applies damage to enemy (PlayerRangedAttack.cs , PlayerAttack.cs)
+    void ExecuteHunting() - switches to hunting mode (EnemyRoamingDetector.cs)
+    void GoBackToRoaming() - switches to roaming mode (EnemyHuntingDetector.cs)
+
     Dependencies:
-    EnemyHuntingDetector.cs
-    Player.cs
+    Player.cs - switches player to battle mode or back to peace mode (Hunted(), Spared())
 
     Remember to:
     Set the enemy's RigidBody to freeze rotation
@@ -37,6 +40,9 @@ public class Enemy : MonoBehaviour {
     public GameObject enemyRoamingDetector;
     public GameObject enemyHuntingDetector;
 
+    public const float hurtAnimationTime = .3f;
+
+    public bool action = true;
     public bool hunting = false;
     public bool alive;
     public int health;
@@ -44,7 +50,7 @@ public class Enemy : MonoBehaviour {
     public int strength;
     public int defense;
     
-    //Disables any item drops
+    //Disables any item drops, sets up roaming mode
     void Start()
     {
         itemDrop.SetActive(false);
@@ -57,8 +63,11 @@ public class Enemy : MonoBehaviour {
     //Drops an item (if enemy has an item) upon defeat
     //Destroys itself upon defeat
     //Aggroes enemy when hurt
+    //Disables action temporarily
     public void ReceiveDamage(int damage)
     {
+        action = false;
+        Invoke("EnableAction", hurtAnimationTime);
         if(!hunting)
         {
             ExecuteHunting();
@@ -80,6 +89,11 @@ public class Enemy : MonoBehaviour {
             player.GetComponent<Player>().Spared();
             Destroy(this.gameObject);
         }
+    }
+
+    void EnableAction()
+    {
+        action = true;
     }
 
     //Called by EnemyRoamingDetector.cs

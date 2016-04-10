@@ -1,15 +1,14 @@
 ﻿/*
     Nathan Cruz
 
-    NOT COMPLETE:
-    ENEMY DROPS ITEMS NOT YET IMPLEMENTED
-
-    Any items dropped on screen by either chest or enemy (THE ENEMY PART IS NOT YET IMPLEMENTED).
+    Any items dropped on screen by either chest or enemy.
     The item will appear on screen when "dropped" (SetActive by another object), and then fall to the ground.
+    This script just handles the how the player will pick the object, and what sprite and size it should have.
+    Need to enter the itemID beforehand.
 
     Dependency:
-    Chest.cs
-    ItemDatabase.cs
+    ItemDatabase.cs & Item.cs - accesing information (everything*)
+    Inventory.cs - placing item in inventory (AddItemFromDrop())
 
     Required:
     The itemDrop needs to be a child of a gameObject with a Chest script or enemy script (ENEMY PART NOT YET IMPLEMENTED)
@@ -32,15 +31,18 @@ public class ItemDrop : MonoBehaviour {
     public string player = "Player";
     public string inventory = "Inventory";
 
+    //Change on preference
     public const float fallRate = 0.05f;
 
+    //Important to get item stats across from inventory and item database
     public int itemID;
+
+    //Check for falling
     bool grounded;
 
-    //Copies itemID of chest, used to determine sprite from ItemDatabase, scales it down appropriately.
+    //Copies texture and scales image down to appropriate size
     void Start()
     {
-        itemID = this.transform.parent.GetComponent<Chest>().itemID;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprite.Create(itemDatabase.GetComponent<ItemDatabase>().items[itemID].icon, new Rect(0, 0, itemDatabase.GetComponent<ItemDatabase>().items[itemID].icon.width, itemDatabase.GetComponent<ItemDatabase>().items[itemID].icon.height), new Vector2(0.5f,0.5f));
         this.gameObject.transform.localScale = new Vector3(.25f, .25f, 1);
     }
@@ -59,7 +61,7 @@ public class ItemDrop : MonoBehaviour {
     //Player stand in front, picks it up with "E", it is destroyed from the game, and inventory handles placement.
     void OnTriggerStay2D(Collider2D other)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (other.gameObject.tag == ("Player") && Input.GetKeyDown(KeyCode.E))
         {
             GameObject.Find(player).transform.FindChild(inventory).GetComponent<Inventory>().AddItemFromDrop(itemID);
             Destroy(this.gameObject);

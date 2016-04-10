@@ -4,7 +4,7 @@
     Signals to the Enemy when the player has been detected by them.
 
     Dependencies:
-    Enemy.cs
+    Enemy.cs - trigger hunting mode (ExecuteHunting())
 
     Required:
     Attach this to empty GameObject with a Collider2D
