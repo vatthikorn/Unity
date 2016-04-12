@@ -6,11 +6,10 @@
     There should be multiple in most rooms.
 
     Dependency:
-    Room.cs
+    Room.cs - (entered())
 
     Required:
-    Attached to a cube gameObject (w/o material & w 2D Collider)
-    gameObject has isTrigger set
+    Attached to a cube gameObject (w/o material & w 2D Collider & trigger on)
     gameObject has a parent (The Room)
     The parent has a "Room" Script component
     The player gameObject has the "Player" tag

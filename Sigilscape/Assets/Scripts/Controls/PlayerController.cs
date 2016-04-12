@@ -1,24 +1,29 @@
 ﻿/*
     Nathan Cruz
 
-    NOT COMPLETE. NEEDS A LOT OF REFINEMENT TOO FOR THE THINGS ALREADY IMPLEMENTED. LIKE FOR EXAMPLE:
-    NOT LETING THE PLAYER MASH THAT ATTACK BUTTON. IT DISGRACEFUL AND SHAMEFUL FOR A GAMER TO RESULT TO BUTTON MASHING.
-    SERIOUSLY HAVE SOME CLASS. NEED SOMETHING TO RESTRICT THAT.
+    NEED TO APPLY ACCELERATOR FOR WALL JUMPING
+    NEED TO ALLOW SOME DASHING
 
     Controls (Fight Screen):
     Attack - Left Click or K                    
     Defend - Right Click or J                   
-    Dodge - Directional Button + Left Shift     NOT AT ALL IMPLEMENTED
-    Activate Sigil - {1,2,3,4}                  NOT IMPLEMENTED
-    Use Healing Potion - Q                      NOT IMPLEMENTED
-    Use Sigil Potion - E                        NOT IMPLEMENTED
+    Dodge - Directional Button + Left Shift     NOT IMPLEMENTED
+    Activate Sigil - {1,2,3,4}                  
+    Use Healing Potion - Q                      
+    Use Sigil Potion - E                        
     Movement - WASD || Up/Left/Down/Right          
     Inventory - I  
     Map - M                                     
     Menu - ESC
 
+    Interface:
+    facingRight, action, ranged*  - allows enable/disable action, values concerning ranged attacks location - (Player.cs)
+    screenState  - invetory screen - (Inventory.cs)
+
     Dependencies:
-    Player.cs
+    Player.cs - attacking and blocking (Attack(), Shield())
+    PlayerAttack.cs - get direction of force from attack (facingRight)
+    Equipment.cs - (activateSigil1(), activateSigil2(), activateSigil3(), activateSigil4(), UseHealthPotion(), UseSigilPotion())
 
     Required:
     Attached to the player object.
@@ -39,7 +44,6 @@ public class PlayerController : MonoBehaviour {
     public GameObject equipment;
     public GameObject player;
     public GameObject pauseScreen;
-    public GameObject inventoryScreen;
     public GameObject largeMap;
     public GameObject miniMap;
     public Transform groundCheck;//Object that is placed underneath the player
@@ -85,9 +89,9 @@ public class PlayerController : MonoBehaviour {
     public bool facingRight = true;
 
     //Deteremines what is displayed and if the game is paused or not (Default settings)
-    MapState mapState = MapState.mini;
-    ScreenState screenState = ScreenState.fight;
-    bool pauseGame = false;
+    public MapState mapState = MapState.mini;
+    public ScreenState screenState = ScreenState.fight;
+    public bool pauseGame = false;
     
     private Rigidbody2D rb;
 
@@ -125,28 +129,28 @@ public class PlayerController : MonoBehaviour {
             //Sigil Buttons
             else if(action && Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Debug.Log(1);
+                equipment.GetComponent<Equipment>().activateSigil1();
             }
             else if (action && Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
             {
-                Debug.Log(2);
+                equipment.GetComponent<Equipment>().activateSigil2();
             }
             else if (action && Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
             {
-                Debug.Log(3);
+                equipment.GetComponent<Equipment>().activateSigil3();
             }
             else if (action && Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4))
             {
-                Debug.Log(4);
+                equipment.GetComponent<Equipment>().activateSigil4();
             }
             //Consumables (Health and Sigil potion)
             else if(action && Input.GetKeyDown(KeyCode.Q))
             {
-                Debug.Log("Q");
+                equipment.GetComponent<Equipment>().UseHealthPotion();
             }
             else if(action && Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("E");
+                equipment.GetComponent<Equipment>().UseSigilPotion();
             }
             //Attack and defend (only if the player has a shield equipped)
             else if(action && ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K))))
@@ -281,14 +285,12 @@ public class PlayerController : MonoBehaviour {
     {
         DisableMap();
         screenState = ScreenState.inventory;
-        inventoryScreen.GetComponent<Canvas>().enabled = true;
     }
 
     void DisableInventoryScreen()
     {
         EnableMap();
         screenState = ScreenState.fight;
-        inventoryScreen.GetComponent<Canvas>().enabled = false;
     }
 
     //Section deals with the map

@@ -1,18 +1,24 @@
-﻿using UnityEngine;
+﻿/*
+    Nathan Cruz
+
+    NOT COMPELTE, NOT STARTED, I DON'T EVEN KNOW WHAT I AM DOING HERE. LIKE. EVEN THOUGH I DID THE CLASS DIAGRAMS, I AM BLATANTLY IGNORING THEM CAUSE I SUCK AT FOLLOWING THROUGH WITH PLANS. 
+    AND PLUS THE PLAN SUCKED. SO.
+    THE IDEA IS TO HAVE THIS KEEP TRACK OF THE COOLDOWN, BEHAVIOR, DAMAGE, TYPE, ETC OF THE SIGIL. BASICALLY EVERYTHING CONCERNINNG SIGILS.
+*/
+
+using UnityEngine;
 using System.Collections;
 
-public class Sigil : Item
-{
+public class Sigil : MonoBehaviour {
 
-	public enum SigilType { passibe, targetAOE, directional };
+	public enum SigilType { passive, targetAOE, directional };
 
     public SigilType sigilType;
     public int coolDown;
     public double timer;
     public int damage;
     public bool enabledSigil;
-    public GameObject sigil;
-    public Animator anim;
+    public GameObject behavior;
 
     /*void Update()
     {

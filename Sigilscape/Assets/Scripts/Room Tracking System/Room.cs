@@ -5,8 +5,13 @@
     This is attached to a single room.
     The status of the room is updated every time the player enters (collides with DoorWay of this room) or exits (collides with a DoorWay of another room) the room.
 
+    Interface:
+    void entered() - alllows room status to entered (DoorWay.cs)
+    void exited() - resets rooms status to exited (RoomTracker.cs)
+    roomType - give info (RoomTracker.cs)
+
     Dependency:
-    RoomTracker.cs
+    RoomTracker.cs - (resetAll(), UpdateMap())
 
     Required:
     Attached to a room GameObject (empy GameObject)
