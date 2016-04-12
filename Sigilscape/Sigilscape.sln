@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{EE19A999-1FDC-C46A-A88F-82470A043012}") = "Sigilscape", "Assembly-CSharp.csproj", "{3F87F859-BF1E-CA2A-A158-4FD65A7D947B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F87F859-BF1E-CA2A-A158-4FD65A7D947B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F87F859-BF1E-CA2A-A158-4FD65A7D947B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F87F859-BF1E-CA2A-A158-4FD65A7D947B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F87F859-BF1E-CA2A-A158-4FD65A7D947B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
