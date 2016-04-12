@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class ZoneLoader : MonoBehaviour {
+public class SaveGame : MonoBehaviour {
 
 
 	//Call when a gameobject collides with this object
@@ -14,7 +14,7 @@ public class ZoneLoader : MonoBehaviour {
 			Debug.Log ("Is player");
 		
 			//If so then load scene2
-			SceneManager.LoadScene ("Entire Test 2");
+			SceneManager.LoadScene ("Zone2");
 
 		} else {
 
@@ -24,7 +24,7 @@ public class ZoneLoader : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		//DontDestroyOnLoad (gameObject);
 	}
 	

@@ -87,6 +87,7 @@
 'Assets/Scripts/Combat System/PlayerRangedAttack.cs'
 'Assets/Scripts/Combat System/Shield.cs'
 'Assets/Scripts/Controls/PlayerController.cs'
+'Assets/Scripts/Controls/SaveGame.cs'
 'Assets/Scripts/FightScreenManager.cs'
 'Assets/Scripts/Inventory System/Inventory.cs'
 'Assets/Scripts/Item Drop System/Chest.cs'

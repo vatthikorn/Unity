@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Combat System\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\Combat System\PlayerRangedAttack.cs" />
      <Compile Include="Assets\Scripts\Combat System\Shield.cs" />
+     <Compile Include="Assets\Scripts\Controls\GameControl.cs" />
      <Compile Include="Assets\Scripts\Controls\PlayerController.cs" />
      <Compile Include="Assets\Scripts\FightScreenManager.cs" />
      <Compile Include="Assets\Scripts\Inventory System\Inventory.cs" />
