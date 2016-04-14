@@ -64,10 +64,12 @@ public class Chest : MonoBehaviour {
         }
     }
 
+    //Frees item drop and detaches it
     void OpenChest()
     {
         chestState = ChestState.unlocked;
         itemDrop.gameObject.SetActive(true);
+        this.transform.DetachChildren();
     }
 
 }
