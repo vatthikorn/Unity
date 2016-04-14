@@ -40,5 +40,9 @@ public class ItemDatabase : MonoBehaviour {
         items[17].addItemInfo(17, "Chastity Belt", "Don't worry, mate. No one cares if you're a virgin. They just want to kill you that's all.", Item.ItemType.sigil);
         items[18].addItemInfo(18, "Basic Shield", "Test shield.", Item.ItemType.shield, 0.5f);
         items[19].addItemInfo(19, "Minor Healing Potion", "Good for small booboos.", Item.ItemType.consumable);
+        items[20].addItemInfo(20, "Fire Wand", "Shoots fire!", Item.ItemType.sigil);
+        items[21].addItemInfo(21, "Greater Healing Potion", "Good for small booboos.", Item.ItemType.consumable);
+        items[22].addItemInfo(22, "Healing Potion", "Good for small booboos.", Item.ItemType.consumable);
+        items[23].addItemInfo(23, "Sigil Potion", "Good for small booboos.", Item.ItemType.consumable);
     }
 }

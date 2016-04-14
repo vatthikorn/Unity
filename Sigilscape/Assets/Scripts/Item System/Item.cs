@@ -52,6 +52,24 @@ public class Item {
 
     }
 
+    //Called by Equipment.cs, for when the player is using their fist
+    public Item(int ID, string name, string desc, ItemType itemType, int dmg, float crtChnce, AttackSpeed attspd, Range range, Knockback knockback, WeaponType weaponType)
+    {
+        this.itemID = ID;
+        this.itemName = name;
+        this.itemDesc = desc;
+        this.itemType = itemType;
+        this.damage = dmg;
+        this.criticalChance = crtChnce;
+        this.attackSpeed = attspd;
+        this.range = range;
+        this.knockback = knockback;
+        this.weaponType = weaponType;
+        this.damageMitigation = 0;
+        this.defense = 0;
+        this.sigil = null;
+    }
+
     //Item initialization for Weapons
     public void addItemInfo(int ID, string name, string desc, ItemType itemType, int dmg, float crtChnce, AttackSpeed attspd, Range range, Knockback knockback, WeaponType weaponType)
     {
