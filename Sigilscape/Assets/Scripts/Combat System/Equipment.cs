@@ -1,11 +1,12 @@
 ﻿/*
     Nathan Cruz
 
-    NOT COMPLETE. BARELY STARTED.
-    THE IDEA IS TO HAVE THIS BE REFERENCED IN THE COMBAT SYSTEM (SPECIFICALLY THE COLLISIONS, THE BLOCKS ATTACHED TO THE PLAYER ACTIVATED, DAMAGE, DEFENSE, ETC)
-    CURRENTLY JUST A LIST OF SHIT THE PLAYER CAN HOLD AT A TIME.
+    NEED TO IMPLEMENT HOW HEALTH POTIONS WORK
+    NEED TO IMPLEMENT HOW SIGIL POTIONS WORK
 
     Interface:
+    void LoadEquipment(Equipment savedEquipment) - used for loading the equipment from the previous game session
+    Equipment SaveEquipment() - used for saving the equipment from this game session
     activateSigil1() - is activated by (PlayerController.cs) 
     activateSigil2() - is activated by (PlayerController.cs)
     activateSigil3() - is activated by (PlayerController.cs)
@@ -16,6 +17,9 @@
 
     Dependencies:
     Sigil.cs - holds the effects
+
+    Load Order:
+    Equipment.cs loads before the script that handles the loading from a save file.
 */
 using UnityEngine;
 using System.Collections;
@@ -24,6 +28,10 @@ using System.Collections.Generic;
 public class Equipment : MonoBehaviour {
 
     public GameObject itemDatabase;
+    public GameObject inventory;
+    public GameObject player;
+
+    public const float sigilActivationTime = 0.2f;
 
     public Item weapon;
     public Item armor;
@@ -38,6 +46,41 @@ public class Equipment : MonoBehaviour {
     public Item healthPotions;
     public Item sigilPotions;
 
+    public int healthPotionCount = 0;
+    public int allHealthPotionCount = 0;
+    public int sigilPotionCount = 0;
+
+    public const int minorHealthPotionHeal = 30;
+    public const int healthPotionHeal = 60;
+    public const int greaterHealthPotionHeal = 100;
+
+    public const string minorHealthPotionName = "Minor Healing Potion";
+    public const string healthPotionName = "Healing Potion";
+    public const string greaterHealthPotionName = "Greater Healing Potion";
+
+    //For loading the game
+    public void LoadEquipment(Equipment savedEquipment)
+    {
+        weapon = savedEquipment.weapon;
+        armor = savedEquipment.armor;
+        shield = savedEquipment.shield;
+        activeSigil1 = savedEquipment.activeSigil1;
+        activeSigil2 = savedEquipment.activeSigil2;
+        activeSigil3 = savedEquipment.activeSigil3;
+        activeSigil4 = savedEquipment.activeSigil4;
+        passiveSigil1 = savedEquipment.passiveSigil1;
+        passiveSigil2 = savedEquipment.passiveSigil2;
+        passiveSigil3 = savedEquipment.passiveSigil3;
+        healthPotions = savedEquipment.healthPotions;
+        sigilPotions = savedEquipment.sigilPotions;
+    }
+
+    //For saving the game
+    public Equipment SaveEquipment()
+    {
+        return this;
+    }
+
     //TEST VALUES
     void Start()
     {
@@ -46,54 +89,216 @@ public class Equipment : MonoBehaviour {
         armor = itemDatabase.GetComponent<ItemDatabase>().items[15];
         activeSigil1 = itemDatabase.GetComponent<ItemDatabase>().items[16];
         healthPotions = itemDatabase.GetComponent<ItemDatabase>().items[19];
-        activeSigil2 = activeSigil3 = activeSigil4 = passiveSigil1 = passiveSigil2 = passiveSigil3 = sigilPotions = new Item();
+        activeSigil2 = itemDatabase.GetComponent<ItemDatabase>().items[20];
+        activeSigil3 = activeSigil4 = passiveSigil1 = passiveSigil2 = passiveSigil3 = sigilPotions = new Item();
+        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(21);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(21);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(22);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(21);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(22);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(21);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(21);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(23);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(23);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(23);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(23);
+        UpdateItemCount();
     }
 
+    //Called by Player.cs
+    public Item GetWeapon()
+    {
+        if (weapon.itemName != null)
+            return weapon;
+        //Thye punch if they got no weapon
+        else
+        {
+            return new Item(-1, null, null, Item.ItemType.weapon, 1, 0, Item.AttackSpeed.fastest, Item.Range.smallest, Item.Knockback.smallest, Item.WeaponType.melee);
+        }
+    }
+
+    //Called by PlayerController.cs
     public void activateSigil1()
     {
-        if(activeSigil1.itemName != null)
+        //Activates when sigil is equipped and enabled
+        if(activeSigil1.itemName != null && activeSigil1.sigil.GetComponent<Sigil>().enabledSigil)
         {
-            Debug.Log("This is where the function call for the sigil effect is supposed to go!");
+            player.GetComponent<PlayerController>().action = false;
+            activeSigil1.sigil.GetComponent<Sigil>().activated();
+            Invoke("Enable", sigilActivationTime);
         }
     }
 
+    //Called by PlayerController.cs
     public void activateSigil2()
     {
-        if (activeSigil2.itemName != null)
+        //Activates when sigil is equipped and enabled
+        if (activeSigil2.itemName != null && activeSigil2.sigil.GetComponent<Sigil>().enabledSigil)
         {
-            Debug.Log("This is where the function call for the sigil effect is supposed to go!");
+            player.GetComponent<PlayerController>().action = false;
+            activeSigil2.sigil.GetComponent<Sigil>().activated();
+            Invoke("Enable", sigilActivationTime);
         }
     }
 
+    //Called by PlayerController.cs
     public void activateSigil3()
     {
-        if (activeSigil3.itemName != null)
+        //Activates when sigil is equipped and enabled
+        if (activeSigil3.itemName != null && activeSigil3.sigil.GetComponent<Sigil>().enabledSigil)
         {
-            Debug.Log("This is where the function call for the sigil effect is supposed to go!");
+            player.GetComponent<PlayerController>().action = false;
+            activeSigil3.sigil.GetComponent<Sigil>().activated();
+            Invoke("Enable", sigilActivationTime);
         }
     }
 
+    //Called by PlayerController.cs
     public void activateSigil4()
     {
-        if (activeSigil4.itemName != null)
+        //Activates when sigil is equipped and enabled
+        if (activeSigil4.itemName != null && activeSigil4.sigil.GetComponent<Sigil>().enabledSigil)
         {
-            Debug.Log("This is where the function call for the sigil effect is supposed to go!");
+            player.GetComponent<PlayerController>().action = false;
+            activeSigil4.sigil.GetComponent<Sigil>().activated();
+            Invoke("Enable", sigilActivationTime);
         }
     }
-    
-    public void UseHealthPotion()
+
+    void Enable()
+    {
+        player.GetComponent<PlayerController>().action = true;
+    }
+
+    public void UpdateItemCount()
     {
         if(healthPotions.itemName != null)
         {
-            Debug.Log("This is where the function call to use the health potion is supposed to go!");
+            if (healthPotions.itemName == minorHealthPotionName)
+            {
+                healthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + 1;
+                allHealthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + inventory.GetComponent<Inventory>().CountHealingPotions() + inventory.GetComponent<Inventory>().CountGreaterHealingPotions() + 1;
+            }
+            else if (healthPotions.itemName == healthPotionName)
+            {
+                healthPotionCount = inventory.GetComponent<Inventory>().CountHealingPotions() + 1;
+                allHealthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + inventory.GetComponent<Inventory>().CountHealingPotions() + inventory.GetComponent<Inventory>().CountGreaterHealingPotions() + 1;
+            }
+            else if(healthPotions.itemName == greaterHealthPotionName)
+            {
+                healthPotionCount = inventory.GetComponent<Inventory>().CountGreaterHealingPotions() + 1;
+                allHealthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + inventory.GetComponent<Inventory>().CountHealingPotions() + inventory.GetComponent<Inventory>().CountGreaterHealingPotions() + 1;
+            }
+        }
+        else
+        {
+            allHealthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + inventory.GetComponent<Inventory>().CountHealingPotions() + inventory.GetComponent<Inventory>().CountGreaterHealingPotions();
+        }
+
+        if(sigilPotions.itemName != null)
+            sigilPotionCount = inventory.GetComponent<Inventory>().CountSigilPotions() + 1;
+    }
+
+    //Called by PlayerController.cs
+    public void UseHealthPotion()
+    {
+        //Check there is a potion equipped, then check which kind, heal, see if there are any other then remove either from inventory or here
+        if(healthPotions.itemName != null)
+        {
+            if(healthPotions.itemName == minorHealthPotionName)
+            {
+                player.GetComponent<Player>().Heal(minorHealthPotionHeal);
+                if(inventory.GetComponent<Inventory>().Find(healthPotions.itemID))
+                {
+                    inventory.GetComponent<Inventory>().OthersRemoveItem(healthPotions.itemID);
+                    healthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + 1;
+                    allHealthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + inventory.GetComponent<Inventory>().CountHealingPotions() + inventory.GetComponent<Inventory>().CountGreaterHealingPotions() + 1;
+                }
+                else
+                {
+                    healthPotions = new Item();
+                    healthPotionCount = healthPotions.itemName != null ? healthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() : 0;
+                    allHealthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + inventory.GetComponent<Inventory>().CountHealingPotions() + inventory.GetComponent<Inventory>().CountGreaterHealingPotions();
+                }
+            }
+            else if (healthPotions.itemName == healthPotionName)
+            {
+                player.GetComponent<Player>().Heal(healthPotionHeal);
+                if (inventory.GetComponent<Inventory>().Find(healthPotions.itemID))
+                {
+                    inventory.GetComponent<Inventory>().OthersRemoveItem(healthPotions.itemID);
+                    healthPotionCount = inventory.GetComponent<Inventory>().CountHealingPotions() + 1;
+                    allHealthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + inventory.GetComponent<Inventory>().CountHealingPotions() + inventory.GetComponent<Inventory>().CountGreaterHealingPotions() + 1;
+                }
+                else
+                {
+                    healthPotions = new Item();
+                    healthPotionCount = healthPotions.itemName != null ? healthPotionCount = inventory.GetComponent<Inventory>().CountHealingPotions() : 0;
+                    allHealthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + inventory.GetComponent<Inventory>().CountHealingPotions() + inventory.GetComponent<Inventory>().CountGreaterHealingPotions();
+                }
+            }
+            else if (healthPotions.itemName == greaterHealthPotionName)
+            {
+                player.GetComponent<Player>().Heal(greaterHealthPotionHeal);
+                if (inventory.GetComponent<Inventory>().Find(healthPotions.itemID))
+                {
+                    inventory.GetComponent<Inventory>().OthersRemoveItem(healthPotions.itemID);
+                    healthPotionCount = inventory.GetComponent<Inventory>().CountGreaterHealingPotions() + 1;
+                    allHealthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + inventory.GetComponent<Inventory>().CountHealingPotions() + inventory.GetComponent<Inventory>().CountGreaterHealingPotions() + 1;
+                }
+                else
+                {
+                    healthPotions = new Item();
+                    healthPotionCount = healthPotions.itemName != null ? healthPotionCount = inventory.GetComponent<Inventory>().CountGreaterHealingPotions() : 0;
+                    allHealthPotionCount = inventory.GetComponent<Inventory>().CountMinorHealingPotions() + inventory.GetComponent<Inventory>().CountHealingPotions() + inventory.GetComponent<Inventory>().CountGreaterHealingPotions();
+                }
+            }
         }
     }
 
+    //Called by PlayerController.cs
     public void UseSigilPotion()
     {
         if(sigilPotions.itemName != null)
         {
-            Debug.Log("This is where the function call to use the sigil potion is supposed to go!");
+            if(activeSigil1.itemName != null)
+            {
+                activeSigil1.sigil.GetComponent<Sigil>().timer = 0;
+            }
+
+            if (activeSigil2.itemName != null)
+            {
+                activeSigil2.sigil.GetComponent<Sigil>().timer = 0;
+            }
+
+            if (activeSigil3.itemName != null)
+            {
+                activeSigil3.sigil.GetComponent<Sigil>().timer = 0;
+            }
+
+            if (activeSigil4.itemName != null)
+            {
+                activeSigil4.sigil.GetComponent<Sigil>().timer = 0;
+            }
+
+            if (inventory.GetComponent<Inventory>().Find(sigilPotions.itemID))
+            {
+                inventory.GetComponent<Inventory>().OthersRemoveItem(sigilPotions.itemID);
+                sigilPotionCount = inventory.GetComponent<Inventory>().CountSigilPotions() + 1;
+            }
+            else
+            {
+                sigilPotions = new Item();
+                sigilPotionCount = 0;
+            }
         }
     }
 }

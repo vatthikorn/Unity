@@ -12,6 +12,7 @@
     Handles projectile spawning.
 
     Interface:
+    void Heal(int x) - to heal the player when they use a health potion (Equipment.cs)
     void ReceiveDamage(int damage) - applies damage from attacks (Enemy.cs, EnemyProjectile.cs)
     void KnockBackToPlayer(Collision2D other) - applies knockback from attacks (Enemy.cs, EnemyProjectile.cs)
     void Shield() - allows player to bring up shield (PlayerContoller.cs)
@@ -65,9 +66,13 @@ public class Player : MonoBehaviour {
     public const float shieldTime = 0.2f;
 
     public const float playerHurtTime = 0.2f;
+    public const float playerDodgeTime = 0.2f;
 
     //KnockBack to player by an enemy attack
     public Vector2 PlayerKnockBack = new Vector2(2000f, 100f);
+
+    //Dodge Force
+    public Vector2 PlayerDodgeForce = new Vector2(4000f, 0f);
 
     public int health;
     public int maxHealth;
@@ -117,11 +122,28 @@ public class Player : MonoBehaviour {
         combatCounter--;
     }
 
+    public void DodgeLeft()
+    {
+        this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-PlayerDodgeForce.x, PlayerDodgeForce.y));
+        Invoke("EnableAction", playerDodgeTime);
+    }
+
+    public void DodgeRight()
+    {
+        this.gameObject.GetComponent<Rigidbody2D>().AddForce(PlayerDodgeForce);
+        Invoke("EnableAction", playerDodgeTime);
+    }
+
+    void EnableAction()
+    {
+        this.gameObject.GetComponent<PlayerController>().action = true;
+    }
+
     //Called by the playercontroller, when player attacks
     public void Attack()
     {
         //Access equipment and determines type of range
-        Item weapon = equipment.GetComponent<Equipment>().weapon;
+        Item weapon = equipment.GetComponent<Equipment>().GetWeapon();
         
         //Enables the PlayerAttack gameobject for appropriate range
         if(weapon.weaponType == Item.WeaponType.melee)
@@ -423,10 +445,20 @@ public class Player : MonoBehaviour {
             health = maxHealth;
     }
 
+    //Called by Equipment when Health potions are used
+    public void Heal(int x)
+    {
+        health += (int)(maxHealth * ((float)x / 100));
+
+        if (health > maxHealth)
+            health = maxHealth;
+    }
+
     //Damage Receiver, Can be called by Shield
     public void ReceiveDamage(int damage)
     {
         int reducedDamage = damageReductionByArmor(damage);
+        reducedDamage = ChastityBeltSigil.ReduceDamage(damage);
 
         health -= reducedDamage;
 

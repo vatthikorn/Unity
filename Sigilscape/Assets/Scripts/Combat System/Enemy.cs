@@ -84,6 +84,8 @@ public class Enemy : MonoBehaviour {
             if(itemDrop != null)
             {
                 itemDrop.SetActive(true);
+                Destroy(enemyRoamingDetector);
+                Destroy(enemyHuntingDetector);
                 this.transform.DetachChildren();   
             }
             player.GetComponent<Player>().Spared();
