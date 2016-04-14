@@ -1,16 +1,16 @@
 ﻿/*
     Nathan Cruz
 
-    NEED TO APPLY ACCELERATOR FOR WALL JUMPING
-    NEED TO ALLOW SOME DASHING
+    NEED TO REFINE WALL JUMPING AND DODGING
 
     Controls (Fight Screen):
     Attack - Left Click or K                    
     Defend - Right Click or J                   
-    Dodge - Directional Button + Left Shift     NOT IMPLEMENTED
+    Dodge - Directional Button + Left Shift     
     Activate Sigil - {1,2,3,4}                  
     Use Healing Potion - Q                      
-    Use Sigil Potion - E                        
+    Use Sigil Potion - R
+    Activate environment - E                        
     Movement - WASD || Up/Left/Down/Right          
     Inventory - I  
     Map - M                                     
@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour {
     //All of these must be referenced
     public GameObject equipment;
     public GameObject player;
-    public GameObject pauseScreen;
     public GameObject largeMap;
     public GameObject miniMap;
     public Transform groundCheck;//Object that is placed underneath the player
@@ -148,7 +147,7 @@ public class PlayerController : MonoBehaviour {
             {
                 equipment.GetComponent<Equipment>().UseHealthPotion();
             }
-            else if(action && Input.GetKeyDown(KeyCode.E))
+            else if(action && Input.GetKeyDown(KeyCode.R))
             {
                 equipment.GetComponent<Equipment>().UseSigilPotion();
             }
@@ -162,6 +161,19 @@ public class PlayerController : MonoBehaviour {
             {
                 action = false;
                 this.gameObject.GetComponent<Player>().Shield();
+            }
+            //Dodging
+            else if(action && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.A))
+            {
+                action = false;
+                Debug.Log("Dodge!");
+                this.gameObject.GetComponent<Player>().DodgeLeft();
+            }
+            else if(action && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.D))
+            {
+                action = false;
+                Debug.Log("Dodge!");
+                this.gameObject.GetComponent<Player>().DodgeRight();
             }
         }
 
@@ -271,14 +283,12 @@ public class PlayerController : MonoBehaviour {
     {
         DisableMap();
         screenState = ScreenState.pause;
-        pauseScreen.GetComponent<Canvas>().enabled = true;
     }
 
     void DisablePauseScreen()
     {
         EnableMap();
         screenState = ScreenState.fight;
-        pauseScreen.GetComponent<Canvas>().enabled = false;
     }
 
     void EnableInventoryScreen()
