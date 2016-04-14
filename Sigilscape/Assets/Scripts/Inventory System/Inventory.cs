@@ -20,6 +20,8 @@
     Make sure to reference the skin as well!
     
     Interface:
+    void LoadInventory(List<Item> savedItems) - loads items into from previous session
+    List<Item> SaveInventory() - saves the items from this session
     void AddItemFromDrop(int itemID) - to add items to the invetory (for ItemDrop.cs)
     bool Find(int itemID) - test if the item is in the inventory
     void OthersRemoveItem(int itemID) - remove the item from the inventory
@@ -32,6 +34,9 @@
 
     Required:
     Attached to a gameobject "Inventory".
+
+    Load Order:
+    Inventory.cs loads before the script that handles the loading from a save file.
 */
 using System;
 using UnityEngine;
@@ -110,6 +115,21 @@ public class Inventory : MonoBehaviour {
     //Used to scroll through the inventory
     int iOffSet = 0;
 
+    //For loading the game
+    public void LoadInventory(List<Item> savedItems)
+    {
+        for(int i = 0; i < savedItems.Count; i++)
+        {
+            AddItemFromDrop(savedItems[i].itemID);
+        }
+    }
+
+    //For saving the game
+    public List<Item> SaveInventory()
+    {
+        return items;
+    }
+
     //Sets up slots
     void Start()
     {
@@ -126,6 +146,10 @@ public class Inventory : MonoBehaviour {
 
     void OnGUI()
     {
+        GUI.skin.box.fontSize = 14;
+        GUI.skin.box.fontStyle = FontStyle.Normal;
+        GUI.skin.box.alignment = TextAnchor.UpperLeft;
+
         //Draws inventory screen
         if (player.GetComponent<PlayerController>().screenState == PlayerController.ScreenState.inventory)
         {
@@ -1729,6 +1753,11 @@ public class Inventory : MonoBehaviour {
                 info += "Damage Mitigation: ";
                 info += (int) 100*itemDatabase.GetComponent<ItemDatabase>().items[itemID].damageMitigation;
                 break;
+            case Item.ItemType.sigil:
+                info += "\n";
+                info += "Type: ";
+                info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].sigil.GetComponent<Sigil>().sigilType;
+                break;
         }
         return info;
     }
@@ -1980,15 +2009,68 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    //Removes the first item it fines of the same name
+    //Counting health and sigil potions
+    public int CountMinorHealingPotions()
+    {
+        int x = 0;
+
+        for(int i = 0; i < consumables.Count; i++)
+        {
+            if (consumables[i].itemName != null && consumables[i].itemName == "Minor Healing Potion")
+                x++;
+        }
+
+        return x;
+    }
+
+    public int CountHealingPotions()
+    {
+        int x = 0;
+
+        for (int i = 0; i < consumables.Count; i++)
+        {
+            if (consumables[i].itemName != null && consumables[i].itemName == "Healing Potion")
+                x++;
+        }
+
+        return x;
+    }
+
+    public int CountGreaterHealingPotions()
+    {
+        int x = 0;
+
+        for (int i = 0; i < consumables.Count; i++)
+        {
+            if (consumables[i].itemName != null && consumables[i].itemName == "Greater Healing Potion")
+                x++;
+        }
+
+        return x;
+    }
+
+    public int CountSigilPotions()
+    {
+        int x = 0;
+
+        for (int i = 0; i < consumables.Count; i++)
+        {
+            if (consumables[i].itemName != null && consumables[i].itemName == "Sigil Potion")
+                x++;
+        }
+
+        return x;
+    }
+
+    //Removes the first item it finds if the same name
     public void OthersRemoveItem(int itemID)
     {
         for(int i = 0; i < items.Count; i++)
         {
             if (items[i].itemName == itemDatabase.GetComponent<ItemDatabase>().items[itemID].itemName)
             {
-                items[i] = new Item();
                 RemoveItem(items[i], 'a');
+                items[i] = new Item();
                 break;
             }
         }
