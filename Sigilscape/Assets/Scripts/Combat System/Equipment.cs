@@ -1,8 +1,7 @@
 ﻿/*
     Nathan Cruz
 
-    NEED TO IMPLEMENT HOW HEALTH POTIONS WORK
-    NEED TO IMPLEMENT HOW SIGIL POTIONS WORK
+    NEED TO MAKE SURE THAT ANYTHING SLOTS WITHOUT EQUIPMENT NEED TO BE FILLED A AN EMPY ITEM (NEW ITEM())
 
     Interface:
     void LoadEquipment(Equipment savedEquipment) - used for loading the equipment from the previous game session
@@ -85,31 +84,36 @@ public class Equipment : MonoBehaviour {
     void Start()
     {
         weapon = itemDatabase.GetComponent<ItemDatabase>().items[0];
-        shield = itemDatabase.GetComponent<ItemDatabase>().items[18];
-        armor = itemDatabase.GetComponent<ItemDatabase>().items[15];
-        activeSigil1 = itemDatabase.GetComponent<ItemDatabase>().items[16];
-        healthPotions = itemDatabase.GetComponent<ItemDatabase>().items[19];
-        activeSigil2 = itemDatabase.GetComponent<ItemDatabase>().items[20];
-        activeSigil3 = activeSigil4 = passiveSigil1 = passiveSigil2 = passiveSigil3 = sigilPotions = new Item();
-        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(21);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(21);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(22);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(21);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(22);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(21);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(21);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(19);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(23);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(23);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(23);
-        inventory.GetComponent<Inventory>().AddItemFromDrop(23);
+        shield = itemDatabase.GetComponent<ItemDatabase>().items[55];
+        armor = itemDatabase.GetComponent<ItemDatabase>().items[37];
+        activeSigil1 = itemDatabase.GetComponent<ItemDatabase>().items[44];
+        activeSigil2 = itemDatabase.GetComponent<ItemDatabase>().items[45];
+        activeSigil3 = itemDatabase.GetComponent<ItemDatabase>().items[46];
+        activeSigil4 = itemDatabase.GetComponent<ItemDatabase>().items[47];
+        passiveSigil1 = itemDatabase.GetComponent<ItemDatabase>().items[48];
+        passiveSigil2 = itemDatabase.GetComponent<ItemDatabase>().items[49];
+        passiveSigil3 = itemDatabase.GetComponent<ItemDatabase>().items[50];
+        healthPotions = itemDatabase.GetComponent<ItemDatabase>().items[51];
+        sigilPotions = itemDatabase.GetComponent<ItemDatabase>().items[54];
+        inventory.GetComponent<Inventory>().AddItemFromDrop(51);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(51);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(54);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(52);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(53);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(53);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(52);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(51);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(54);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(54);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(53);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(51);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(51);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(51);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(51);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(51);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(51);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(51);
+        inventory.GetComponent<Inventory>().AddItemFromDrop(52);
         UpdateItemCount();
     }
 

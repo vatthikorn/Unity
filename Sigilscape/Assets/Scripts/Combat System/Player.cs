@@ -458,7 +458,7 @@ public class Player : MonoBehaviour {
     public void ReceiveDamage(int damage)
     {
         int reducedDamage = damageReductionByArmor(damage);
-        reducedDamage = ChastityBeltSigil.ReduceDamage(damage);
+        reducedDamage = EternasBlessingSigil.ReduceDamage(damage);
 
         health -= reducedDamage;
 

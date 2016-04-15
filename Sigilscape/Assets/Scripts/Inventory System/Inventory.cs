@@ -64,6 +64,9 @@ public class Inventory : MonoBehaviour {
     //Skins for slots, player pic, info slot, overall Inventory
     public GUISkin slotSkin;
     public GUISkin inventorySkin;
+    public GUISkin sigilSkin;
+    public GUISkin tabSkin;
+    public GUISkin equipmentSkin;
     public GUISkin playerSkin;
     public GUISkin infoSkin;
 
@@ -146,10 +149,6 @@ public class Inventory : MonoBehaviour {
 
     void OnGUI()
     {
-        GUI.skin.box.fontSize = 14;
-        GUI.skin.box.fontStyle = FontStyle.Normal;
-        GUI.skin.box.alignment = TextAnchor.UpperLeft;
-
         //Draws inventory screen
         if (player.GetComponent<PlayerController>().screenState == PlayerController.ScreenState.inventory)
         {
@@ -266,34 +265,26 @@ public class Inventory : MonoBehaviour {
         Event e = Event.current;
         int i = 0 + iOffSet;//for drawing the slots
 
-        GUI.skin = infoSkin;
-        //Style for Info Box
-        GUIStyle guiStyle = GUI.skin.box;
-        guiStyle.wordWrap = true;
-        guiStyle.alignment = TextAnchor.UpperLeft;
-        
         //Switches to inventory skin
         GUI.skin = inventorySkin;
-
         //Draws the entire panel
-        GUI.Box(new Rect(Screen.width * screenUpperLeftAnchorX, Screen.height * screenUpperLeftAnchorY, Screen.width * inventoryWidth, Screen.height * inventoryHeight), "");
-
-        //Switches skin to slot skin
-        GUI.skin = slotSkin;
+        GUI.Box(new Rect(Screen.width * screenUpperLeftAnchorX, Screen.height * screenUpperLeftAnchorY, Screen.width * inventoryWidth, Screen.height * inventoryHeight), "", GUI.skin.GetStyle("Inventory Background"));        
 
         //Drawn either at end or in the middle if the player mouses over an item
         Rect infoRect = new Rect(Screen.width * infoLowerLeftAnchorX, Screen.height * infoLowerLeftAnchorY - infoHeight, infoWidth, infoHeight);
         bool containsInfo = false;
 
         //Draws ActiveSigil1 slot
+        GUI.skin = sigilSkin;
         Rect slotRect = new Rect(Screen.width * equipmentRightAnchorX - 290, Screen.height * .2f, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().activeSigil1.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().activeSigil1.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().activeSigil1.itemID), guiStyle);
+                GUI.skin = infoSkin;
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().activeSigil1.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -364,14 +355,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws ActiveSigil2 slot
+        GUI.skin = sigilSkin;
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 215, Screen.height * .17f, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().activeSigil2.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().activeSigil2.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().activeSigil2.itemID), guiStyle);
+                GUI.skin = infoSkin; 
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().activeSigil2.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -442,14 +435,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws ActiveSigil3 slot
+        GUI.skin = sigilSkin; 
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 140, Screen.height * .17f, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().activeSigil3.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().activeSigil3.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().activeSigil3.itemID), guiStyle);
+                GUI.skin = infoSkin;
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().activeSigil3.itemID),  GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -520,14 +515,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws ActiveSigil4 slot
+        GUI.skin = sigilSkin;
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 65, Screen.height * .2f, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().activeSigil4.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().activeSigil4.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().activeSigil4.itemID), guiStyle);
+                GUI.skin = infoSkin; 
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().activeSigil4.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -598,14 +595,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws PassiveSigil1 slot
+        GUI.skin = sigilSkin;
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 250, Screen.height * .85f - 88, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().passiveSigil1.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().passiveSigil1.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().passiveSigil1.itemID), guiStyle);
+                GUI.skin = infoSkin; 
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().passiveSigil1.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -670,14 +669,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws PassiveSigil2 slot
+        GUI.skin = sigilSkin; 
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 175, Screen.height * .85f - 75, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().passiveSigil2.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().passiveSigil2.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().passiveSigil2.itemID), guiStyle);
+                GUI.skin = infoSkin; 
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().passiveSigil2.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -742,14 +743,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws PassiveSigil3 slot
+        GUI.skin = sigilSkin; 
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 100, Screen.height * .85f - 88, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().passiveSigil3.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().passiveSigil3.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().passiveSigil3.itemID), guiStyle);
+                GUI.skin = infoSkin; 
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().passiveSigil3.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -814,14 +817,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws Weapon slot
+        GUI.skin = equipmentSkin; 
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 290, Screen.height * .5f - 45, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Equipment Slot"));
         if (playersEquipment.GetComponent<Equipment>().weapon.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().weapon.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().weapon.itemID), guiStyle);
+                GUI.skin = infoSkin; 
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().weapon.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -874,14 +879,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws HealthPotion slot
+        GUI.skin = equipmentSkin;
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 275, Screen.height * .5f + 30, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Equipment Slot"));
         if (playersEquipment.GetComponent<Equipment>().healthPotions.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().healthPotions.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().healthPotions.itemID), guiStyle);
+                GUI.skin = infoSkin; 
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().healthPotions.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -934,14 +941,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws Armor slot
+        GUI.skin = equipmentSkin;
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 175, Screen.height * .5f - 25, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Equipment Slot"));
         if (playersEquipment.GetComponent<Equipment>().armor.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().armor.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().armor.itemID), guiStyle);
+                GUI.skin = infoSkin; 
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().armor.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -994,14 +1003,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws Shield slot
+        GUI.skin = equipmentSkin;
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 65, Screen.height * .5f - 45, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Equipment Slot"));
         if (playersEquipment.GetComponent<Equipment>().shield.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().shield.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().shield.itemID), guiStyle);
+                GUI.skin = infoSkin; 
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().shield.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -1054,14 +1065,16 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws SigilPotion slot
+        GUI.skin = equipmentSkin;
         slotRect = new Rect(Screen.width * equipmentRightAnchorX - 80, Screen.height * .5f + 30, slotWidth, slotHeight);
-        GUI.Box(slotRect, "");
+        GUI.Box(slotRect, "", GUI.skin.GetStyle("Equipment Slot"));
         if (playersEquipment.GetComponent<Equipment>().sigilPotions.itemName != null)
         {
             GUI.DrawTexture(slotRect, playersEquipment.GetComponent<Equipment>().sigilPotions.icon);
             if (slotRect.Contains(Event.current.mousePosition))
             {
-                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().sigilPotions.itemID), guiStyle);
+                GUI.skin = infoSkin; 
+                GUI.Box(infoRect, DisplayInfo(playersEquipment.GetComponent<Equipment>().sigilPotions.itemID), GUI.skin.GetStyle("Info Box"));
                 containsInfo = true;
                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                 {
@@ -1114,8 +1127,9 @@ public class Inventory : MonoBehaviour {
         }
 
         //Draws Buttons, and Switches tabs (disables tab switching when player is dragging item)
+        GUI.skin = tabSkin;
         Rect buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
-        if (GUI.Button(buttonRect, "All") && !draggingItem)
+        if (GUI.Button(buttonRect, "All", GUI.skin.GetStyle("Tab Skin")) && !draggingItem)
         {
             iOffSet = 0;
             displayAll = true;
@@ -1125,7 +1139,7 @@ public class Inventory : MonoBehaviour {
             displayKeyItems = false;
         }
         buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + 95, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
-        if (GUI.Button(buttonRect, "Equipment") && !draggingItem)
+        if (GUI.Button(buttonRect, "Equipment", GUI.skin.GetStyle("Tab Skin")) && !draggingItem)
         {
             iOffSet = 0;
             displayAll = false;
@@ -1135,7 +1149,7 @@ public class Inventory : MonoBehaviour {
             displayKeyItems = false;
         }
         buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + tabWidth * 2, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
-        if (GUI.Button(buttonRect, "Sigils") && !draggingItem)
+        if (GUI.Button(buttonRect, "Sigils", GUI.skin.GetStyle("Tab Skin")) && !draggingItem)
         {
             iOffSet = 0;
             displayAll = false;
@@ -1145,7 +1159,7 @@ public class Inventory : MonoBehaviour {
             displayKeyItems = false;
         }
         buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + tabWidth * 3, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
-        if (GUI.Button(buttonRect, "Consumables") && !draggingItem)
+        if (GUI.Button(buttonRect, "Consumables", GUI.skin.GetStyle("Tab Skin")) && !draggingItem)
         {
             iOffSet = 0;
             displayAll = false;
@@ -1155,7 +1169,7 @@ public class Inventory : MonoBehaviour {
             displayKeyItems = false;
         }
         buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + tabWidth * 4, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
-        if (GUI.Button(buttonRect, "Key Items") && !draggingItem)
+        if (GUI.Button(buttonRect, "Key Items", GUI.skin.GetStyle("Tab Skin")) && !draggingItem)
         {
             iOffSet = 0;
             displayAll = false;
@@ -1201,8 +1215,9 @@ public class Inventory : MonoBehaviour {
                 //Draws all inventory
                 if (displayAll)
                 {
+                    GUI.skin = slotSkin;
                     slotRect = new Rect(x * slotWidth + Screen.width * inventoryGridUpperLeftAnchorX, y * slotHeight + Screen.height * inventoryGridUpperLeftAnchorY, slotWidth, slotHeight);
-                    GUI.Box(slotRect, "");
+                    GUI.Box(slotRect, "", GUI.skin.GetStyle("Item Slot"));
                     if (i < items.Count)
                     {
                         slots[i] = items[i];
@@ -1215,7 +1230,8 @@ public class Inventory : MonoBehaviour {
                             GUI.DrawTexture(slotRect, slots[i].icon);
                             if (slotRect.Contains(Event.current.mousePosition))
                             {
-                                GUI.Box(infoRect, DisplayInfo(slots[i].itemID), guiStyle);
+                                GUI.skin = infoSkin; 
+                                GUI.Box(infoRect, DisplayInfo(slots[i].itemID), GUI.skin.GetStyle("Info Box"));
                                 containsInfo = true;
                                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                                 {
@@ -1379,8 +1395,9 @@ public class Inventory : MonoBehaviour {
                 //Draws equipment inventory
                 else if (displayEquipment)
                 {
+                    GUI.skin = slotSkin; 
                     slotRect = new Rect(x * slotWidth + Screen.width * inventoryGridUpperLeftAnchorX, y * slotHeight + Screen.height * inventoryGridUpperLeftAnchorY, slotWidth, slotHeight);
-                    GUI.Box(slotRect, "");
+                    GUI.Box(slotRect, "", GUI.skin.GetStyle("Item Slot"));
                     if (i < items.Count)
                     {
                         slots[i] = equipment[i];
@@ -1393,7 +1410,8 @@ public class Inventory : MonoBehaviour {
                             GUI.DrawTexture(slotRect, slots[i].icon);
                             if (slotRect.Contains(Event.current.mousePosition))
                             {
-                                GUI.Box(infoRect, DisplayInfo(slots[i].itemID), guiStyle);
+                                GUI.skin = infoSkin; 
+                                GUI.Box(infoRect, DisplayInfo(slots[i].itemID), GUI.skin.GetStyle("Info Box"));
                                 containsInfo = true;
                                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                                 {
@@ -1461,8 +1479,9 @@ public class Inventory : MonoBehaviour {
                 //Draws sigils inventory
                 else if (displaySigils)
                 {
+                    GUI.skin = slotSkin; 
                     slotRect = new Rect(x * slotWidth + Screen.width * inventoryGridUpperLeftAnchorX, y * slotHeight + Screen.height * inventoryGridUpperLeftAnchorY, slotWidth, slotHeight);
-                    GUI.Box(slotRect, "");
+                    GUI.Box(slotRect, "", GUI.skin.GetStyle("Item Slot"));
                     if (i < items.Count)
                     {
                         slots[i] = sigils[i];
@@ -1475,7 +1494,8 @@ public class Inventory : MonoBehaviour {
                             GUI.DrawTexture(slotRect, slots[i].icon);
                             if (slotRect.Contains(Event.current.mousePosition))
                             {
-                                GUI.Box(infoRect, DisplayInfo(slots[i].itemID), guiStyle);
+                                GUI.skin = infoSkin; 
+                                GUI.Box(infoRect, DisplayInfo(slots[i].itemID), GUI.skin.GetStyle("Info Box"));
                                 containsInfo = true;
                                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                                 {
@@ -1571,8 +1591,9 @@ public class Inventory : MonoBehaviour {
                 //Draws consumables inventory
                 else if (displayConsumables)
                 {
+                    GUI.skin = slotSkin; 
                     slotRect = new Rect(x * slotWidth + Screen.width * inventoryGridUpperLeftAnchorX, y * slotHeight + Screen.height * inventoryGridUpperLeftAnchorY, slotWidth, slotHeight);
-                    GUI.Box(slotRect, "");
+                    GUI.Box(slotRect, "", GUI.skin.GetStyle("Item Slot"));
                     if (i < items.Count)
                     {
                         slots[i] = consumables[i];
@@ -1585,7 +1606,8 @@ public class Inventory : MonoBehaviour {
                             GUI.DrawTexture(slotRect, slots[i].icon);
                             if (slotRect.Contains(Event.current.mousePosition))
                             {
-                                GUI.Box(infoRect, DisplayInfo(slots[i].itemID), guiStyle);
+                                GUI.skin = infoSkin; 
+                                GUI.Box(infoRect, DisplayInfo(slots[i].itemID), GUI.skin.GetStyle("Info Box"));
                                 containsInfo = true;
                                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                                 {
@@ -1646,8 +1668,9 @@ public class Inventory : MonoBehaviour {
                 //Draws key items inventory
                 else if (displayKeyItems)
                 {
+                    GUI.skin = slotSkin; 
                     slotRect = new Rect(x * slotWidth + Screen.width * inventoryGridUpperLeftAnchorX, y * slotHeight + Screen.height * inventoryGridUpperLeftAnchorY, slotWidth, slotHeight);
-                    GUI.Box(slotRect, "");
+                    GUI.Box(slotRect, "", GUI.skin.GetStyle("Item Slot"));
                     if (i < items.Count)
                     {
                         slots[i] = keyItems[i];
@@ -1660,7 +1683,8 @@ public class Inventory : MonoBehaviour {
                             GUI.DrawTexture(slotRect, slots[i].icon);
                             if (slotRect.Contains(Event.current.mousePosition))
                             {
-                                GUI.Box(infoRect, DisplayInfo(slots[i].itemID), guiStyle);
+                                GUI.skin = infoSkin; 
+                                GUI.Box(infoRect, DisplayInfo(slots[i].itemID), GUI.skin.GetStyle("Info Box"));
                                 containsInfo = true;
                                 if (e.button == 0 && e.type == EventType.mouseDrag && !draggingItem)
                                 {
@@ -1709,7 +1733,11 @@ public class Inventory : MonoBehaviour {
 
         //Only draws info box when no item is hovered over
         if (!containsInfo)
-            GUI.Box(infoRect, "");
+        {
+            GUI.skin = infoSkin;
+            GUI.Box(infoRect, "", GUI.skin.GetStyle("Info Box"));
+        }
+            
 
         containsInfo = false;
     }
