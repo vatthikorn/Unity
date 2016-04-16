@@ -35,6 +35,7 @@ public class FireBall : MonoBehaviour {
         }
         else
         {
+            Debug.Log("TRUE NOW!");
             anim.SetBool("impact", true);
             this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
@@ -45,6 +46,7 @@ public class FireBall : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy")
         {
+            Debug.Log("HIT!");
             impact = true;
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Sign(velocity.x) * knockBack.x, knockBack.y));
             other.gameObject.GetComponent<Enemy>().ReceiveDamage(damage);
@@ -74,6 +76,7 @@ public class FireBall : MonoBehaviour {
 
     void Impact()
     {
+        Debug.Log("DEAD!");
         Destroy(this.gameObject);
     }
 }
