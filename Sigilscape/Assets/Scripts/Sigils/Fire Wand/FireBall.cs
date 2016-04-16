@@ -15,11 +15,29 @@ public class FireBall : MonoBehaviour {
     public Vector2 velocity;
     public Vector2 knockBack = new Vector2(100 , 100);
     public const int damage = 20;
+    public bool impact = false;
+    public const float animTime = .32f;
+
+    public Animator anim;
+
+    void Start()
+    {
+        anim = this.gameObject.GetComponent<Animator>();
+    }
 
     //Maintains velocity
     void Update()
     {
-        this.gameObject.GetComponent<Rigidbody2D>().velocity = velocity;
+        if(!impact)
+        {
+            anim.SetBool("impact", false);
+            this.gameObject.GetComponent<Rigidbody2D>().velocity = velocity;
+        }
+        else
+        {
+            anim.SetBool("impact", true);
+            this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
     }
 
     //Destroys itself on impact
@@ -27,15 +45,16 @@ public class FireBall : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy")
         {
+            impact = true;
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Sign(velocity.x) * knockBack.x, knockBack.y));
             other.gameObject.GetComponent<Enemy>().ReceiveDamage(damage);
-            
-            Destroy(this.gameObject);
+            Invoke("Impact", animTime);
         }
 
         else if(other.gameObject.tag == "Wall" || other.gameObject.tag == "Ground")
         {
-            Destroy(this.gameObject);
+            impact = true;
+            Invoke("Impact", animTime);
         }
     }
 
@@ -43,8 +62,18 @@ public class FireBall : MonoBehaviour {
     public void Direction(bool facingRight)
     {
         if (facingRight)
+        {
             velocity = speed;
+        }            
         else
+        {
             velocity = new Vector2(-speed.x, speed.y);
+            this.transform.localScale = (new Vector2(-this.transform.localScale.x, this.transform.localScale.y));
+        }
+    }
+
+    void Impact()
+    {
+        Destroy(this.gameObject);
     }
 }
