@@ -83,8 +83,6 @@ public class PlayerController : MonoBehaviour {
     public bool leftWalled = false;
     public bool rightWalled = false;
     bool jump = false;
-    bool rightJump = false;
-    bool leftJump = false;
     public bool facingRight = true;
 
     //Deteremines what is displayed and if the game is paused or not (Default settings)
@@ -107,8 +105,6 @@ public class PlayerController : MonoBehaviour {
 
         //Down - Jump: Checks if the player is on the ground to enable jumping
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-        leftWalled = !grounded && Physics2D.Linecast(transform.position, leftWallCheck.position, 1 << LayerMask.NameToLayer("Wall"));
-        rightWalled = !grounded && Physics2D.Linecast(transform.position, rightWallCheck.position, 1 << LayerMask.NameToLayer("Wall"));
 
         if (!pauseGame)
         {
@@ -116,16 +112,6 @@ public class PlayerController : MonoBehaviour {
             if (((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))) && grounded)
             {
                 jump = true;
-                MoonShoesSigil.Jump();
-            }
-            else if((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && leftWalled)
-            {
-                rightJump = true;
-                MoonShoesSigil.Jump();
-            }
-            else if((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && rightWalled)
-            {
-                leftJump = true;
                 MoonShoesSigil.Jump();
             }
             //Sigil Buttons
@@ -169,13 +155,11 @@ public class PlayerController : MonoBehaviour {
             else if(action && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.A))
             {
                 action = false;
-                Debug.Log("Dodge!");
                 this.gameObject.GetComponent<Player>().DodgeLeft();
             }
             else if(action && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.D))
             {
                 action = false;
-                Debug.Log("Dodge!");
                 this.gameObject.GetComponent<Player>().DodgeRight();
             }
         }
@@ -266,16 +250,6 @@ public class PlayerController : MonoBehaviour {
             {
                 rb.AddForce(new Vector2(0f, jumpForce));
                 jump = false;
-            }
-            else if(action && leftJump)
-            {
-                rb.AddForce(new Vector2(-wallJumpForce, jumpForce));
-                leftJump = false;
-            }
-            else if(action && rightJump)
-            {
-                rb.AddForce(new Vector2(wallJumpForce, jumpForce));
-                rightJump = false;
             }
         }        
     }

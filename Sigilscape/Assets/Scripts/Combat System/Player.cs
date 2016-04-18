@@ -72,7 +72,9 @@ public class Player : MonoBehaviour {
     public Vector2 PlayerKnockBack = new Vector2(2000f, 100f);
 
     //Dodge Force
-    public Vector2 PlayerDodgeForce = new Vector2(4000f, 0f);
+    public Vector2 PlayerDodgeForce = new Vector2(1200f, 0f);
+    public bool leftDodging = false;
+    public bool rightDodging = false;
 
     public int health;
     public int maxHealth;
@@ -109,6 +111,16 @@ public class Player : MonoBehaviour {
                 regenerateHealth();
             }
         }
+
+        if(leftDodging)
+        {
+            this.GetComponent<Rigidbody2D>().AddForce(new Vector2(-PlayerDodgeForce.x, PlayerDodgeForce.y));
+        }
+
+        if(rightDodging)
+        {
+            this.GetComponent<Rigidbody2D>().AddForce(PlayerDodgeForce);
+        }
     }
 
     //Called by Enemy.cs when Enemy switches to hunting mode
@@ -123,16 +135,25 @@ public class Player : MonoBehaviour {
         combatCounter--;
     }
 
+    //Dodging
     public void DodgeLeft()
     {
-        this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-PlayerDodgeForce.x, PlayerDodgeForce.y));
+        leftDodging = true;
+        Invoke("DisableDodging", playerDodgeTime);
         Invoke("EnableAction", playerDodgeTime);
     }
 
     public void DodgeRight()
     {
-        this.gameObject.GetComponent<Rigidbody2D>().AddForce(PlayerDodgeForce);
+        rightDodging = true;
+        Invoke("DisableDodging", playerDodgeTime);
         Invoke("EnableAction", playerDodgeTime);
+    }
+
+    public void DisableDodging()
+    {
+        leftDodging = false;
+        rightDodging = false;
     }
 
     void EnableAction()
