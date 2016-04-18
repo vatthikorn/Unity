@@ -101,5 +101,8 @@
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Zone Switching\ZoneLoader.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Treasurechest\Read me\readme.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
