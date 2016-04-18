@@ -1,0 +1,23 @@
+print "Starting maya loading and fbx conversion \n";
+	
+if (`file -q -exists "/Users/Zack/Unity/Sigilscape/Assets/Maya_Assets/incrementalSave/Prison_Zone1_WIP.mb/Prison_Zone1_WIP.0001.mb"`)
+{		
+	file -o "/Users/Zack/Unity/Sigilscape/Assets/Maya_Assets/incrementalSave/Prison_Zone1_WIP.mb/Prison_Zone1_WIP.0001.mb";
+	FBXExportEmbeddedTextures -v false;
+	// FBXExportHardEdges -v true;
+	FBXExportApplyConstantKeyReducer -v false;
+	FBXExportShowUI -v false;
+
+	print "Before fbx export\n";
+	FBXExport -f "/Users/Zack/Unity/Sigilscape/Temp/ExportedFBXFile.fbx";
+	print "after fbx export\n";
+}
+else
+	print "Could not open Maya file.";
+
+
+system ("rm \"/Users/Zack/Unity/Sigilscape/Temp/CommandPipe\"");
+
+$donepipeKill = `fopen "/Users/Zack/Unity/Sigilscape/Temp/SyncPipeKill" "w"`;
+fwrite $donepipeKill "Done";
+fclose $donepipeKill;
