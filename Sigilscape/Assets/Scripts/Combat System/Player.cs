@@ -82,6 +82,7 @@ public class Player : MonoBehaviour {
     //Determines if player is in combat (combatCounter = number of enemies hunting them)
     public int combatCounter = 0;
     public bool inCombat = false;
+    public bool isInvincible = false;
     
     int direction;//Facing right = 1, Facing left = -1
    
@@ -389,20 +390,23 @@ public class Player : MonoBehaviour {
     //Applies force and damage of enemy when in contact
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Enemy Projectile")
+        if(!isInvincible)
         {
-            this.gameObject.GetComponent<PlayerController>().action = false;
-            Invoke("DoneHurting", playerHurtTime);
-            KnockBackToPlayer(other);
-            ReceiveDamage(other.gameObject.GetComponent<EnemyProjectile>().damage);
-            Destroy(other.gameObject);
-        }
-        else if(other.gameObject.tag == "Enemy")
-        {
-            this.gameObject.GetComponent<PlayerController>().action = false;
-            Invoke("DoneHurting", playerHurtTime);
-            KnockBackToPlayer(other);
-            ReceiveDamage(other.gameObject.GetComponent<Enemy>().strength);
+            if (other.gameObject.tag == "Enemy Projectile")
+            {
+                this.gameObject.GetComponent<PlayerController>().action = false;
+                Invoke("DoneHurting", playerHurtTime);
+                KnockBackToPlayer(other);
+                ReceiveDamage(other.gameObject.GetComponent<EnemyProjectile>().damage);
+                Destroy(other.gameObject);
+            }
+            else if (other.gameObject.tag == "Enemy")
+            {
+                this.gameObject.GetComponent<PlayerController>().action = false;
+                Invoke("DoneHurting", playerHurtTime);
+                KnockBackToPlayer(other);
+                ReceiveDamage(other.gameObject.GetComponent<Enemy>().strength);
+            }
         }
     }
 

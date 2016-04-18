@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour {
     //Limits movement
     public const float moveForce = 300f;//Horizontal Force
     public const float maxSpeed = 5f;//Horizontal Speed
-    public const float jumpForce = 2000f;
+    public const float jumpForce = 1500f;
     public const float wallJumpForce = 2000f;
 
     //How to place melee attack objects and shield away from player

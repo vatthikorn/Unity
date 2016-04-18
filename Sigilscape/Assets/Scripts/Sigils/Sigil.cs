@@ -42,7 +42,7 @@ abstract public class Sigil : MonoBehaviour {
         Effect();
     }
 
-    void Enable()
+    public void Enable()
     {
         enabledSigil = true;
     }
@@ -59,7 +59,7 @@ abstract public class Sigil : MonoBehaviour {
 
     abstract public void Effect();
 
-    void CountDown()
+    public void CountDown()
     {
         timer -= Time.deltaTime;
 
