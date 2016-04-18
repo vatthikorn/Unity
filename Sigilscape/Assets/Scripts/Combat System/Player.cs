@@ -72,7 +72,7 @@ public class Player : MonoBehaviour {
     public Vector2 PlayerKnockBack = new Vector2(2000f, 100f);
 
     //Dodge Force
-    public Vector2 PlayerDodgeForce = new Vector2(1200f, 0f);
+    public Vector2 PlayerDodgeForce = new Vector2(500f, 0f);
     public bool leftDodging = false;
     public bool rightDodging = false;
 

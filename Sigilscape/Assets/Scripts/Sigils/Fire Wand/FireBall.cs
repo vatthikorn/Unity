@@ -16,7 +16,7 @@ public class FireBall : MonoBehaviour {
     public Vector2 knockBack = new Vector2(100 , 100);
     public const int damage = 20;
     public bool impact = false;
-    public const float animTime = .32f;
+    public const float animTime = .30f;
 
     public Animator anim;
 
@@ -35,7 +35,6 @@ public class FireBall : MonoBehaviour {
         }
         else
         {
-            Debug.Log("TRUE NOW!");
             anim.SetBool("impact", true);
             this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
@@ -46,7 +45,6 @@ public class FireBall : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("HIT!");
             impact = true;
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Sign(velocity.x) * knockBack.x, knockBack.y));
             other.gameObject.GetComponent<Enemy>().ReceiveDamage(damage);
@@ -76,7 +74,6 @@ public class FireBall : MonoBehaviour {
 
     void Impact()
     {
-        Debug.Log("DEAD!");
         Destroy(this.gameObject);
     }
 }

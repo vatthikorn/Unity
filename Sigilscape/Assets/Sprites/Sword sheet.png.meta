@@ -1,0 +1,291 @@
+fileFormatVersion: 2
+guid: a25e2ac6ec6e8b84f9b0bf1d06cb22df
+TextureImporter:
+  fileIDToRecycleName: {}
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: Sword sheet_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 738
+        width: 39
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: The Flame
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 721
+        width: 67
+        height: 228
+      alignment: 9
+      pivot: {x: 0.5341, y: 0.30960885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 688
+        width: 89
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_3
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 688
+        width: 89
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_4
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 686
+        width: 117
+        height: 319
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_5
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 686
+        width: 118
+        height: 319
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_6
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 699
+        width: 40
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_7
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 691
+        width: 43
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_8
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 699
+        width: 41
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_9
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 688
+        width: 90
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_10
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 688
+        width: 89
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_11
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 431
+        width: 39
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_12
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 431
+        width: 39
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_13
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 431
+        width: 38
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_14
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 281
+        width: 99
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_15
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 345
+        width: 117
+        height: 319
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_16
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 344
+        width: 117
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_17
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 355
+        width: 42
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_18
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 355
+        width: 40
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_19
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 350
+        width: 92
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Sword sheet_20
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 349
+        width: 89
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
