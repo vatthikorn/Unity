@@ -10,10 +10,15 @@ using System.Collections;
 
 public class MoonShoesSigil : Sigil {
 
+    public GameObject player;
     public GameObject equipment;
 
     public string sigilName = "Moon shoes";
     static public bool isEquipped = false;
+    static public float jumpForce = 10f;
+    static public bool jumping = false;
+    static public float jumpTime = .5f;
+    static public float jumpTimer = 0;
 
     //Sets up type
     void Start()
@@ -26,15 +31,33 @@ public class MoonShoesSigil : Sigil {
     {
         isEquipped = IsEquipped();
 
-        if (isEquipped)
+        if(isEquipped && jumping)
         {
-            //DO SOMETHING
+            jumpTimer -= Time.deltaTime;
+
+            if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W))
+            {
+                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpForce, 0));
+            }
+            
+
+            if(jumpTimer < 0)
+            {
+                jumpTimer = 0;
+                jumping = false;
+            }
         }
     }
 
     override public void Effect()
     {
         //Does nothing.
+    }
+
+    static public void Jump()
+    {
+        jumping = true;
+        jumpTimer = jumpTime;
     }
 
     //Checks if it is equipped

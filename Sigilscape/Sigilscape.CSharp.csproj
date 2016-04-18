@@ -95,13 +95,13 @@
     <Compile Include="Assets\Scripts\Sigils\EternasBlessingSigil.cs" />
     <Compile Include="Assets\Scripts\Sigils\Fire Wand\FireBall.cs" />
     <Compile Include="Assets\Scripts\Sigils\Fire Wand\FireWandSigil.cs" />
-    <Compile Include="Assets\Scripts\Sigils\Lightning.cs" />
-    <Compile Include="Assets\Scripts\Sigils\LightningRodSigil.cs" />
+    <Compile Include="Assets\Scripts\Sigils\Lightning Rod\Lightning.cs" />
+    <Compile Include="Assets\Scripts\Sigils\Lightning Rod\LightningRodSigil.cs" />
     <Compile Include="Assets\Scripts\Sigils\MaskOfFearSigil.cs" />
     <Compile Include="Assets\Scripts\Sigils\MoonShoesSigil.cs" />
     <Compile Include="Assets\Scripts\Sigils\Sigil.cs" />
-    <Compile Include="Assets\Scripts\Sigils\TheFist.cs" />
-    <Compile Include="Assets\Scripts\Sigils\TheFisterSigil.cs" />
+    <Compile Include="Assets\Scripts\Sigils\The Fister\TheFist.cs" />
+    <Compile Include="Assets\Scripts\Sigils\The Fister\TheFisterSigil.cs" />
     <Compile Include="Assets\Scripts\Sigils\TheKeySigil.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Zone Switching\ZoneLoader.cs" />

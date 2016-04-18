@@ -463,6 +463,7 @@ public class Player : MonoBehaviour {
     {
         int reducedDamage = damageReductionByArmor(damage);
         reducedDamage = EternasBlessingSigil.ReduceDamage(damage);
+        reducedDamage = MaskOfFearSigil.ReduceDamage(damage);
 
         health -= reducedDamage;
 

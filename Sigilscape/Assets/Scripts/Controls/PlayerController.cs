@@ -116,14 +116,17 @@ public class PlayerController : MonoBehaviour {
             if (((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))) && grounded)
             {
                 jump = true;
+                MoonShoesSigil.Jump();
             }
             else if((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && leftWalled)
             {
                 rightJump = true;
+                MoonShoesSigil.Jump();
             }
             else if((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && rightWalled)
             {
                 leftJump = true;
+                MoonShoesSigil.Jump();
             }
             //Sigil Buttons
             else if(action && Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))

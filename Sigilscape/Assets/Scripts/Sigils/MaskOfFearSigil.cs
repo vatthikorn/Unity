@@ -13,6 +13,7 @@ public class MaskOfFearSigil : Sigil {
 
     public string sigilName = "Mask of Fear";
     static public bool isEquipped = false;
+    static public float damageMitigation = 0.05f;
 
     //Sets up type
     void Start()
@@ -24,16 +25,21 @@ public class MaskOfFearSigil : Sigil {
     void Update()
     {
         isEquipped = IsEquipped();
-
-        if(isEquipped)
-        {
-            //DO SOMETHING
-        }
     }
 
     override public void Effect()
     {
         //Does nothing.
+    }
+
+    static public int ReduceDamage(int damage)
+    {
+        if (isEquipped)
+        {
+            return (int)(damage * (1 - damageMitigation));
+        }
+
+        return damage;
     }
 
     //Checks if it is equipped
