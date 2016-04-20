@@ -58,6 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -76,9 +82,12 @@
     <Compile Include="Assets\Scripts\Combat System\Shield.cs" />
     <Compile Include="Assets\Scripts\Controls\GameControl.cs" />
     <Compile Include="Assets\Scripts\Controls\MainMenuControl.cs" />
+    <Compile Include="Assets\Scripts\Controls\Music Controllers\HiddenRoomTrigger.cs" />
+    <Compile Include="Assets\Scripts\Controls\Music Controllers\PreBossMusic.cs" />
+    <Compile Include="Assets\Scripts\Controls\Music Controllers\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\Controls\Music Controllers\bossTrigger.cs" />
     <Compile Include="Assets\Scripts\Controls\NewGame.cs" />
     <Compile Include="Assets\Scripts\Controls\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Controls\SoundManager.cs" />
     <Compile Include="Assets\Scripts\FightScreenManager.cs" />
     <Compile Include="Assets\Scripts\Inventory System\Inventory.cs" />
     <Compile Include="Assets\Scripts\Item Drop System\Chest.cs" />

@@ -1253,88 +1253,123 @@ public class Inventory : MonoBehaviour {
                                     switch (prevIndex)
                                     {
                                         case 1001:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().activeSigil1 = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if(items[i].itemType == Item.ItemType.sigil && items[i].sigil.GetComponent<Sigil>().sigilType != Sigil.SigilType.passive)
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().activeSigil1 = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         case 1002:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().activeSigil2 = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.sigil && items[i].sigil.GetComponent<Sigil>().sigilType != Sigil.SigilType.passive)
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().activeSigil2 = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
-                                        case 1003:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().activeSigil3 = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.sigil && items[i].sigil.GetComponent<Sigil>().sigilType != Sigil.SigilType.passive)
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().activeSigil3 = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         case 1004:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().activeSigil4 = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.sigil && items[i].sigil.GetComponent<Sigil>().sigilType != Sigil.SigilType.passive)
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().activeSigil4 = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         case 1005:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().passiveSigil1 = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.sigil && items[i].sigil.GetComponent<Sigil>().sigilType == Sigil.SigilType.passive)
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().passiveSigil1 = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         case 1006:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().passiveSigil2 = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.sigil && items[i].sigil.GetComponent<Sigil>().sigilType == Sigil.SigilType.passive)
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().passiveSigil2 = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         case 1007:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().passiveSigil3 = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.sigil && items[i].sigil.GetComponent<Sigil>().sigilType == Sigil.SigilType.passive)
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().passiveSigil3 = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         case 1008:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().weapon = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.weapon)
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().weapon = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         case 1009:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().healthPotions = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.consumable && items[i].itemName.Contains("Healing"))
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().healthPotions = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         case 1010:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().armor = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.armor)
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().armor = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         case 1011:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().shield = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.shield)
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().shield = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         case 1012:
-                                            AddItem(draggedItem, 'a');
-                                            playersEquipment.GetComponent<Equipment>().sigilPotions = items[i];
-                                            items[i] = draggedItem;
-                                            draggingItem = false;
-                                            draggedItem = null;
+                                            if (items[i].itemType == Item.ItemType.consumable && items[i].itemName.Contains("Sigil"))
+                                            {
+                                                AddItem(draggedItem, 'a');
+                                                playersEquipment.GetComponent<Equipment>().sigilPotions = items[i];
+                                                items[i] = draggedItem;
+                                                draggingItem = false;
+                                                draggedItem = null;
+                                            }
                                             break;
                                         default:
                                             switch (draggedItem.itemType)
@@ -1354,6 +1389,7 @@ public class Inventory : MonoBehaviour {
                                                     keyItems[otherIndex] = draggedItem;
                                                     break;
                                             }
+                                            items[prevIndex] = items[i];
                                             items[i] = draggedItem;
                                             draggingItem = false;
                                             draggedItem = null;
