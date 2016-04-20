@@ -58,9 +58,12 @@
      <Compile Include="Assets\Scripts\Combat System\Shield.cs" />
      <Compile Include="Assets\Scripts\Controls\GameControl.cs" />
      <Compile Include="Assets\Scripts\Controls\MainMenuControl.cs" />
+     <Compile Include="Assets\Scripts\Controls\Music Controllers\HiddenRoomTrigger.cs" />
+     <Compile Include="Assets\Scripts\Controls\Music Controllers\PreBossMusic.cs" />
+     <Compile Include="Assets\Scripts\Controls\Music Controllers\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\Controls\Music Controllers\bossTrigger.cs" />
      <Compile Include="Assets\Scripts\Controls\NewGame.cs" />
      <Compile Include="Assets\Scripts\Controls\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\Controls\SoundManager.cs" />
      <Compile Include="Assets\Scripts\FightScreenManager.cs" />
      <Compile Include="Assets\Scripts\Inventory System\Inventory.cs" />
      <Compile Include="Assets\Scripts\Item Drop System\Chest.cs" />
@@ -77,14 +80,17 @@
      <Compile Include="Assets\Scripts\Sigils\EternasBlessingSigil.cs" />
      <Compile Include="Assets\Scripts\Sigils\Fire Wand\FireBall.cs" />
      <Compile Include="Assets\Scripts\Sigils\Fire Wand\FireWandSigil.cs" />
+     <Compile Include="Assets\Scripts\Sigils\Lightning Rod\Lightning.cs" />
+     <Compile Include="Assets\Scripts\Sigils\Lightning Rod\LightningRodSigil.cs" />
      <Compile Include="Assets\Scripts\Sigils\MaskOfFearSigil.cs" />
-     <Compile Include="Assets\Scripts\Sigils\MeteoriteTargetingSystemSigil.cs" />
      <Compile Include="Assets\Scripts\Sigils\MoonShoesSigil.cs" />
      <Compile Include="Assets\Scripts\Sigils\Sigil.cs" />
-     <Compile Include="Assets\Scripts\Sigils\TheFisterSigil.cs" />
+     <Compile Include="Assets\Scripts\Sigils\The Fister\TheFist.cs" />
+     <Compile Include="Assets\Scripts\Sigils\The Fister\TheFisterSigil.cs" />
      <Compile Include="Assets\Scripts\Sigils\TheKeySigil.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Zone Switching\ZoneLoader.cs" />
+     <None Include="Assets\Treasurechest\Read me\readme.txt" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
