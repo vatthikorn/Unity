@@ -71,10 +71,9 @@ public class Inventory : MonoBehaviour {
     public GUISkin infoSkin;
 
     //Inventory's Screen Dimensions
-    public const float screenUpperLeftAnchorX = .05f;
-    public const float screenUpperLeftAnchorY = .125f;
-    public const float inventoryWidth = .9f;
-    public const float inventoryHeight = .750f;
+    public const float screenCenterAnchor = .5f;
+    public const float inventoryWidth = 900f;
+    public const float inventoryHeight = 450f;
 
     //Dimensions of slots
     public const int slotWidth = 50;
@@ -92,19 +91,20 @@ public class Inventory : MonoBehaviour {
     bool displayKeyItems = false;
 
     //Inventory Grid's Dimensions and Counts
-    static float inventoryGridUpperLeftAnchorX = .075f;
-    static float inventoryGridUpperLeftAnchorY = .20f;
+    float inventoryGridUpperLeftAnchorX = 50;
+    float inventoryGridUpperLeftAnchorY = 50;
     public const int slotsX = 10;
     public const int slotsY = 5;
 
     //Information Space's Dimensions
-    public const float infoLowerLeftAnchorX = .075f;
-    public const float infoLowerLeftAnchorY = .850f;
+    public const float infoUpperLeftAnchorX = 50;
+    public const float infoUpperLeftAnchorY = 315;
     public const int infoWidth = 500;
     public const int infoHeight = 100;
 
     //Anchor for all Equipment slots
-    public const float equipmentRightAnchorX = .95f;
+    public const float equipmentRightAnchorX = 850;
+    public const float equipmentUpAnchorY = 50;
 
     //For dragging items
     bool draggingItem;
@@ -275,15 +275,15 @@ public class Inventory : MonoBehaviour {
         //Switches to inventory skin
         GUI.skin = inventorySkin;
         //Draws the entire panel
-        GUI.Box(new Rect(Screen.width * screenUpperLeftAnchorX, Screen.height * screenUpperLeftAnchorY, Screen.width * inventoryWidth, Screen.height * inventoryHeight), "", GUI.skin.GetStyle("Inventory Background"));        
+        GUI.Box(new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2, screenCenterAnchor * Screen.height - inventoryHeight / 2, inventoryWidth, inventoryHeight), "", GUI.skin.GetStyle("Inventory Background"));        
 
         //Drawn either at end or in the middle if the player mouses over an item
-        Rect infoRect = new Rect(Screen.width * infoLowerLeftAnchorX, Screen.height * infoLowerLeftAnchorY - infoHeight, infoWidth, infoHeight);
+        Rect infoRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + infoUpperLeftAnchorX, screenCenterAnchor * Screen.height - inventoryHeight / 2 + infoUpperLeftAnchorY, infoWidth, infoHeight);
         bool containsInfo = false;
 
         //Draws ActiveSigil1 slot
         GUI.skin = sigilSkin;
-        Rect slotRect = new Rect(Screen.width * equipmentRightAnchorX - 290, Screen.height * .2f, slotWidth, slotHeight);
+        Rect slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 250, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().activeSigil1.itemName != null)
         {
@@ -363,7 +363,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws ActiveSigil2 slot
         GUI.skin = sigilSkin;
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 215, Screen.height * .17f, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 185, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY - 25, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().activeSigil2.itemName != null)
         {
@@ -443,7 +443,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws ActiveSigil3 slot
         GUI.skin = sigilSkin; 
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 140, Screen.height * .17f, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 120, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY - 25, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().activeSigil3.itemName != null)
         {
@@ -523,7 +523,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws ActiveSigil4 slot
         GUI.skin = sigilSkin;
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 65, Screen.height * .2f, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 55, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().activeSigil4.itemName != null)
         {
@@ -603,7 +603,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws PassiveSigil1 slot
         GUI.skin = sigilSkin;
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 250, Screen.height * .85f - 88, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 210, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY + 290, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().passiveSigil1.itemName != null)
         {
@@ -677,7 +677,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws PassiveSigil2 slot
         GUI.skin = sigilSkin; 
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 175, Screen.height * .85f - 75, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 145, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY + 315, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().passiveSigil2.itemName != null)
         {
@@ -751,7 +751,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws PassiveSigil3 slot
         GUI.skin = sigilSkin; 
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 100, Screen.height * .85f - 88, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 80, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY + 290, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Sigil Skin"));
         if (playersEquipment.GetComponent<Equipment>().passiveSigil3.itemName != null)
         {
@@ -825,7 +825,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws Weapon slot
         GUI.skin = equipmentSkin; 
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 290, Screen.height * .5f - 45, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 240, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY + 125, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Equipment Slot"));
         if (playersEquipment.GetComponent<Equipment>().weapon.itemName != null)
         {
@@ -887,7 +887,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws HealthPotion slot
         GUI.skin = equipmentSkin;
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 275, Screen.height * .5f + 30, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 215, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY + 200, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Equipment Slot"));
         if (playersEquipment.GetComponent<Equipment>().healthPotions.itemName != null)
         {
@@ -949,7 +949,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws Armor slot
         GUI.skin = equipmentSkin;
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 175, Screen.height * .5f - 25, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 145, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY + 125, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Equipment Slot"));
         if (playersEquipment.GetComponent<Equipment>().armor.itemName != null)
         {
@@ -1011,7 +1011,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws Shield slot
         GUI.skin = equipmentSkin;
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 65, Screen.height * .5f - 45, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 50, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY + 125, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Equipment Slot"));
         if (playersEquipment.GetComponent<Equipment>().shield.itemName != null)
         {
@@ -1073,7 +1073,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws SigilPotion slot
         GUI.skin = equipmentSkin;
-        slotRect = new Rect(Screen.width * equipmentRightAnchorX - 80, Screen.height * .5f + 30, slotWidth, slotHeight);
+        slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + equipmentRightAnchorX - 75, screenCenterAnchor * Screen.height - inventoryHeight / 2 + equipmentUpAnchorY + 200, slotWidth, slotHeight);
         GUI.Box(slotRect, "", GUI.skin.GetStyle("Equipment Slot"));
         if (playersEquipment.GetComponent<Equipment>().sigilPotions.itemName != null)
         {
@@ -1135,7 +1135,7 @@ public class Inventory : MonoBehaviour {
 
         //Draws Buttons, and Switches tabs (disables tab switching when player is dragging item)
         GUI.skin = tabSkin;
-        Rect buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
+        Rect buttonRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + 50, screenCenterAnchor * Screen.height - inventoryHeight / 2 + 50 - tabHeight, tabWidth, tabHeight);
         if (GUI.Button(buttonRect, "All", GUI.skin.GetStyle("Tab Skin")) && !draggingItem)
         {
             iOffSet = 0;
@@ -1145,7 +1145,7 @@ public class Inventory : MonoBehaviour {
             displayConsumables = false;
             displayKeyItems = false;
         }
-        buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + 95, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
+        buttonRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + 50 + tabWidth, screenCenterAnchor * Screen.height - inventoryHeight / 2 + 50 - tabHeight, tabWidth, tabHeight);
         if (GUI.Button(buttonRect, "Equipment", GUI.skin.GetStyle("Tab Skin")) && !draggingItem)
         {
             iOffSet = 0;
@@ -1155,7 +1155,7 @@ public class Inventory : MonoBehaviour {
             displayConsumables = false;
             displayKeyItems = false;
         }
-        buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + tabWidth * 2, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
+        buttonRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + 50 + tabWidth * 2, screenCenterAnchor * Screen.height - inventoryHeight / 2 + 50 - tabHeight, tabWidth, tabHeight);
         if (GUI.Button(buttonRect, "Sigils", GUI.skin.GetStyle("Tab Skin")) && !draggingItem)
         {
             iOffSet = 0;
@@ -1165,7 +1165,7 @@ public class Inventory : MonoBehaviour {
             displayConsumables = false;
             displayKeyItems = false;
         }
-        buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + tabWidth * 3, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
+        buttonRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + 50 + tabWidth * 3, screenCenterAnchor * Screen.height - inventoryHeight / 2 + 50 - tabHeight, tabWidth, tabHeight);
         if (GUI.Button(buttonRect, "Consumables", GUI.skin.GetStyle("Tab Skin")) && !draggingItem)
         {
             iOffSet = 0;
@@ -1175,7 +1175,7 @@ public class Inventory : MonoBehaviour {
             displayConsumables = true;
             displayKeyItems = false;
         }
-        buttonRect = new Rect(Screen.width * inventoryGridUpperLeftAnchorX + tabWidth * 4, Screen.height * inventoryGridUpperLeftAnchorY - tabHeight, tabWidth, tabHeight);
+        buttonRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + 50 + tabWidth * 4, screenCenterAnchor * Screen.height - inventoryHeight / 2 + 50 - tabHeight, tabWidth, tabHeight);
         if (GUI.Button(buttonRect, "Key Items", GUI.skin.GetStyle("Tab Skin")) && !draggingItem)
         {
             iOffSet = 0;
@@ -1223,7 +1223,7 @@ public class Inventory : MonoBehaviour {
                 if (displayAll)
                 {
                     GUI.skin = slotSkin;
-                    slotRect = new Rect(x * slotWidth + Screen.width * inventoryGridUpperLeftAnchorX, y * slotHeight + Screen.height * inventoryGridUpperLeftAnchorY, slotWidth, slotHeight);
+                    slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + 50 + x * slotWidth, screenCenterAnchor * Screen.height - inventoryHeight / 2 + 50 + y * slotHeight, slotWidth, slotHeight);
                     GUI.Box(slotRect, "", GUI.skin.GetStyle("Item Slot"));
                     if (i < items.Count)
                     {
@@ -1438,8 +1438,8 @@ public class Inventory : MonoBehaviour {
                 //Draws equipment inventory
                 else if (displayEquipment)
                 {
-                    GUI.skin = slotSkin; 
-                    slotRect = new Rect(x * slotWidth + Screen.width * inventoryGridUpperLeftAnchorX, y * slotHeight + Screen.height * inventoryGridUpperLeftAnchorY, slotWidth, slotHeight);
+                    GUI.skin = slotSkin;
+                    slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + 50 + x * slotWidth, screenCenterAnchor * Screen.height - inventoryHeight / 2 + 50 + y * slotHeight, slotWidth, slotHeight);
                     GUI.Box(slotRect, "", GUI.skin.GetStyle("Item Slot"));
                     if (i < items.Count)
                     {
@@ -1522,8 +1522,8 @@ public class Inventory : MonoBehaviour {
                 //Draws sigils inventory
                 else if (displaySigils)
                 {
-                    GUI.skin = slotSkin; 
-                    slotRect = new Rect(x * slotWidth + Screen.width * inventoryGridUpperLeftAnchorX, y * slotHeight + Screen.height * inventoryGridUpperLeftAnchorY, slotWidth, slotHeight);
+                    GUI.skin = slotSkin;
+                    slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + 50 + x * slotWidth, screenCenterAnchor * Screen.height - inventoryHeight / 2 + 50 + y * slotHeight, slotWidth, slotHeight);
                     GUI.Box(slotRect, "", GUI.skin.GetStyle("Item Slot"));
                     if (i < items.Count)
                     {
@@ -1634,8 +1634,8 @@ public class Inventory : MonoBehaviour {
                 //Draws consumables inventory
                 else if (displayConsumables)
                 {
-                    GUI.skin = slotSkin; 
-                    slotRect = new Rect(x * slotWidth + Screen.width * inventoryGridUpperLeftAnchorX, y * slotHeight + Screen.height * inventoryGridUpperLeftAnchorY, slotWidth, slotHeight);
+                    GUI.skin = slotSkin;
+                    slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + 50 + x * slotWidth, screenCenterAnchor * Screen.height - inventoryHeight / 2 + 50 + y * slotHeight, slotWidth, slotHeight);
                     GUI.Box(slotRect, "", GUI.skin.GetStyle("Item Slot"));
                     if (i < items.Count)
                     {
@@ -1711,8 +1711,8 @@ public class Inventory : MonoBehaviour {
                 //Draws key items inventory
                 else if (displayKeyItems)
                 {
-                    GUI.skin = slotSkin; 
-                    slotRect = new Rect(x * slotWidth + Screen.width * inventoryGridUpperLeftAnchorX, y * slotHeight + Screen.height * inventoryGridUpperLeftAnchorY, slotWidth, slotHeight);
+                    GUI.skin = slotSkin;
+                    slotRect = new Rect(screenCenterAnchor * Screen.width - inventoryWidth / 2 + 50 + x * slotWidth, screenCenterAnchor * Screen.height - inventoryHeight / 2 + 50 + y * slotHeight, slotWidth, slotHeight);
                     GUI.Box(slotRect, "", GUI.skin.GetStyle("Item Slot"));
                     if (i < items.Count)
                     {
