@@ -1,7 +1,28 @@
 fileFormatVersion: 2
 guid: a25e2ac6ec6e8b84f9b0bf1d06cb22df
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Sword sheet_0
+    21300002: The Flame
+    21300004: Sword sheet_2
+    21300006: Sword sheet_3
+    21300008: Sword sheet_4
+    21300010: Sword sheet_5
+    21300012: Sword sheet_6
+    21300014: Sword sheet_7
+    21300016: Sword sheet_8
+    21300018: Sword sheet_9
+    21300020: Sword sheet_10
+    21300022: Sword sheet_11
+    21300024: Sword sheet_12
+    21300026: Sword sheet_13
+    21300028: Sword sheet_14
+    21300030: Sword sheet_15
+    21300032: Sword sheet_16
+    21300034: Sword sheet_17
+    21300036: Sword sheet_18
+    21300038: Sword sheet_19
+    21300040: Sword sheet_20
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -63,7 +84,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -4.5, y: 81}
+        - {x: -15.5, y: 59}
+        - {x: -19.5, y: 13}
+        - {x: -19.5, y: -50}
+        - {x: -7.5, y: -81}
+        - {x: 9.5, y: -81}
+        - {x: 19.5, y: -77}
+        - {x: 19.5, y: 70}
+        - {x: 2.5, y: 81}
     - name: The Flame
       rect:
         serializedVersion: 2
@@ -74,7 +104,20 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.5341, y: 0.30960885}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 29.215302, y: 32.40918}
+        - {x: 30.215302, y: 42.40918}
+        - {x: 30.215302, y: 53.40918}
+        - {x: 21.215302, y: 60.40918}
+        - {x: 16.215302, y: 87.40918}
+        - {x: 2.2153015, y: 157.40918}
+        - {x: -13.7846985, y: 157.40918}
+        - {x: -35.7847, y: 110.40918}
+        - {x: -35.7847, y: -70.59082}
+        - {x: 5.2153015, y: -70.59082}
+        - {x: 14.2153015, y: -61.59082}
+        - {x: 31.215302, y: 7.4091797}
+        - {x: 31.215302, y: 31.40918}
     - name: Sword sheet_2
       rect:
         serializedVersion: 2
@@ -85,7 +128,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 22.5, y: 144}
+        - {x: -34.5, y: 144}
+        - {x: -44.5, y: 100}
+        - {x: -44.5, y: -77}
+        - {x: -3.5, y: -144}
+        - {x: 4.5, y: -144}
+        - {x: 9.5, y: -131}
+        - {x: 44.5, y: -48}
+        - {x: 44.5, y: 28}
     - name: Sword sheet_3
       rect:
         serializedVersion: 2
@@ -96,7 +148,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 33.5, y: 3}
+        - {x: 18.5, y: 144}
+        - {x: -5.5, y: 144}
+        - {x: -44.5, y: 90}
+        - {x: -44.5, y: -127}
+        - {x: -39.5, y: -144}
+        - {x: 3.5, y: -144}
+        - {x: 7.5, y: -132}
+        - {x: 44.5, y: -42}
+        - {x: 44.5, y: -28}
     - name: Sword sheet_4
       rect:
         serializedVersion: 2
@@ -107,7 +169,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 3.5, y: 159.5}
+        - {x: -19.5, y: 159.5}
+        - {x: -58.5, y: 29.5}
+        - {x: -58.5, y: -85.5}
+        - {x: -20.5, y: -148.5}
+        - {x: -6.5, y: -159.5}
+        - {x: 7.5, y: -159.5}
+        - {x: 10.5, y: -158.5}
+        - {x: 19.5, y: -143.5}
+        - {x: 58.5, y: -100.5}
+        - {x: 58.5, y: 40.5}
     - name: Sword sheet_5
       rect:
         serializedVersion: 2
@@ -118,7 +191,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 18, y: 159.5}
+        - {x: -22, y: 159.5}
+        - {x: -59, y: -41.5}
+        - {x: -59, y: -60.5}
+        - {x: -21, y: -149.5}
+        - {x: -6, y: -159.5}
+        - {x: 4, y: -159.5}
+        - {x: 18, y: -148.5}
+        - {x: 59, y: -94.5}
+        - {x: 59, y: 21.5}
     - name: Sword sheet_6
       rect:
         serializedVersion: 2
@@ -129,7 +212,12 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -20, y: 148.5}
+        - {x: -20, y: -148.5}
+        - {x: 10, y: -148.5}
+        - {x: 20, y: -125.5}
+        - {x: 20, y: 148.5}
     - name: Sword sheet_7
       rect:
         serializedVersion: 2
@@ -140,7 +228,12 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -21.5, y: 150.5}
+        - {x: -21.5, y: -144.5}
+        - {x: -11.5, y: -150.5}
+        - {x: 21.5, y: -150.5}
+        - {x: 21.5, y: 150.5}
     - name: Sword sheet_8
       rect:
         serializedVersion: 2
@@ -151,7 +244,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 1.5, y: 148}
+        - {x: -20.5, y: 140}
+        - {x: -20.5, y: -148}
+        - {x: 10.5, y: -148}
+        - {x: 20.5, y: -74}
+        - {x: 20.5, y: -45}
+        - {x: 11.5, y: 148}
     - name: Sword sheet_9
       rect:
         serializedVersion: 2
@@ -162,7 +262,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -5, y: 144}
+        - {x: -45, y: 82}
+        - {x: -45, y: -92}
+        - {x: -29, y: -144}
+        - {x: 7, y: -144}
+        - {x: 45, y: -62}
+        - {x: 45, y: 22}
+        - {x: 6, y: 144}
     - name: Sword sheet_10
       rect:
         serializedVersion: 2
@@ -173,7 +281,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -6.5, y: 144}
+        - {x: -11.5, y: 135}
+        - {x: -44.5, y: 77}
+        - {x: -44.5, y: -71}
+        - {x: -28.5, y: -144}
+        - {x: 12.5, y: -144}
+        - {x: 44.5, y: -96}
+        - {x: 44.5, y: 96}
+        - {x: 27.5, y: 144}
     - name: Sword sheet_11
       rect:
         serializedVersion: 2
@@ -184,7 +301,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 15.5, y: -21.5}
+        - {x: 15.5, y: 59.5}
+        - {x: 4.5, y: 80.5}
+        - {x: -13.5, y: 80.5}
+        - {x: -19.5, y: 48.5}
+        - {x: -19.5, y: -53.5}
+        - {x: -7.5, y: -80.5}
+        - {x: 4.5, y: -80.5}
+        - {x: 7.5, y: -77.5}
+        - {x: 19.5, y: -35.5}
+        - {x: 19.5, y: -21.5}
     - name: Sword sheet_12
       rect:
         serializedVersion: 2
@@ -195,7 +323,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 15.5, y: -21.5}
+        - {x: 15.5, y: 59.5}
+        - {x: 10.5, y: 73.5}
+        - {x: 3.5, y: 80.5}
+        - {x: -14.5, y: 80.5}
+        - {x: -19.5, y: 64.5}
+        - {x: -19.5, y: -70.5}
+        - {x: -15.5, y: -80.5}
+        - {x: 5.5, y: -80.5}
+        - {x: 8.5, y: -75.5}
+        - {x: 8.5, y: -72.5}
+        - {x: 19.5, y: -37.5}
+        - {x: 19.5, y: -21.5}
     - name: Sword sheet_13
       rect:
         serializedVersion: 2
@@ -206,7 +347,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 8, y: 80.5}
+        - {x: -2, y: 80.5}
+        - {x: -8, y: 70.5}
+        - {x: -13, y: 59.5}
+        - {x: -19, y: 3.5}
+        - {x: -19, y: -49.5}
+        - {x: -10, y: -80.5}
+        - {x: 6, y: -80.5}
+        - {x: 13, y: -69.5}
+        - {x: 19, y: -36.5}
+        - {x: 19, y: 53.5}
     - name: Sword sheet_14
       rect:
         serializedVersion: 2
@@ -217,7 +369,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -4.5, y: 200}
+        - {x: -9.5, y: 193}
+        - {x: -49.5, y: 30}
+        - {x: -49.5, y: -139}
+        - {x: -18.5, y: -200}
+        - {x: 11.5, y: -200}
+        - {x: 49.5, y: -101}
+        - {x: 49.5, y: -79}
+        - {x: 14.5, y: 200}
     - name: Sword sheet_15
       rect:
         serializedVersion: 2
@@ -228,7 +389,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 49.5, y: -39.5}
+        - {x: 15.5, y: 159.5}
+        - {x: -58.5, y: 159.5}
+        - {x: -58.5, y: -159.5}
+        - {x: 10.5, y: -159.5}
+        - {x: 28.5, y: -148.5}
+        - {x: 58.5, y: -62.5}
+        - {x: 58.5, y: -47.5}
+        - {x: 53.5, y: -39.5}
     - name: Sword sheet_16
       rect:
         serializedVersion: 2
@@ -239,7 +409,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -21.5, y: 160}
+        - {x: -58.5, y: 35}
+        - {x: -58.5, y: -93}
+        - {x: -11.5, y: -160}
+        - {x: 8.5, y: -160}
+        - {x: 32.5, y: -136}
+        - {x: 58.5, y: -71}
+        - {x: 58.5, y: 21}
+        - {x: 9.5, y: 160}
     - name: Sword sheet_17
       rect:
         serializedVersion: 2
@@ -250,7 +429,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -8, y: 148}
+        - {x: -21, y: -31}
+        - {x: -21, y: -81}
+        - {x: -8, y: -148}
+        - {x: 12, y: -148}
+        - {x: 21, y: -74}
+        - {x: 21, y: -24}
+        - {x: 12, y: 148}
     - name: Sword sheet_18
       rect:
         serializedVersion: 2
@@ -261,7 +448,12 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -20, y: 148.5}
+        - {x: -20, y: -148.5}
+        - {x: 12, y: -148.5}
+        - {x: 20, y: -131.5}
+        - {x: 20, y: 148.5}
     - name: Sword sheet_19
       rect:
         serializedVersion: 2
@@ -272,7 +464,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 40, y: -20}
+        - {x: 24, y: -5}
+        - {x: 16, y: 105}
+        - {x: 4, y: 144}
+        - {x: 2, y: 145}
+        - {x: -7, y: 145}
+        - {x: -46, y: 136}
+        - {x: -46, y: -80}
+        - {x: -39, y: -145}
+        - {x: 4, y: -145}
+        - {x: 9, y: -132}
+        - {x: 46, y: -46}
+        - {x: 46, y: -36}
     - name: Sword sheet_20
       rect:
         serializedVersion: 2
@@ -283,7 +488,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -2.5, y: 144.5}
+        - {x: -4.5, y: 136.5}
+        - {x: -14.5, y: 97.5}
+        - {x: -44.5, y: -0.5}
+        - {x: -44.5, y: -55.5}
+        - {x: -9.5, y: -131.5}
+        - {x: -2.5, y: -144.5}
+        - {x: 4.5, y: -144.5}
+        - {x: 44.5, y: -78.5}
+        - {x: 44.5, y: 37.5}
+        - {x: 16.5, y: 144.5}
     outline: []
   spritePackingTag: 
   userData: 
