@@ -118,20 +118,27 @@ public class Inventory : MonoBehaviour {
     //Used to scroll through the inventory
     int iOffSet = 0;
 
-    //For loading the game
-    public void LoadInventory(List<Item> savedItems)
-    {
-        for(int i = 0; i < savedItems.Count; i++)
-        {
-            AddItemFromDrop(savedItems[i].itemID);
-        }
-    }
+	//For loading the game
+	public void LoadInventory(List<int> savedItems)
+	{
+		for(int i = 0; i < savedItems.Count; i++)
+		{
+			AddItemFromDrop(savedItems[i]);
+		}
+	}
 
-    //For saving the game
-    public List<Item> SaveInventory()
-    {
-        return items;
-    }
+	//For saving the game
+	public List<int> SaveInventory()
+	{
+		List<int> x = new List<int> ();
+
+		for (int i = 0; i < items.Count; i++)
+		{
+			if (items [i].itemName != null)
+				x.Add (items [i].itemID);
+		}
+		return x;
+	}
 
     //Sets up slots
     void Start()

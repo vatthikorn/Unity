@@ -59,6 +59,39 @@ public class Enemy : MonoBehaviour {
         this.GetComponent<Enemy>().hunting = false;
     }
 
+	//For loading, sets players health
+	public int GetEnemyHealth()
+	{
+		return this.health;
+	}
+
+	public void SetEnemyHealth(int enemyHealth)
+	{
+		this.health = enemyHealth;
+	}
+
+	public int GetEnemyDefense()
+	{
+		return this.defense;
+	}
+
+	//For loading, sets players health
+	public void SetEnemyDefense(int enemyDefense)
+	{
+		this.defense = enemyDefense;
+	}
+
+	public int GetEnemyStrength()
+	{
+		return this.strength;
+	}
+
+	//For loading, sets players health
+	public void SetEnemyStrength(int enemyStrength)
+	{
+		this.strength = enemyStrength;
+	}
+
     //Damage Receiver
     //Drops an item (if enemy has an item) upon defeat
     //Destroys itself upon defeat

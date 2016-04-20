@@ -22,25 +22,41 @@ public class ItemDropManager : MonoBehaviour {
 
     public List<GameObject> itemDrops = new List<GameObject>();
 
-    //For Loading the game
-    public void LoadItemDrops(List<GameObject> savedItemDrops)
-    {
-        for (int i = 0; i < itemDrops.Count; i++)
-        {
-            if (savedItemDrops[i] == null)
-            {
-                Destroy(itemDrops[i].gameObject);
-            }
-            else if(savedItemDrops[i].transform.parent == null)
-            {
-                itemDrops[i].SetActive(true);
-            }
-        }
-    }
+	//For Loading the game
+	public void LoadItemDrops(List<int> savedItemDrops)
+	{
+		for (int i = 0; i < savedItemDrops.Count; i++)
+		{
+			if (savedItemDrops[i] != 0)
+			{
+				itemDrops[i].SetActive(true);
+				//Destroy(itemDrops[i].gameObject);
+			}
+			else
+			{
+				Destroy(itemDrops[i].gameObject);
+			}
+		}
+	}
 
-    //For Saving the game
-    public List<GameObject> SaveItemDrops()
-    {
-        return itemDrops;
-    }
+	//For Saving the game
+	public List<int> SaveItemDrops()
+	{
+		List<int> x = new List<int> ();
+
+		for (int i = 0; i < itemDrops.Count; i++)
+		{
+			if (itemDrops [i] != null)
+				x.Add (1);
+			else
+				x.Add (0);
+
+			//			else if(savedItemDrops[i].transform.parent == null)
+			//			{
+			//				itemDrops[i].SetActive(true);
+			//			}
+		}
+
+		return x;
+	}
 }

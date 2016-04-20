@@ -38,22 +38,29 @@ public class RoomTracker : MonoBehaviour {
 
     public List<Room.RoomState> roomStatus = new List<Room.RoomState>();
 
-    //For loading the game
-    public void LoadRooms(List<Room.RoomState> savedRoomStatus)
-    {
-        for(int i = 0; i < rooms.Count; i++)
-        {
-            rooms[i].GetComponent<Room>().roomType = savedRoomStatus[i];
-        }
+	//For loading the game
+	public void LoadRooms(List<int> savedRoomStatus)
+	{
+		for(int i = 0; i < rooms.Count; i++)
+		{
+			rooms[i].GetComponent<Room>().roomType = (Room.RoomState)savedRoomStatus[i];
+		}
 
-        UpdateMap();
-    }
+		UpdateMap();
+	}
 
-    //For saving the game
-    public List<Room.RoomState> SaveRooms()
-    {
-        return roomStatus;
-    }
+	//For saving the game
+	public List<int> SaveRooms()
+	{
+		List<int> x = new List<int> ();
+
+		for (int i = 0; i < roomStatus.Count; i++) 
+		{
+			x.Add ((int)roomStatus [i]);
+		}
+
+		return x;
+	}
 
     //Intializes all the rooms status in list and sets up the mapManager for display
     void Start()
