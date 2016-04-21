@@ -1,5 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controls/Music Controllers/SoundManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Controls/NewGame.cs" Line="12" Column="3" />
+      <File FileName="Assets/Scripts/Zone Switching/ZoneLoader.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Combat System/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controls/Music Controllers/SoundManager.cs" Line="45" Column="4" />
+      <File FileName="Assets/Scripts/Controls/Music Controllers/PreBossMusic.cs" Line="48" Column="22" />
+      <File FileName="Assets/Scripts/Controls/Music Controllers/HiddenRoomTrigger.cs" Line="26" Column="3" />
+      <File FileName="Assets/Scripts/Controls/Music Controllers/bossTrigger.cs" Line="27" Column="18" NotebookId="1" />
+=======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MenuScreen.cs">
     <Files>
       <File FileName="Assets/Scripts/MenuScreen.cs" Line="69" Column="4" />
@@ -7,6 +18,7 @@
       <File FileName="Assets/Scripts/Controls/GameControl.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Room Tracking System/MapManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Controls/MainMenuControl.cs" Line="1" Column="1" />
+>>>>>>> 46de98760492a8f8a6e3062364e0238d38f5c050
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

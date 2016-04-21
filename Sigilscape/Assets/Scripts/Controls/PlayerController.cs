@@ -33,6 +33,9 @@ using UnityEngine;
 using System.Collections;
 using System;
 
+//-MS
+using UnityEngine.UI;
+
 public class PlayerController : MonoBehaviour {
 
     public enum ScreenState { fight, inventory, pause };//If the player is in combat, in the invnetory, or the pause menu
@@ -90,6 +93,11 @@ public class PlayerController : MonoBehaviour {
     public ScreenState screenState = ScreenState.fight;
     public bool pauseGame = false;
     
+	//find the panel for game over -MS
+	public GameObject panel;
+	public Button restartButton;
+	public Button exitButton;
+
     private Rigidbody2D rb;
 
     //Dislays miniMap, fight screen on startup
@@ -99,6 +107,15 @@ public class PlayerController : MonoBehaviour {
         MiniMapView();
         DisablePauseScreen();
         DisableInventoryScreen();
+
+		//find panel for gameover -MS
+		panel = GameObject.Find("GameOverPanel");
+		restartButton = GameObject.Find ("RestartButton").GetComponent<Button>();
+		exitButton = GameObject.Find ("ExitButton").GetComponent<Button>();
+		panel.SetActive (false);
+		restartButton.interactable = false;
+		exitButton.interactable = false;
+		Time.timeScale = 1;
     }
 	
     //Determines if player can jump, the game is paused, and what screen the player is on and to which screen they can switch to
@@ -110,6 +127,15 @@ public class PlayerController : MonoBehaviour {
 
         if (!pauseGame)
         {
+			//if player health is 0 call game over
+			if (player.GetComponent<Player>().health <= 0) {
+
+				Time.timeScale = 0;
+				panel.SetActive (true);
+				exitButton.interactable = true;
+				restartButton.interactable = true;
+			}
+
             //Jump
             if (((action && Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))) && grounded)
             {
