@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Camera.cs" />
+    <Compile Include="Assets\GameOver.cs" />
     <Compile Include="Assets\Scripts\Combat System\AttackVars.cs" />
     <Compile Include="Assets\Scripts\Combat System\Enemy.cs" />
     <Compile Include="Assets\Scripts\Combat System\EnemyHuntingDetector.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Assets\Scripts\Room Tracking System\MapManager.cs" />
     <Compile Include="Assets\Scripts\Room Tracking System\Room.cs" />
     <Compile Include="Assets\Scripts\Room Tracking System\RoomTracker.cs" />
+    <Compile Include="Assets\Scripts\SecretRoomReveal.cs" />
     <Compile Include="Assets\Scripts\Sigils\EternasBlessingSigil.cs" />
     <Compile Include="Assets\Scripts\Sigils\Fire Wand\FireBall.cs" />
     <Compile Include="Assets\Scripts\Sigils\Fire Wand\FireWandSigil.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="Assets\Scripts\Sigils\TheKeySigil.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Zone Switching\ZoneLoader.cs" />
+    <Compile Include="Assets\TNTExplosion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Treasurechest\Read me\readme.txt" />

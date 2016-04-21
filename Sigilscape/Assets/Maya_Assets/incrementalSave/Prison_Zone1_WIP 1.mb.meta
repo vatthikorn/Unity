@@ -1,0 +1,3191 @@
+fileFormatVersion: 2
+guid: ecebb29c6a4028946913c5239683223b
+timeCreated: 1461250746
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ambientLight1
+    100002: bottom
+    100004: Bridge_Blocks
+    100006: Bridge_Blocks_001
+    100008: Bridge_Blocks_002
+    100010: Bridge_Blocks_003
+    100012: Bridge_Blocks_004
+    100014: Bridge_Blocks_005
+    100016: Bridge_Blocks_006
+    100018: Bridge_Models
+    100020: Bridge_Prefabs
+    100022: Divider_010
+    100024: Divider_0101
+    100026: Divider_0102
+    100028: Divider_0103
+    100030: Divider_0104
+    100032: Divider_0105
+    100034: Divider_0106
+    100036: Divider_0107
+    100038: Divider_0108
+    100040: Divider_0109
+    100042: Divider_011
+    100044: Divider_0110
+    100046: Divider_0111
+    100048: Divider_0112
+    100050: Divider_012
+    100052: Divider_013
+    100054: Divider_014
+    100056: Divider_016
+    100058: Divider_017
+    100060: Divider_019
+    100062: Divider_02
+    100064: Divider_020
+    100066: Divider_021
+    100068: Divider_026
+    100070: Divider_027
+    100072: Divider_03
+    100074: Divider_031
+    100076: Divider_032
+    100078: Divider_033
+    100080: Divider_034
+    100082: Divider_035
+    100084: Divider_036
+    100086: Divider_037
+    100088: Divider_038
+    100090: Divider_039
+    100092: Divider_040
+    100094: Divider_041
+    100096: Divider_042
+    100098: Divider_043
+    100100: Divider_044
+    100102: Divider_045
+    100104: Divider_046
+    100106: Divider_047
+    100108: Divider_048
+    100110: Divider_049
+    100112: Divider_05
+    100114: Divider_050
+    100116: Divider_052
+    100118: Divider_053
+    100120: Divider_054
+    100122: Divider_055
+    100124: Divider_056
+    100126: Divider_057
+    100128: Divider_058
+    100130: Divider_059
+    100132: Divider_06
+    100134: Divider_060
+    100136: Divider_061
+    100138: Divider_062
+    100140: Divider_063
+    100142: Divider_064
+    100144: Divider_065
+    100146: Divider_066
+    100148: Divider_067
+    100150: Divider_068
+    100152: Divider_069
+    100154: Divider_07
+    100156: Divider_070
+    100158: Divider_071
+    100160: Divider_072
+    100162: Divider_073
+    100164: Divider_074
+    100166: Divider_075
+    100168: Divider_076
+    100170: Divider_077
+    100172: Divider_078
+    100174: Divider_079
+    100176: Divider_08
+    100178: Divider_080
+    100180: Divider_081
+    100182: Divider_082
+    100184: Divider_083
+    100186: Divider_084
+    100188: Divider_085
+    100190: Divider_086
+    100192: Divider_087
+    100194: Divider_088
+    100196: Divider_089
+    100198: Divider_09
+    100200: Divider_090
+    100202: Divider_091
+    100204: Divider_092
+    100206: Divider_093
+    100208: Divider_094
+    100210: Divider_095
+    100212: Divider_096
+    100214: Divider_097
+    100216: Divider_098
+    100218: Door_Archway_001
+    100220: Door_Archway_0010
+    100222: Door_Archway_0011
+    100224: Door_Archway_0012
+    100226: Door_Archway_0013
+    100228: Door_Archway_0014
+    100230: Door_Archway_0015
+    100232: Door_Archway_0016
+    100234: Door_Archway_0017
+    100236: Door_Archway_0018
+    100238: Door_Archway_002
+    100240: Door_Archway_0020
+    100242: Door_Archway_0021
+    100244: Door_Archway_0022
+    100246: Door_Archway_0023
+    100248: Door_Archway_0024
+    100250: Door_Archway_0025
+    100252: Door_Archway_0026
+    100254: Door_Archway_0027
+    100256: Door_Archway_0028
+    100258: Door_Archway_0029
+    100260: Door_Archway_003
+    100262: Door_Archway_0030
+    100264: Door_Archway_0032
+    100266: Door_Archway_0033
+    100268: Door_Archway_0034
+    100270: Door_Archway_0035
+    100272: Door_Archway_0036
+    100274: Door_Archway_005
+    100276: Door_Archway_006
+    100278: Door_Archway_007
+    100280: Door_Archway_008
+    100282: Door_Archway_009
+    100284: Door_Archways
+    100286: Doorways
+    100288: Gold_Pile_002
+    100290: Gold_Pile_003
+    100292: Gold_Pile_004
+    100294: Gold_Pile_005
+    100296: Gold_Pile_006
+    100298: Gold_Pile_Prefabs
+    100300: Inner_Bridge_Cliffs_01
+    100302: Inner_Bridge_Sprites
+    100304: Inner_Ground_Model_01
+    100306: Inner_Ground_Model_02
+    100308: Inner_Ground_Model_03
+    100310: Inner_Ground_Models
+    100312: Inner_Ground_Secret_Room_01
+    100314: Inner_Ground_Secret_Room_02
+    100316: Inner_Ground_Secret_Room_03
+    100318: Inner_Ground_Secret_Room_04
+    100320: Inner_Ground_Secret_Room_05
+    100322: Inner_Tower_Model
+    100324: Outside_3D_Cliff_01
+    100326: Outside_3D_Cliff_02
+    100328: Outside_Bridge_01
+    100330: Outside_Bridge_02
+    100332: Outside_Bridge_03
+    100334: Outside_Bridge_04
+    100336: Outside_Bridge_BG
+    100338: Outside_Bridge_Rocks
+    100340: Outside_Bridge_Sprites
+    100342: Outside_Building_Model_01
+    100344: pCube1
+    100346: pCube1 1
+    100348: pCube1 2
+    100350: pCube1 3
+    100352: pCube1 4
+    100354: pCube10
+    100356: pCube10 1
+    100358: pCube10 2
+    100360: pCube10 3
+    100362: pCube10 4
+    100364: pCube11
+    100366: pCube11 1
+    100368: pCube11 2
+    100370: pCube11 3
+    100372: pCube11 4
+    100374: pCube12
+    100376: pCube12 1
+    100378: pCube12 2
+    100380: pCube12 3
+    100382: pCube12 4
+    100384: pCube13
+    100386: pCube13 1
+    100388: pCube13 2
+    100390: pCube13 3
+    100392: pCube13 4
+    100394: pCube14
+    100396: pCube14 1
+    100398: pCube14 2
+    100400: pCube14 3
+    100402: pCube14 4
+    100404: pCube15
+    100406: pCube15 1
+    100408: pCube15 2
+    100410: pCube15 3
+    100412: pCube15 4
+    100414: pCube16
+    100416: pCube16 1
+    100418: pCube16 2
+    100420: pCube16 3
+    100422: pCube16 4
+    100424: pCube17
+    100426: pCube17 1
+    100428: pCube17 2
+    100430: pCube17 3
+    100432: pCube17 4
+    100434: pCube18
+    100436: pCube18 1
+    100438: pCube18 2
+    100440: pCube18 3
+    100442: pCube18 4
+    100444: pCube19
+    100446: pCube19 1
+    100448: pCube19 2
+    100450: pCube19 3
+    100452: pCube19 4
+    100454: pCube2
+    100456: pCube2 1
+    100458: pCube2 2
+    100460: pCube2 3
+    100462: pCube2 4
+    100464: pCube3
+    100466: pCube3 1
+    100468: pCube3 2
+    100470: pCube3 3
+    100472: pCube3 4
+    100474: pCube5
+    100476: pCube5 1
+    100478: pCube5 2
+    100480: pCube5 3
+    100482: pCube5 4
+    100484: pCube6
+    100486: pCube6 1
+    100488: pCube6 2
+    100490: pCube6 3
+    100492: pCube6 4
+    100494: pCube7
+    100496: pCube7 1
+    100498: pCube7 2
+    100500: pCube7 3
+    100502: pCube7 4
+    100504: pCube8
+    100506: pCube8 1
+    100508: pCube8 2
+    100510: pCube8 3
+    100512: pCube8 4
+    100514: pCube9
+    100516: pCube9 1
+    100518: pCube9 2
+    100520: pCube9 3
+    100522: pCube9 4
+    100524: pCylinder1
+    100526: pCylinder10
+    100528: pCylinder11
+    100530: pCylinder12
+    100532: pCylinder13
+    100534: pCylinder14
+    100536: pCylinder15
+    100538: pCylinder16
+    100540: pCylinder17
+    100542: pCylinder18
+    100544: pCylinder19
+    100546: pCylinder2
+    100548: pCylinder20
+    100550: pCylinder21
+    100552: pCylinder22
+    100554: pCylinder3
+    100556: pCylinder4
+    100558: pCylinder5
+    100560: pCylinder6
+    100562: pCylinder7
+    100564: pCylinder8
+    100566: pCylinder9
+    100568: Pillars
+    100570: Pillars1
+    100572: Pillars_Sets
+    100574: Platform_01
+    100576: Platform_010
+    100578: Platform_011
+    100580: Platform_012
+    100582: Platform_014
+    100584: Platform_015
+    100586: Platform_016
+    100588: Platform_017
+    100590: Platform_018
+    100592: Platform_019
+    100594: Platform_02
+    100596: Platform_020
+    100598: Platform_021
+    100600: Platform_022
+    100602: Platform_023
+    100604: Platform_024
+    100606: Platform_025
+    100608: Platform_026
+    100610: Platform_027
+    100612: Platform_028
+    100614: Platform_029
+    100616: Platform_03
+    100618: Platform_030
+    100620: Platform_031
+    100622: Platform_032
+    100624: Platform_033
+    100626: Platform_034
+    100628: Platform_035
+    100630: Platform_036
+    100632: Platform_037
+    100634: Platform_04
+    100636: Platform_05
+    100638: Platform_06
+    100640: Platform_07
+    100642: Platform_08
+    100644: Platform_09
+    100646: Platforms
+    100648: pointLight1
+    100650: pointLight2
+    100652: pointLight3
+    100654: pointLight4
+    100656: polySurface_01
+    100658: polySurface_010
+    100660: polySurface_011
+    100662: polySurface_012
+    100664: polySurface_02
+    100666: polySurface_03
+    100668: polySurface_04
+    100670: polySurface_05
+    100672: polySurface_06
+    100674: polySurface_07
+    100676: polySurface_08
+    100678: polySurface_09
+    100680: Prison_Back_Wall_001
+    100682: Prison_Back_Wall_0010
+    100684: Prison_Back_Wall_0011
+    100686: Prison_Back_Wall_0012
+    100688: Prison_Back_Wall_0013
+    100690: Prison_Back_Wall_0014
+    100692: Prison_Back_Wall_0015
+    100694: Prison_Back_Wall_0016
+    100696: Prison_Back_Wall_0017
+    100698: Prison_Back_Wall_0018
+    100700: Prison_Back_Wall_0019
+    100702: Prison_Back_Wall_002
+    100704: Prison_Back_Wall_0020
+    100706: Prison_Back_Wall_0021
+    100708: Prison_Back_Wall_0022
+    100710: Prison_Back_Wall_0023
+    100712: Prison_Back_Wall_0024
+    100714: Prison_Back_Wall_0026
+    100716: Prison_Back_Wall_0027
+    100718: Prison_Back_Wall_0028
+    100720: Prison_Back_Wall_0029
+    100722: Prison_Back_Wall_003
+    100724: Prison_Back_Wall_0030
+    100726: Prison_Back_Wall_005
+    100728: Prison_Back_Wall_006
+    100730: Prison_Back_Wall_007
+    100732: Prison_Back_Wall_008
+    100734: Prison_Back_Wall_009
+    100736: Prison_Back_Walls
+    100738: Prison_Bar_Prefabs
+    100740: Prison_Bars_001
+    100742: Prison_Bars_002
+    100744: Prison_Bars_002 1
+    100746: Prison_Bars_002 2
+    100748: Prison_Bars_002 3
+    100750: Prison_Bars_003
+    100752: Prison_Bars_003 1
+    100754: Prison_Bars_003 2
+    100756: Prison_Bars_003 3
+    100758: Prison_Door_Wall_001
+    100760: Prison_Door_Wall_0010
+    100762: Prison_Door_Wall_0011
+    100764: Prison_Door_Wall_0012
+    100766: Prison_Door_Wall_0013
+    100768: Prison_Door_Wall_0014
+    100770: Prison_Door_Wall_0015
+    100772: Prison_Door_Wall_0016
+    100774: Prison_Door_Wall_0017
+    100776: Prison_Door_Wall_0018
+    100778: Prison_Door_Wall_0019
+    100780: Prison_Door_Wall_002
+    100782: Prison_Door_Wall_0020
+    100784: Prison_Door_Wall_0021
+    100786: Prison_Door_Wall_0022
+    100788: Prison_Door_Wall_0023
+    100790: Prison_Door_Wall_0024
+    100792: Prison_Door_Wall_0025
+    100794: Prison_Door_Wall_0026
+    100796: Prison_Door_Wall_0027
+    100798: Prison_Door_Wall_0028
+    100800: Prison_Door_Wall_0029
+    100802: Prison_Door_Wall_003
+    100804: Prison_Door_Wall_0031
+    100806: Prison_Door_Wall_0032
+    100808: Prison_Door_Wall_0033
+    100810: Prison_Door_Wall_0034
+    100812: Prison_Door_Wall_0035
+    100814: Prison_Door_Wall_004
+    100816: Prison_Door_Wall_005
+    100818: Prison_Door_Wall_006
+    100820: Prison_Door_Wall_007
+    100822: Prison_Door_Wall_008
+    100824: Prison_Door_Wall_009
+    100826: Prison_Door_Walls
+    100828: Prison_Doorway_Wall_001
+    100830: Prison_Doorway_Wall_0010
+    100832: Prison_Doorway_Wall_0011
+    100834: Prison_Doorway_Wall_0012
+    100836: Prison_Doorway_Wall_0013
+    100838: Prison_Doorway_Wall_0014
+    100840: Prison_Doorway_Wall_0015
+    100842: Prison_Doorway_Wall_0016
+    100844: Prison_Doorway_Wall_0017
+    100846: Prison_Doorway_Wall_0018
+    100848: Prison_Doorway_Wall_002
+    100850: Prison_Doorway_Wall_0020
+    100852: Prison_Doorway_Wall_0021
+    100854: Prison_Doorway_Wall_0022
+    100856: Prison_Doorway_Wall_0023
+    100858: Prison_Doorway_Wall_0024
+    100860: Prison_Doorway_Wall_0025
+    100862: Prison_Doorway_Wall_0026
+    100864: Prison_Doorway_Wall_0027
+    100866: Prison_Doorway_Wall_0028
+    100868: Prison_Doorway_Wall_0029
+    100870: Prison_Doorway_Wall_003
+    100872: Prison_Doorway_Wall_0030
+    100874: Prison_Doorway_Wall_0032
+    100876: Prison_Doorway_Wall_0033
+    100878: Prison_Doorway_Wall_0034
+    100880: Prison_Doorway_Wall_0035
+    100882: Prison_Doorway_Wall_0036
+    100884: Prison_Doorway_Wall_005
+    100886: Prison_Doorway_Wall_006
+    100888: Prison_Doorway_Wall_007
+    100890: Prison_Doorway_Wall_008
+    100892: Prison_Doorway_Wall_009
+    100894: Prison_Doorway_Walls
+    100896: Prison_Floor_001
+    100898: Prison_Floor_0010
+    100900: Prison_Floor_0011
+    100902: Prison_Floor_0012
+    100904: Prison_Floor_0013
+    100906: Prison_Floor_0014
+    100908: Prison_Floor_0015
+    100910: Prison_Floor_0016
+    100912: Prison_Floor_0017
+    100914: Prison_Floor_0018
+    100916: Prison_Floor_0019
+    100918: Prison_Floor_002
+    100920: Prison_Floor_0020
+    100922: Prison_Floor_0021
+    100924: Prison_Floor_0022
+    100926: Prison_Floor_0023
+    100928: Prison_Floor_0024
+    100930: Prison_Floor_0025
+    100932: Prison_Floor_0026
+    100934: Prison_Floor_0027
+    100936: Prison_Floor_0028
+    100938: Prison_Floor_0029
+    100940: Prison_Floor_003
+    100942: Prison_Floor_0030
+    100944: Prison_Floor_0031
+    100946: Prison_Floor_0032
+    100948: Prison_Floor_0033
+    100950: Prison_Floor_0034
+    100952: Prison_Floor_0038
+    100954: Prison_Floor_0039
+    100956: Prison_Floor_004
+    100958: Prison_Floor_0040
+    100960: Prison_Floor_0041
+    100962: Prison_Floor_0042
+    100964: Prison_Floor_0043
+    100966: Prison_Floor_0044
+    100968: Prison_Floor_0045
+    100970: Prison_Floor_0046
+    100972: Prison_Floor_0047
+    100974: Prison_Floor_005
+    100976: Prison_Floor_006
+    100978: Prison_Floor_008
+    100980: Prison_Floor_009
+    100982: Prison_Floors
+    100984: Prison_Room_Wall_Floors
+    100986: Prison_SupportBars_001
+    100988: Prison_SupportBars_0010
+    100990: Prison_SupportBars_0010 1
+    100992: Prison_SupportBars_0010 2
+    100994: Prison_SupportBars_0010 3
+    100996: Prison_SupportBars_0011
+    100998: Prison_SupportBars_0011 1
+    101000: Prison_SupportBars_0011 2
+    101002: Prison_SupportBars_0011 3
+    101004: Prison_SupportBars_0012
+    101006: Prison_SupportBars_0012 1
+    101008: Prison_SupportBars_0012 2
+    101010: Prison_SupportBars_0012 3
+    101012: Prison_SupportBars_0013
+    101014: Prison_SupportBars_0013 1
+    101016: Prison_SupportBars_0013 2
+    101018: Prison_SupportBars_0013 3
+    101020: Prison_SupportBars_0014
+    101022: Prison_SupportBars_0014 1
+    101024: Prison_SupportBars_0014 2
+    101026: Prison_SupportBars_0014 3
+    101028: Prison_SupportBars_0015
+    101030: Prison_SupportBars_0015 1
+    101032: Prison_SupportBars_0015 2
+    101034: Prison_SupportBars_0015 3
+    101036: Prison_SupportBars_002
+    101038: Prison_SupportBars_003
+    101040: Prison_SupportBars_004
+    101042: Prison_SupportBars_006
+    101044: Prison_SupportBars_006 1
+    101046: Prison_SupportBars_006 2
+    101048: Prison_SupportBars_006 3
+    101050: Prison_SupportBars_007
+    101052: Prison_SupportBars_007 1
+    101054: Prison_SupportBars_007 2
+    101056: Prison_SupportBars_007 3
+    101058: Prison_SupportBars_008
+    101060: Prison_SupportBars_008 1
+    101062: Prison_SupportBars_008 2
+    101064: Prison_SupportBars_008 3
+    101066: Prison_SupportBars_009
+    101068: Prison_SupportBars_009 1
+    101070: Prison_SupportBars_009 2
+    101072: Prison_SupportBars_009 3
+    101074: Prison_UpperDoor_Wall_001
+    101076: Prison_UpperDoor_Wall_0010
+    101078: Prison_UpperDoor_Wall_0011
+    101080: Prison_UpperDoor_Wall_0012
+    101082: Prison_UpperDoor_Wall_0013
+    101084: Prison_UpperDoor_Wall_0014
+    101086: Prison_UpperDoor_Wall_0015
+    101088: Prison_UpperDoor_Wall_0016
+    101090: Prison_UpperDoor_Wall_0017
+    101092: Prison_UpperDoor_Wall_0018
+    101094: Prison_UpperDoor_Wall_0019
+    101096: Prison_UpperDoor_Wall_002
+    101098: Prison_UpperDoor_Wall_0020
+    101100: Prison_UpperDoor_Wall_0021
+    101102: Prison_UpperDoor_Wall_0022
+    101104: Prison_UpperDoor_Wall_0023
+    101106: Prison_UpperDoor_Wall_0024
+    101108: Prison_UpperDoor_Wall_0025
+    101110: Prison_UpperDoor_Wall_003
+    101112: Prison_UpperDoor_Wall_004
+    101114: Prison_UpperDoor_Wall_005
+    101116: Prison_UpperDoor_Wall_006
+    101118: Prison_UpperDoor_Wall_007
+    101120: Prison_UpperDoor_Wall_008
+    101122: Prison_UpperDoor_Wall_009
+    101124: Prison_UpperDoor_Walls
+    101126: Prison_Wall_001
+    101128: Prison_Wall_0010
+    101130: Prison_Wall_0011
+    101132: Prison_Wall_0012
+    101134: Prison_Wall_0013
+    101136: Prison_Wall_0014
+    101138: Prison_Wall_0015
+    101140: Prison_Wall_0016
+    101142: Prison_Wall_0017
+    101144: Prison_Wall_0018
+    101146: Prison_Wall_0019
+    101148: Prison_Wall_002
+    101150: Prison_Wall_0020
+    101152: Prison_Wall_0021
+    101154: Prison_Wall_0023
+    101156: Prison_Wall_0024
+    101158: Prison_Wall_0025
+    101160: Prison_Wall_0026
+    101162: Prison_Wall_0027
+    101164: Prison_Wall_003
+    101166: Prison_Wall_004
+    101168: Prison_Wall_005
+    101170: Prison_Wall_006
+    101172: Prison_Wall_007
+    101174: Prison_Wall_008
+    101176: Prison_Wall_009
+    101178: Prison_Walls
+    101180: //RootNode
+    101182: PrisonBars_001
+    101184: PrisonBars_002
+    101186: PrisonBars_003
+    101188: PrisonBars_004
+    101190: PrisonBars_005
+    101192: PrisonBars_006
+    101194: PrisonBars_007
+    101196: PrisonBars_008
+    101198: PrisonBars_009
+    101200: Room_assets
+    101202: Room_Dividers
+    101204: Secret_Room_01
+    101206: Secret_Room_02
+    101208: Secret_Room_03
+    101210: Secret_Room_04
+    101212: Secret_Room_05
+    101214: Secret_Rooms
+    101216: Secret_rooms
+    101218: Skirt_Ledge_001
+    101220: Skirt_Ledge_001 1
+    101222: Skirt_Ledge_002
+    101224: Skirt_Ledges
+    101226: Skirt_Ledges1
+    101228: TNT
+    101230: Tnt:pCylinder1
+    101232: Tnt:pCylinder10
+    101234: Tnt:pCylinder11
+    101236: Tnt:pCylinder12
+    101238: Tnt:pCylinder13
+    101240: Tnt:pCylinder14
+    101242: Tnt:pCylinder15
+    101244: Tnt:pCylinder16
+    101246: Tnt:pCylinder17
+    101248: Tnt:pCylinder18
+    101250: Tnt:pCylinder19
+    101252: Tnt:pCylinder2
+    101254: Tnt:pCylinder20
+    101256: Tnt:pCylinder21
+    101258: Tnt:pCylinder22
+    101260: Tnt:pCylinder3
+    101262: Tnt:pCylinder4
+    101264: Tnt:pCylinder5
+    101266: Tnt:pCylinder6
+    101268: Tnt:pCylinder7
+    101270: Tnt:pCylinder8
+    101272: Tnt:pCylinder9
+    101274: Tnt:TNT
+    101276: Tnt:TNT_Box
+    101278: TNT_Box
+    101280: TNT_Prefab
+    101282: TNT_Prefab1
+    101284: TNT_Prefabs
+    101286: Tower_01
+    101288: Tower_Floor_01
+    101290: Tower_Floor_02
+    101292: Walkway
+    101294: Walkway_01
+    101296: Walkway_02
+    101298: Wall_Skirt_001
+    101300: Wall_Skirt_001 1
+    101302: Wall_Skirt_002
+    101304: Wall_Skirts
+    101306: Wall_Skirts 1
+    101308: Wall_Skirts1
+    101310: Wooden_Platform_001
+    101312: Wooden_Platform_002
+    101314: Wooden_Platform_003
+    101316: Wooden_Platform_004
+    101318: Wooden_Platform_005
+    101320: Wooden_Platform_Prefabs
+    400000: ambientLight1
+    400002: bottom
+    400004: Bridge_Blocks
+    400006: Bridge_Blocks_001
+    400008: Bridge_Blocks_002
+    400010: Bridge_Blocks_003
+    400012: Bridge_Blocks_004
+    400014: Bridge_Blocks_005
+    400016: Bridge_Blocks_006
+    400018: Bridge_Models
+    400020: Bridge_Prefabs
+    400022: Divider_010
+    400024: Divider_0101
+    400026: Divider_0102
+    400028: Divider_0103
+    400030: Divider_0104
+    400032: Divider_0105
+    400034: Divider_0106
+    400036: Divider_0107
+    400038: Divider_0108
+    400040: Divider_0109
+    400042: Divider_011
+    400044: Divider_0110
+    400046: Divider_0111
+    400048: Divider_0112
+    400050: Divider_012
+    400052: Divider_013
+    400054: Divider_014
+    400056: Divider_016
+    400058: Divider_017
+    400060: Divider_019
+    400062: Divider_02
+    400064: Divider_020
+    400066: Divider_021
+    400068: Divider_026
+    400070: Divider_027
+    400072: Divider_03
+    400074: Divider_031
+    400076: Divider_032
+    400078: Divider_033
+    400080: Divider_034
+    400082: Divider_035
+    400084: Divider_036
+    400086: Divider_037
+    400088: Divider_038
+    400090: Divider_039
+    400092: Divider_040
+    400094: Divider_041
+    400096: Divider_042
+    400098: Divider_043
+    400100: Divider_044
+    400102: Divider_045
+    400104: Divider_046
+    400106: Divider_047
+    400108: Divider_048
+    400110: Divider_049
+    400112: Divider_05
+    400114: Divider_050
+    400116: Divider_052
+    400118: Divider_053
+    400120: Divider_054
+    400122: Divider_055
+    400124: Divider_056
+    400126: Divider_057
+    400128: Divider_058
+    400130: Divider_059
+    400132: Divider_06
+    400134: Divider_060
+    400136: Divider_061
+    400138: Divider_062
+    400140: Divider_063
+    400142: Divider_064
+    400144: Divider_065
+    400146: Divider_066
+    400148: Divider_067
+    400150: Divider_068
+    400152: Divider_069
+    400154: Divider_07
+    400156: Divider_070
+    400158: Divider_071
+    400160: Divider_072
+    400162: Divider_073
+    400164: Divider_074
+    400166: Divider_075
+    400168: Divider_076
+    400170: Divider_077
+    400172: Divider_078
+    400174: Divider_079
+    400176: Divider_08
+    400178: Divider_080
+    400180: Divider_081
+    400182: Divider_082
+    400184: Divider_083
+    400186: Divider_084
+    400188: Divider_085
+    400190: Divider_086
+    400192: Divider_087
+    400194: Divider_088
+    400196: Divider_089
+    400198: Divider_09
+    400200: Divider_090
+    400202: Divider_091
+    400204: Divider_092
+    400206: Divider_093
+    400208: Divider_094
+    400210: Divider_095
+    400212: Divider_096
+    400214: Divider_097
+    400216: Divider_098
+    400218: Door_Archway_001
+    400220: Door_Archway_0010
+    400222: Door_Archway_0011
+    400224: Door_Archway_0012
+    400226: Door_Archway_0013
+    400228: Door_Archway_0014
+    400230: Door_Archway_0015
+    400232: Door_Archway_0016
+    400234: Door_Archway_0017
+    400236: Door_Archway_0018
+    400238: Door_Archway_002
+    400240: Door_Archway_0020
+    400242: Door_Archway_0021
+    400244: Door_Archway_0022
+    400246: Door_Archway_0023
+    400248: Door_Archway_0024
+    400250: Door_Archway_0025
+    400252: Door_Archway_0026
+    400254: Door_Archway_0027
+    400256: Door_Archway_0028
+    400258: Door_Archway_0029
+    400260: Door_Archway_003
+    400262: Door_Archway_0030
+    400264: Door_Archway_0032
+    400266: Door_Archway_0033
+    400268: Door_Archway_0034
+    400270: Door_Archway_0035
+    400272: Door_Archway_0036
+    400274: Door_Archway_005
+    400276: Door_Archway_006
+    400278: Door_Archway_007
+    400280: Door_Archway_008
+    400282: Door_Archway_009
+    400284: Door_Archways
+    400286: Doorways
+    400288: Gold_Pile_002
+    400290: Gold_Pile_003
+    400292: Gold_Pile_004
+    400294: Gold_Pile_005
+    400296: Gold_Pile_006
+    400298: Gold_Pile_Prefabs
+    400300: Inner_Bridge_Cliffs_01
+    400302: Inner_Bridge_Sprites
+    400304: Inner_Ground_Model_01
+    400306: Inner_Ground_Model_02
+    400308: Inner_Ground_Model_03
+    400310: Inner_Ground_Models
+    400312: Inner_Ground_Secret_Room_01
+    400314: Inner_Ground_Secret_Room_02
+    400316: Inner_Ground_Secret_Room_03
+    400318: Inner_Ground_Secret_Room_04
+    400320: Inner_Ground_Secret_Room_05
+    400322: Inner_Tower_Model
+    400324: Outside_3D_Cliff_01
+    400326: Outside_3D_Cliff_02
+    400328: Outside_Bridge_01
+    400330: Outside_Bridge_02
+    400332: Outside_Bridge_03
+    400334: Outside_Bridge_04
+    400336: Outside_Bridge_BG
+    400338: Outside_Bridge_Rocks
+    400340: Outside_Bridge_Sprites
+    400342: Outside_Building_Model_01
+    400344: pCube1
+    400346: pCube1 1
+    400348: pCube1 2
+    400350: pCube1 3
+    400352: pCube1 4
+    400354: pCube10
+    400356: pCube10 1
+    400358: pCube10 2
+    400360: pCube10 3
+    400362: pCube10 4
+    400364: pCube11
+    400366: pCube11 1
+    400368: pCube11 2
+    400370: pCube11 3
+    400372: pCube11 4
+    400374: pCube12
+    400376: pCube12 1
+    400378: pCube12 2
+    400380: pCube12 3
+    400382: pCube12 4
+    400384: pCube13
+    400386: pCube13 1
+    400388: pCube13 2
+    400390: pCube13 3
+    400392: pCube13 4
+    400394: pCube14
+    400396: pCube14 1
+    400398: pCube14 2
+    400400: pCube14 3
+    400402: pCube14 4
+    400404: pCube15
+    400406: pCube15 1
+    400408: pCube15 2
+    400410: pCube15 3
+    400412: pCube15 4
+    400414: pCube16
+    400416: pCube16 1
+    400418: pCube16 2
+    400420: pCube16 3
+    400422: pCube16 4
+    400424: pCube17
+    400426: pCube17 1
+    400428: pCube17 2
+    400430: pCube17 3
+    400432: pCube17 4
+    400434: pCube18
+    400436: pCube18 1
+    400438: pCube18 2
+    400440: pCube18 3
+    400442: pCube18 4
+    400444: pCube19
+    400446: pCube19 1
+    400448: pCube19 2
+    400450: pCube19 3
+    400452: pCube19 4
+    400454: pCube2
+    400456: pCube2 1
+    400458: pCube2 2
+    400460: pCube2 3
+    400462: pCube2 4
+    400464: pCube3
+    400466: pCube3 1
+    400468: pCube3 2
+    400470: pCube3 3
+    400472: pCube3 4
+    400474: pCube5
+    400476: pCube5 1
+    400478: pCube5 2
+    400480: pCube5 3
+    400482: pCube5 4
+    400484: pCube6
+    400486: pCube6 1
+    400488: pCube6 2
+    400490: pCube6 3
+    400492: pCube6 4
+    400494: pCube7
+    400496: pCube7 1
+    400498: pCube7 2
+    400500: pCube7 3
+    400502: pCube7 4
+    400504: pCube8
+    400506: pCube8 1
+    400508: pCube8 2
+    400510: pCube8 3
+    400512: pCube8 4
+    400514: pCube9
+    400516: pCube9 1
+    400518: pCube9 2
+    400520: pCube9 3
+    400522: pCube9 4
+    400524: pCylinder1
+    400526: pCylinder10
+    400528: pCylinder11
+    400530: pCylinder12
+    400532: pCylinder13
+    400534: pCylinder14
+    400536: pCylinder15
+    400538: pCylinder16
+    400540: pCylinder17
+    400542: pCylinder18
+    400544: pCylinder19
+    400546: pCylinder2
+    400548: pCylinder20
+    400550: pCylinder21
+    400552: pCylinder22
+    400554: pCylinder3
+    400556: pCylinder4
+    400558: pCylinder5
+    400560: pCylinder6
+    400562: pCylinder7
+    400564: pCylinder8
+    400566: pCylinder9
+    400568: Pillars
+    400570: Pillars1
+    400572: Pillars_Sets
+    400574: Platform_01
+    400576: Platform_010
+    400578: Platform_011
+    400580: Platform_012
+    400582: Platform_014
+    400584: Platform_015
+    400586: Platform_016
+    400588: Platform_017
+    400590: Platform_018
+    400592: Platform_019
+    400594: Platform_02
+    400596: Platform_020
+    400598: Platform_021
+    400600: Platform_022
+    400602: Platform_023
+    400604: Platform_024
+    400606: Platform_025
+    400608: Platform_026
+    400610: Platform_027
+    400612: Platform_028
+    400614: Platform_029
+    400616: Platform_03
+    400618: Platform_030
+    400620: Platform_031
+    400622: Platform_032
+    400624: Platform_033
+    400626: Platform_034
+    400628: Platform_035
+    400630: Platform_036
+    400632: Platform_037
+    400634: Platform_04
+    400636: Platform_05
+    400638: Platform_06
+    400640: Platform_07
+    400642: Platform_08
+    400644: Platform_09
+    400646: Platforms
+    400648: pointLight1
+    400650: pointLight2
+    400652: pointLight3
+    400654: pointLight4
+    400656: polySurface_01
+    400658: polySurface_010
+    400660: polySurface_011
+    400662: polySurface_012
+    400664: polySurface_02
+    400666: polySurface_03
+    400668: polySurface_04
+    400670: polySurface_05
+    400672: polySurface_06
+    400674: polySurface_07
+    400676: polySurface_08
+    400678: polySurface_09
+    400680: Prison_Back_Wall_001
+    400682: Prison_Back_Wall_0010
+    400684: Prison_Back_Wall_0011
+    400686: Prison_Back_Wall_0012
+    400688: Prison_Back_Wall_0013
+    400690: Prison_Back_Wall_0014
+    400692: Prison_Back_Wall_0015
+    400694: Prison_Back_Wall_0016
+    400696: Prison_Back_Wall_0017
+    400698: Prison_Back_Wall_0018
+    400700: Prison_Back_Wall_0019
+    400702: Prison_Back_Wall_002
+    400704: Prison_Back_Wall_0020
+    400706: Prison_Back_Wall_0021
+    400708: Prison_Back_Wall_0022
+    400710: Prison_Back_Wall_0023
+    400712: Prison_Back_Wall_0024
+    400714: Prison_Back_Wall_0026
+    400716: Prison_Back_Wall_0027
+    400718: Prison_Back_Wall_0028
+    400720: Prison_Back_Wall_0029
+    400722: Prison_Back_Wall_003
+    400724: Prison_Back_Wall_0030
+    400726: Prison_Back_Wall_005
+    400728: Prison_Back_Wall_006
+    400730: Prison_Back_Wall_007
+    400732: Prison_Back_Wall_008
+    400734: Prison_Back_Wall_009
+    400736: Prison_Back_Walls
+    400738: Prison_Bar_Prefabs
+    400740: Prison_Bars_001
+    400742: Prison_Bars_002
+    400744: Prison_Bars_002 1
+    400746: Prison_Bars_002 2
+    400748: Prison_Bars_002 3
+    400750: Prison_Bars_003
+    400752: Prison_Bars_003 1
+    400754: Prison_Bars_003 2
+    400756: Prison_Bars_003 3
+    400758: Prison_Door_Wall_001
+    400760: Prison_Door_Wall_0010
+    400762: Prison_Door_Wall_0011
+    400764: Prison_Door_Wall_0012
+    400766: Prison_Door_Wall_0013
+    400768: Prison_Door_Wall_0014
+    400770: Prison_Door_Wall_0015
+    400772: Prison_Door_Wall_0016
+    400774: Prison_Door_Wall_0017
+    400776: Prison_Door_Wall_0018
+    400778: Prison_Door_Wall_0019
+    400780: Prison_Door_Wall_002
+    400782: Prison_Door_Wall_0020
+    400784: Prison_Door_Wall_0021
+    400786: Prison_Door_Wall_0022
+    400788: Prison_Door_Wall_0023
+    400790: Prison_Door_Wall_0024
+    400792: Prison_Door_Wall_0025
+    400794: Prison_Door_Wall_0026
+    400796: Prison_Door_Wall_0027
+    400798: Prison_Door_Wall_0028
+    400800: Prison_Door_Wall_0029
+    400802: Prison_Door_Wall_003
+    400804: Prison_Door_Wall_0031
+    400806: Prison_Door_Wall_0032
+    400808: Prison_Door_Wall_0033
+    400810: Prison_Door_Wall_0034
+    400812: Prison_Door_Wall_0035
+    400814: Prison_Door_Wall_004
+    400816: Prison_Door_Wall_005
+    400818: Prison_Door_Wall_006
+    400820: Prison_Door_Wall_007
+    400822: Prison_Door_Wall_008
+    400824: Prison_Door_Wall_009
+    400826: Prison_Door_Walls
+    400828: Prison_Doorway_Wall_001
+    400830: Prison_Doorway_Wall_0010
+    400832: Prison_Doorway_Wall_0011
+    400834: Prison_Doorway_Wall_0012
+    400836: Prison_Doorway_Wall_0013
+    400838: Prison_Doorway_Wall_0014
+    400840: Prison_Doorway_Wall_0015
+    400842: Prison_Doorway_Wall_0016
+    400844: Prison_Doorway_Wall_0017
+    400846: Prison_Doorway_Wall_0018
+    400848: Prison_Doorway_Wall_002
+    400850: Prison_Doorway_Wall_0020
+    400852: Prison_Doorway_Wall_0021
+    400854: Prison_Doorway_Wall_0022
+    400856: Prison_Doorway_Wall_0023
+    400858: Prison_Doorway_Wall_0024
+    400860: Prison_Doorway_Wall_0025
+    400862: Prison_Doorway_Wall_0026
+    400864: Prison_Doorway_Wall_0027
+    400866: Prison_Doorway_Wall_0028
+    400868: Prison_Doorway_Wall_0029
+    400870: Prison_Doorway_Wall_003
+    400872: Prison_Doorway_Wall_0030
+    400874: Prison_Doorway_Wall_0032
+    400876: Prison_Doorway_Wall_0033
+    400878: Prison_Doorway_Wall_0034
+    400880: Prison_Doorway_Wall_0035
+    400882: Prison_Doorway_Wall_0036
+    400884: Prison_Doorway_Wall_005
+    400886: Prison_Doorway_Wall_006
+    400888: Prison_Doorway_Wall_007
+    400890: Prison_Doorway_Wall_008
+    400892: Prison_Doorway_Wall_009
+    400894: Prison_Doorway_Walls
+    400896: Prison_Floor_001
+    400898: Prison_Floor_0010
+    400900: Prison_Floor_0011
+    400902: Prison_Floor_0012
+    400904: Prison_Floor_0013
+    400906: Prison_Floor_0014
+    400908: Prison_Floor_0015
+    400910: Prison_Floor_0016
+    400912: Prison_Floor_0017
+    400914: Prison_Floor_0018
+    400916: Prison_Floor_0019
+    400918: Prison_Floor_002
+    400920: Prison_Floor_0020
+    400922: Prison_Floor_0021
+    400924: Prison_Floor_0022
+    400926: Prison_Floor_0023
+    400928: Prison_Floor_0024
+    400930: Prison_Floor_0025
+    400932: Prison_Floor_0026
+    400934: Prison_Floor_0027
+    400936: Prison_Floor_0028
+    400938: Prison_Floor_0029
+    400940: Prison_Floor_003
+    400942: Prison_Floor_0030
+    400944: Prison_Floor_0031
+    400946: Prison_Floor_0032
+    400948: Prison_Floor_0033
+    400950: Prison_Floor_0034
+    400952: Prison_Floor_0038
+    400954: Prison_Floor_0039
+    400956: Prison_Floor_004
+    400958: Prison_Floor_0040
+    400960: Prison_Floor_0041
+    400962: Prison_Floor_0042
+    400964: Prison_Floor_0043
+    400966: Prison_Floor_0044
+    400968: Prison_Floor_0045
+    400970: Prison_Floor_0046
+    400972: Prison_Floor_0047
+    400974: Prison_Floor_005
+    400976: Prison_Floor_006
+    400978: Prison_Floor_008
+    400980: Prison_Floor_009
+    400982: Prison_Floors
+    400984: Prison_Room_Wall_Floors
+    400986: Prison_SupportBars_001
+    400988: Prison_SupportBars_0010
+    400990: Prison_SupportBars_0010 1
+    400992: Prison_SupportBars_0010 2
+    400994: Prison_SupportBars_0010 3
+    400996: Prison_SupportBars_0011
+    400998: Prison_SupportBars_0011 1
+    401000: Prison_SupportBars_0011 2
+    401002: Prison_SupportBars_0011 3
+    401004: Prison_SupportBars_0012
+    401006: Prison_SupportBars_0012 1
+    401008: Prison_SupportBars_0012 2
+    401010: Prison_SupportBars_0012 3
+    401012: Prison_SupportBars_0013
+    401014: Prison_SupportBars_0013 1
+    401016: Prison_SupportBars_0013 2
+    401018: Prison_SupportBars_0013 3
+    401020: Prison_SupportBars_0014
+    401022: Prison_SupportBars_0014 1
+    401024: Prison_SupportBars_0014 2
+    401026: Prison_SupportBars_0014 3
+    401028: Prison_SupportBars_0015
+    401030: Prison_SupportBars_0015 1
+    401032: Prison_SupportBars_0015 2
+    401034: Prison_SupportBars_0015 3
+    401036: Prison_SupportBars_002
+    401038: Prison_SupportBars_003
+    401040: Prison_SupportBars_004
+    401042: Prison_SupportBars_006
+    401044: Prison_SupportBars_006 1
+    401046: Prison_SupportBars_006 2
+    401048: Prison_SupportBars_006 3
+    401050: Prison_SupportBars_007
+    401052: Prison_SupportBars_007 1
+    401054: Prison_SupportBars_007 2
+    401056: Prison_SupportBars_007 3
+    401058: Prison_SupportBars_008
+    401060: Prison_SupportBars_008 1
+    401062: Prison_SupportBars_008 2
+    401064: Prison_SupportBars_008 3
+    401066: Prison_SupportBars_009
+    401068: Prison_SupportBars_009 1
+    401070: Prison_SupportBars_009 2
+    401072: Prison_SupportBars_009 3
+    401074: Prison_UpperDoor_Wall_001
+    401076: Prison_UpperDoor_Wall_0010
+    401078: Prison_UpperDoor_Wall_0011
+    401080: Prison_UpperDoor_Wall_0012
+    401082: Prison_UpperDoor_Wall_0013
+    401084: Prison_UpperDoor_Wall_0014
+    401086: Prison_UpperDoor_Wall_0015
+    401088: Prison_UpperDoor_Wall_0016
+    401090: Prison_UpperDoor_Wall_0017
+    401092: Prison_UpperDoor_Wall_0018
+    401094: Prison_UpperDoor_Wall_0019
+    401096: Prison_UpperDoor_Wall_002
+    401098: Prison_UpperDoor_Wall_0020
+    401100: Prison_UpperDoor_Wall_0021
+    401102: Prison_UpperDoor_Wall_0022
+    401104: Prison_UpperDoor_Wall_0023
+    401106: Prison_UpperDoor_Wall_0024
+    401108: Prison_UpperDoor_Wall_0025
+    401110: Prison_UpperDoor_Wall_003
+    401112: Prison_UpperDoor_Wall_004
+    401114: Prison_UpperDoor_Wall_005
+    401116: Prison_UpperDoor_Wall_006
+    401118: Prison_UpperDoor_Wall_007
+    401120: Prison_UpperDoor_Wall_008
+    401122: Prison_UpperDoor_Wall_009
+    401124: Prison_UpperDoor_Walls
+    401126: Prison_Wall_001
+    401128: Prison_Wall_0010
+    401130: Prison_Wall_0011
+    401132: Prison_Wall_0012
+    401134: Prison_Wall_0013
+    401136: Prison_Wall_0014
+    401138: Prison_Wall_0015
+    401140: Prison_Wall_0016
+    401142: Prison_Wall_0017
+    401144: Prison_Wall_0018
+    401146: Prison_Wall_0019
+    401148: Prison_Wall_002
+    401150: Prison_Wall_0020
+    401152: Prison_Wall_0021
+    401154: Prison_Wall_0023
+    401156: Prison_Wall_0024
+    401158: Prison_Wall_0025
+    401160: Prison_Wall_0026
+    401162: Prison_Wall_0027
+    401164: Prison_Wall_003
+    401166: Prison_Wall_004
+    401168: Prison_Wall_005
+    401170: Prison_Wall_006
+    401172: Prison_Wall_007
+    401174: Prison_Wall_008
+    401176: Prison_Wall_009
+    401178: Prison_Walls
+    401180: //RootNode
+    401182: PrisonBars_001
+    401184: PrisonBars_002
+    401186: PrisonBars_003
+    401188: PrisonBars_004
+    401190: PrisonBars_005
+    401192: PrisonBars_006
+    401194: PrisonBars_007
+    401196: PrisonBars_008
+    401198: PrisonBars_009
+    401200: Room_assets
+    401202: Room_Dividers
+    401204: Secret_Room_01
+    401206: Secret_Room_02
+    401208: Secret_Room_03
+    401210: Secret_Room_04
+    401212: Secret_Room_05
+    401214: Secret_Rooms
+    401216: Secret_rooms
+    401218: Skirt_Ledge_001
+    401220: Skirt_Ledge_001 1
+    401222: Skirt_Ledge_002
+    401224: Skirt_Ledges
+    401226: Skirt_Ledges1
+    401228: TNT
+    401230: Tnt:pCylinder1
+    401232: Tnt:pCylinder10
+    401234: Tnt:pCylinder11
+    401236: Tnt:pCylinder12
+    401238: Tnt:pCylinder13
+    401240: Tnt:pCylinder14
+    401242: Tnt:pCylinder15
+    401244: Tnt:pCylinder16
+    401246: Tnt:pCylinder17
+    401248: Tnt:pCylinder18
+    401250: Tnt:pCylinder19
+    401252: Tnt:pCylinder2
+    401254: Tnt:pCylinder20
+    401256: Tnt:pCylinder21
+    401258: Tnt:pCylinder22
+    401260: Tnt:pCylinder3
+    401262: Tnt:pCylinder4
+    401264: Tnt:pCylinder5
+    401266: Tnt:pCylinder6
+    401268: Tnt:pCylinder7
+    401270: Tnt:pCylinder8
+    401272: Tnt:pCylinder9
+    401274: Tnt:TNT
+    401276: Tnt:TNT_Box
+    401278: TNT_Box
+    401280: TNT_Prefab
+    401282: TNT_Prefab1
+    401284: TNT_Prefabs
+    401286: Tower_01
+    401288: Tower_Floor_01
+    401290: Tower_Floor_02
+    401292: Walkway
+    401294: Walkway_01
+    401296: Walkway_02
+    401298: Wall_Skirt_001
+    401300: Wall_Skirt_001 1
+    401302: Wall_Skirt_002
+    401304: Wall_Skirts
+    401306: Wall_Skirts 1
+    401308: Wall_Skirts1
+    401310: Wooden_Platform_001
+    401312: Wooden_Platform_002
+    401314: Wooden_Platform_003
+    401316: Wooden_Platform_004
+    401318: Wooden_Platform_005
+    401320: Wooden_Platform_Prefabs
+    2300000: Bridge_Blocks_001
+    2300002: Bridge_Blocks_002
+    2300004: Bridge_Blocks_003
+    2300006: Bridge_Blocks_004
+    2300008: Bridge_Blocks_005
+    2300010: Bridge_Blocks_006
+    2300012: Divider_010
+    2300014: Divider_0101
+    2300016: Divider_0102
+    2300018: Divider_0103
+    2300020: Divider_0104
+    2300022: Divider_0105
+    2300024: Divider_0106
+    2300026: Divider_0107
+    2300028: Divider_0108
+    2300030: Divider_0109
+    2300032: Divider_011
+    2300034: Divider_0110
+    2300036: Divider_0111
+    2300038: Divider_0112
+    2300040: Divider_012
+    2300042: Divider_013
+    2300044: Divider_014
+    2300046: Divider_016
+    2300048: Divider_017
+    2300050: Divider_019
+    2300052: Divider_02
+    2300054: Divider_020
+    2300056: Divider_021
+    2300058: Divider_026
+    2300060: Divider_027
+    2300062: Divider_03
+    2300064: Divider_031
+    2300066: Divider_032
+    2300068: Divider_033
+    2300070: Divider_034
+    2300072: Divider_035
+    2300074: Divider_036
+    2300076: Divider_037
+    2300078: Divider_038
+    2300080: Divider_039
+    2300082: Divider_040
+    2300084: Divider_041
+    2300086: Divider_042
+    2300088: Divider_043
+    2300090: Divider_044
+    2300092: Divider_045
+    2300094: Divider_046
+    2300096: Divider_047
+    2300098: Divider_048
+    2300100: Divider_049
+    2300102: Divider_05
+    2300104: Divider_050
+    2300106: Divider_052
+    2300108: Divider_053
+    2300110: Divider_054
+    2300112: Divider_055
+    2300114: Divider_056
+    2300116: Divider_057
+    2300118: Divider_058
+    2300120: Divider_059
+    2300122: Divider_06
+    2300124: Divider_060
+    2300126: Divider_061
+    2300128: Divider_062
+    2300130: Divider_063
+    2300132: Divider_064
+    2300134: Divider_065
+    2300136: Divider_066
+    2300138: Divider_067
+    2300140: Divider_068
+    2300142: Divider_069
+    2300144: Divider_07
+    2300146: Divider_070
+    2300148: Divider_071
+    2300150: Divider_072
+    2300152: Divider_073
+    2300154: Divider_074
+    2300156: Divider_075
+    2300158: Divider_076
+    2300160: Divider_077
+    2300162: Divider_078
+    2300164: Divider_079
+    2300166: Divider_08
+    2300168: Divider_080
+    2300170: Divider_081
+    2300172: Divider_082
+    2300174: Divider_083
+    2300176: Divider_084
+    2300178: Divider_085
+    2300180: Divider_086
+    2300182: Divider_087
+    2300184: Divider_088
+    2300186: Divider_089
+    2300188: Divider_09
+    2300190: Divider_090
+    2300192: Divider_091
+    2300194: Divider_092
+    2300196: Divider_093
+    2300198: Divider_094
+    2300200: Divider_095
+    2300202: Divider_096
+    2300204: Divider_097
+    2300206: Divider_098
+    2300208: Door_Archway_001
+    2300210: Door_Archway_0010
+    2300212: Door_Archway_0011
+    2300214: Door_Archway_0012
+    2300216: Door_Archway_0013
+    2300218: Door_Archway_0014
+    2300220: Door_Archway_0015
+    2300222: Door_Archway_0016
+    2300224: Door_Archway_0017
+    2300226: Door_Archway_0018
+    2300228: Door_Archway_002
+    2300230: Door_Archway_0020
+    2300232: Door_Archway_0021
+    2300234: Door_Archway_0022
+    2300236: Door_Archway_0023
+    2300238: Door_Archway_0024
+    2300240: Door_Archway_0025
+    2300242: Door_Archway_0026
+    2300244: Door_Archway_0027
+    2300246: Door_Archway_0028
+    2300248: Door_Archway_0029
+    2300250: Door_Archway_003
+    2300252: Door_Archway_0030
+    2300254: Door_Archway_0032
+    2300256: Door_Archway_0033
+    2300258: Door_Archway_0034
+    2300260: Door_Archway_0035
+    2300262: Door_Archway_0036
+    2300264: Door_Archway_005
+    2300266: Door_Archway_006
+    2300268: Door_Archway_007
+    2300270: Door_Archway_008
+    2300272: Door_Archway_009
+    2300274: Gold_Pile_002
+    2300276: Gold_Pile_003
+    2300278: Gold_Pile_004
+    2300280: Gold_Pile_005
+    2300282: Gold_Pile_006
+    2300284: Inner_Bridge_Cliffs_01
+    2300286: Inner_Ground_Model_01
+    2300288: Inner_Ground_Model_02
+    2300290: Inner_Ground_Model_03
+    2300292: Inner_Ground_Secret_Room_01
+    2300294: Inner_Ground_Secret_Room_02
+    2300296: Inner_Ground_Secret_Room_03
+    2300298: Inner_Ground_Secret_Room_04
+    2300300: Inner_Ground_Secret_Room_05
+    2300302: Outside_3D_Cliff_01
+    2300304: Outside_3D_Cliff_02
+    2300306: Outside_Bridge_01
+    2300308: Outside_Bridge_02
+    2300310: Outside_Bridge_03
+    2300312: Outside_Bridge_04
+    2300314: Outside_Bridge_BG
+    2300316: Outside_Bridge_Rocks
+    2300318: Outside_Building_Model_01
+    2300320: pCube1
+    2300322: pCube1 1
+    2300324: pCube1 2
+    2300326: pCube1 3
+    2300328: pCube1 4
+    2300330: pCube10
+    2300332: pCube10 1
+    2300334: pCube10 2
+    2300336: pCube10 3
+    2300338: pCube10 4
+    2300340: pCube11
+    2300342: pCube11 1
+    2300344: pCube11 2
+    2300346: pCube11 3
+    2300348: pCube11 4
+    2300350: pCube12
+    2300352: pCube12 1
+    2300354: pCube12 2
+    2300356: pCube12 3
+    2300358: pCube12 4
+    2300360: pCube13
+    2300362: pCube13 1
+    2300364: pCube13 2
+    2300366: pCube13 3
+    2300368: pCube13 4
+    2300370: pCube14
+    2300372: pCube14 1
+    2300374: pCube14 2
+    2300376: pCube14 3
+    2300378: pCube14 4
+    2300380: pCube15
+    2300382: pCube15 1
+    2300384: pCube15 2
+    2300386: pCube15 3
+    2300388: pCube15 4
+    2300390: pCube16
+    2300392: pCube16 1
+    2300394: pCube16 2
+    2300396: pCube16 3
+    2300398: pCube16 4
+    2300400: pCube17
+    2300402: pCube17 1
+    2300404: pCube17 2
+    2300406: pCube17 3
+    2300408: pCube17 4
+    2300410: pCube18
+    2300412: pCube18 1
+    2300414: pCube18 2
+    2300416: pCube18 3
+    2300418: pCube18 4
+    2300420: pCube19
+    2300422: pCube19 1
+    2300424: pCube19 2
+    2300426: pCube19 3
+    2300428: pCube19 4
+    2300430: pCube2
+    2300432: pCube2 1
+    2300434: pCube2 2
+    2300436: pCube2 3
+    2300438: pCube2 4
+    2300440: pCube3
+    2300442: pCube3 1
+    2300444: pCube3 2
+    2300446: pCube3 3
+    2300448: pCube3 4
+    2300450: pCube5
+    2300452: pCube5 1
+    2300454: pCube5 2
+    2300456: pCube5 3
+    2300458: pCube5 4
+    2300460: pCube6
+    2300462: pCube6 1
+    2300464: pCube6 2
+    2300466: pCube6 3
+    2300468: pCube6 4
+    2300470: pCube7
+    2300472: pCube7 1
+    2300474: pCube7 2
+    2300476: pCube7 3
+    2300478: pCube7 4
+    2300480: pCube8
+    2300482: pCube8 1
+    2300484: pCube8 2
+    2300486: pCube8 3
+    2300488: pCube8 4
+    2300490: pCube9
+    2300492: pCube9 1
+    2300494: pCube9 2
+    2300496: pCube9 3
+    2300498: pCube9 4
+    2300500: pCylinder1
+    2300502: pCylinder10
+    2300504: pCylinder11
+    2300506: pCylinder12
+    2300508: pCylinder13
+    2300510: pCylinder14
+    2300512: pCylinder15
+    2300514: pCylinder16
+    2300516: pCylinder17
+    2300518: pCylinder18
+    2300520: pCylinder19
+    2300522: pCylinder2
+    2300524: pCylinder20
+    2300526: pCylinder21
+    2300528: pCylinder22
+    2300530: pCylinder3
+    2300532: pCylinder4
+    2300534: pCylinder5
+    2300536: pCylinder6
+    2300538: pCylinder7
+    2300540: pCylinder8
+    2300542: pCylinder9
+    2300544: Pillars
+    2300546: Pillars1
+    2300548: Platform_01
+    2300550: Platform_010
+    2300552: Platform_011
+    2300554: Platform_012
+    2300556: Platform_014
+    2300558: Platform_015
+    2300560: Platform_016
+    2300562: Platform_017
+    2300564: Platform_018
+    2300566: Platform_019
+    2300568: Platform_02
+    2300570: Platform_020
+    2300572: Platform_021
+    2300574: Platform_022
+    2300576: Platform_023
+    2300578: Platform_024
+    2300580: Platform_025
+    2300582: Platform_026
+    2300584: Platform_027
+    2300586: Platform_028
+    2300588: Platform_029
+    2300590: Platform_03
+    2300592: Platform_030
+    2300594: Platform_031
+    2300596: Platform_032
+    2300598: Platform_033
+    2300600: Platform_034
+    2300602: Platform_035
+    2300604: Platform_036
+    2300606: Platform_037
+    2300608: Platform_04
+    2300610: Platform_05
+    2300612: Platform_06
+    2300614: Platform_07
+    2300616: Platform_08
+    2300618: Platform_09
+    2300620: polySurface_01
+    2300622: polySurface_010
+    2300624: polySurface_011
+    2300626: polySurface_012
+    2300628: polySurface_02
+    2300630: polySurface_03
+    2300632: polySurface_04
+    2300634: polySurface_05
+    2300636: polySurface_06
+    2300638: polySurface_07
+    2300640: polySurface_08
+    2300642: polySurface_09
+    2300644: Prison_Back_Wall_001
+    2300646: Prison_Back_Wall_0010
+    2300648: Prison_Back_Wall_0011
+    2300650: Prison_Back_Wall_0012
+    2300652: Prison_Back_Wall_0013
+    2300654: Prison_Back_Wall_0014
+    2300656: Prison_Back_Wall_0015
+    2300658: Prison_Back_Wall_0016
+    2300660: Prison_Back_Wall_0017
+    2300662: Prison_Back_Wall_0018
+    2300664: Prison_Back_Wall_0019
+    2300666: Prison_Back_Wall_002
+    2300668: Prison_Back_Wall_0020
+    2300670: Prison_Back_Wall_0021
+    2300672: Prison_Back_Wall_0022
+    2300674: Prison_Back_Wall_0023
+    2300676: Prison_Back_Wall_0024
+    2300678: Prison_Back_Wall_0026
+    2300680: Prison_Back_Wall_0027
+    2300682: Prison_Back_Wall_0028
+    2300684: Prison_Back_Wall_0029
+    2300686: Prison_Back_Wall_003
+    2300688: Prison_Back_Wall_0030
+    2300690: Prison_Back_Wall_005
+    2300692: Prison_Back_Wall_006
+    2300694: Prison_Back_Wall_007
+    2300696: Prison_Back_Wall_008
+    2300698: Prison_Back_Wall_009
+    2300700: Prison_Bars_001
+    2300702: Prison_Bars_002
+    2300704: Prison_Bars_002 1
+    2300706: Prison_Bars_002 2
+    2300708: Prison_Bars_002 3
+    2300710: Prison_Bars_003
+    2300712: Prison_Bars_003 1
+    2300714: Prison_Bars_003 2
+    2300716: Prison_Bars_003 3
+    2300718: Prison_Door_Wall_001
+    2300720: Prison_Door_Wall_0010
+    2300722: Prison_Door_Wall_0011
+    2300724: Prison_Door_Wall_0012
+    2300726: Prison_Door_Wall_0013
+    2300728: Prison_Door_Wall_0014
+    2300730: Prison_Door_Wall_0015
+    2300732: Prison_Door_Wall_0016
+    2300734: Prison_Door_Wall_0017
+    2300736: Prison_Door_Wall_0018
+    2300738: Prison_Door_Wall_0019
+    2300740: Prison_Door_Wall_002
+    2300742: Prison_Door_Wall_0020
+    2300744: Prison_Door_Wall_0021
+    2300746: Prison_Door_Wall_0022
+    2300748: Prison_Door_Wall_0023
+    2300750: Prison_Door_Wall_0024
+    2300752: Prison_Door_Wall_0025
+    2300754: Prison_Door_Wall_0026
+    2300756: Prison_Door_Wall_0027
+    2300758: Prison_Door_Wall_0028
+    2300760: Prison_Door_Wall_0029
+    2300762: Prison_Door_Wall_003
+    2300764: Prison_Door_Wall_0031
+    2300766: Prison_Door_Wall_0032
+    2300768: Prison_Door_Wall_0033
+    2300770: Prison_Door_Wall_0034
+    2300772: Prison_Door_Wall_0035
+    2300774: Prison_Door_Wall_004
+    2300776: Prison_Door_Wall_005
+    2300778: Prison_Door_Wall_006
+    2300780: Prison_Door_Wall_007
+    2300782: Prison_Door_Wall_008
+    2300784: Prison_Door_Wall_009
+    2300786: Prison_Doorway_Wall_001
+    2300788: Prison_Doorway_Wall_0010
+    2300790: Prison_Doorway_Wall_0011
+    2300792: Prison_Doorway_Wall_0012
+    2300794: Prison_Doorway_Wall_0013
+    2300796: Prison_Doorway_Wall_0014
+    2300798: Prison_Doorway_Wall_0015
+    2300800: Prison_Doorway_Wall_0016
+    2300802: Prison_Doorway_Wall_0017
+    2300804: Prison_Doorway_Wall_0018
+    2300806: Prison_Doorway_Wall_002
+    2300808: Prison_Doorway_Wall_0020
+    2300810: Prison_Doorway_Wall_0021
+    2300812: Prison_Doorway_Wall_0022
+    2300814: Prison_Doorway_Wall_0023
+    2300816: Prison_Doorway_Wall_0024
+    2300818: Prison_Doorway_Wall_0025
+    2300820: Prison_Doorway_Wall_0026
+    2300822: Prison_Doorway_Wall_0027
+    2300824: Prison_Doorway_Wall_0028
+    2300826: Prison_Doorway_Wall_0029
+    2300828: Prison_Doorway_Wall_003
+    2300830: Prison_Doorway_Wall_0030
+    2300832: Prison_Doorway_Wall_0032
+    2300834: Prison_Doorway_Wall_0033
+    2300836: Prison_Doorway_Wall_0034
+    2300838: Prison_Doorway_Wall_0035
+    2300840: Prison_Doorway_Wall_0036
+    2300842: Prison_Doorway_Wall_005
+    2300844: Prison_Doorway_Wall_006
+    2300846: Prison_Doorway_Wall_007
+    2300848: Prison_Doorway_Wall_008
+    2300850: Prison_Doorway_Wall_009
+    2300852: Prison_Floor_001
+    2300854: Prison_Floor_0010
+    2300856: Prison_Floor_0011
+    2300858: Prison_Floor_0012
+    2300860: Prison_Floor_0013
+    2300862: Prison_Floor_0014
+    2300864: Prison_Floor_0015
+    2300866: Prison_Floor_0016
+    2300868: Prison_Floor_0017
+    2300870: Prison_Floor_0018
+    2300872: Prison_Floor_0019
+    2300874: Prison_Floor_002
+    2300876: Prison_Floor_0020
+    2300878: Prison_Floor_0021
+    2300880: Prison_Floor_0022
+    2300882: Prison_Floor_0023
+    2300884: Prison_Floor_0024
+    2300886: Prison_Floor_0025
+    2300888: Prison_Floor_0026
+    2300890: Prison_Floor_0027
+    2300892: Prison_Floor_0028
+    2300894: Prison_Floor_0029
+    2300896: Prison_Floor_003
+    2300898: Prison_Floor_0030
+    2300900: Prison_Floor_0031
+    2300902: Prison_Floor_0032
+    2300904: Prison_Floor_0033
+    2300906: Prison_Floor_0034
+    2300908: Prison_Floor_0038
+    2300910: Prison_Floor_0039
+    2300912: Prison_Floor_004
+    2300914: Prison_Floor_0040
+    2300916: Prison_Floor_0041
+    2300918: Prison_Floor_0042
+    2300920: Prison_Floor_0043
+    2300922: Prison_Floor_0044
+    2300924: Prison_Floor_0045
+    2300926: Prison_Floor_0046
+    2300928: Prison_Floor_0047
+    2300930: Prison_Floor_005
+    2300932: Prison_Floor_006
+    2300934: Prison_Floor_008
+    2300936: Prison_Floor_009
+    2300938: Prison_SupportBars_001
+    2300940: Prison_SupportBars_0010
+    2300942: Prison_SupportBars_0010 1
+    2300944: Prison_SupportBars_0010 2
+    2300946: Prison_SupportBars_0010 3
+    2300948: Prison_SupportBars_0011
+    2300950: Prison_SupportBars_0011 1
+    2300952: Prison_SupportBars_0011 2
+    2300954: Prison_SupportBars_0011 3
+    2300956: Prison_SupportBars_0012
+    2300958: Prison_SupportBars_0012 1
+    2300960: Prison_SupportBars_0012 2
+    2300962: Prison_SupportBars_0012 3
+    2300964: Prison_SupportBars_0013
+    2300966: Prison_SupportBars_0013 1
+    2300968: Prison_SupportBars_0013 2
+    2300970: Prison_SupportBars_0013 3
+    2300972: Prison_SupportBars_0014
+    2300974: Prison_SupportBars_0014 1
+    2300976: Prison_SupportBars_0014 2
+    2300978: Prison_SupportBars_0014 3
+    2300980: Prison_SupportBars_0015
+    2300982: Prison_SupportBars_0015 1
+    2300984: Prison_SupportBars_0015 2
+    2300986: Prison_SupportBars_0015 3
+    2300988: Prison_SupportBars_002
+    2300990: Prison_SupportBars_003
+    2300992: Prison_SupportBars_004
+    2300994: Prison_SupportBars_006
+    2300996: Prison_SupportBars_006 1
+    2300998: Prison_SupportBars_006 2
+    2301000: Prison_SupportBars_006 3
+    2301002: Prison_SupportBars_007
+    2301004: Prison_SupportBars_007 1
+    2301006: Prison_SupportBars_007 2
+    2301008: Prison_SupportBars_007 3
+    2301010: Prison_SupportBars_008
+    2301012: Prison_SupportBars_008 1
+    2301014: Prison_SupportBars_008 2
+    2301016: Prison_SupportBars_008 3
+    2301018: Prison_SupportBars_009
+    2301020: Prison_SupportBars_009 1
+    2301022: Prison_SupportBars_009 2
+    2301024: Prison_SupportBars_009 3
+    2301026: Prison_UpperDoor_Wall_001
+    2301028: Prison_UpperDoor_Wall_0010
+    2301030: Prison_UpperDoor_Wall_0011
+    2301032: Prison_UpperDoor_Wall_0012
+    2301034: Prison_UpperDoor_Wall_0013
+    2301036: Prison_UpperDoor_Wall_0014
+    2301038: Prison_UpperDoor_Wall_0015
+    2301040: Prison_UpperDoor_Wall_0016
+    2301042: Prison_UpperDoor_Wall_0017
+    2301044: Prison_UpperDoor_Wall_0018
+    2301046: Prison_UpperDoor_Wall_0019
+    2301048: Prison_UpperDoor_Wall_002
+    2301050: Prison_UpperDoor_Wall_0020
+    2301052: Prison_UpperDoor_Wall_0021
+    2301054: Prison_UpperDoor_Wall_0022
+    2301056: Prison_UpperDoor_Wall_0023
+    2301058: Prison_UpperDoor_Wall_0024
+    2301060: Prison_UpperDoor_Wall_0025
+    2301062: Prison_UpperDoor_Wall_003
+    2301064: Prison_UpperDoor_Wall_004
+    2301066: Prison_UpperDoor_Wall_005
+    2301068: Prison_UpperDoor_Wall_006
+    2301070: Prison_UpperDoor_Wall_007
+    2301072: Prison_UpperDoor_Wall_008
+    2301074: Prison_UpperDoor_Wall_009
+    2301076: Prison_Wall_001
+    2301078: Prison_Wall_0010
+    2301080: Prison_Wall_0011
+    2301082: Prison_Wall_0012
+    2301084: Prison_Wall_0013
+    2301086: Prison_Wall_0014
+    2301088: Prison_Wall_0015
+    2301090: Prison_Wall_0016
+    2301092: Prison_Wall_0017
+    2301094: Prison_Wall_0018
+    2301096: Prison_Wall_0019
+    2301098: Prison_Wall_002
+    2301100: Prison_Wall_0020
+    2301102: Prison_Wall_0021
+    2301104: Prison_Wall_0023
+    2301106: Prison_Wall_0024
+    2301108: Prison_Wall_0025
+    2301110: Prison_Wall_0026
+    2301112: Prison_Wall_0027
+    2301114: Prison_Wall_003
+    2301116: Prison_Wall_004
+    2301118: Prison_Wall_005
+    2301120: Prison_Wall_006
+    2301122: Prison_Wall_007
+    2301124: Prison_Wall_008
+    2301126: Prison_Wall_009
+    2301128: Skirt_Ledge_001
+    2301130: Skirt_Ledge_001 1
+    2301132: Skirt_Ledge_002
+    2301134: Tnt:pCylinder1
+    2301136: Tnt:pCylinder10
+    2301138: Tnt:pCylinder11
+    2301140: Tnt:pCylinder12
+    2301142: Tnt:pCylinder13
+    2301144: Tnt:pCylinder14
+    2301146: Tnt:pCylinder15
+    2301148: Tnt:pCylinder16
+    2301150: Tnt:pCylinder17
+    2301152: Tnt:pCylinder18
+    2301154: Tnt:pCylinder19
+    2301156: Tnt:pCylinder2
+    2301158: Tnt:pCylinder20
+    2301160: Tnt:pCylinder21
+    2301162: Tnt:pCylinder22
+    2301164: Tnt:pCylinder3
+    2301166: Tnt:pCylinder4
+    2301168: Tnt:pCylinder5
+    2301170: Tnt:pCylinder6
+    2301172: Tnt:pCylinder7
+    2301174: Tnt:pCylinder8
+    2301176: Tnt:pCylinder9
+    2301178: Tnt:TNT_Box
+    2301180: TNT_Box
+    2301182: Tower_01
+    2301184: Tower_Floor_01
+    2301186: Tower_Floor_02
+    2301188: Walkway_01
+    2301190: Walkway_02
+    2301192: Wall_Skirt_001
+    2301194: Wall_Skirt_001 1
+    2301196: Wall_Skirt_002
+    3300000: Bridge_Blocks_001
+    3300002: Bridge_Blocks_002
+    3300004: Bridge_Blocks_003
+    3300006: Bridge_Blocks_004
+    3300008: Bridge_Blocks_005
+    3300010: Bridge_Blocks_006
+    3300012: Divider_010
+    3300014: Divider_0101
+    3300016: Divider_0102
+    3300018: Divider_0103
+    3300020: Divider_0104
+    3300022: Divider_0105
+    3300024: Divider_0106
+    3300026: Divider_0107
+    3300028: Divider_0108
+    3300030: Divider_0109
+    3300032: Divider_011
+    3300034: Divider_0110
+    3300036: Divider_0111
+    3300038: Divider_0112
+    3300040: Divider_012
+    3300042: Divider_013
+    3300044: Divider_014
+    3300046: Divider_016
+    3300048: Divider_017
+    3300050: Divider_019
+    3300052: Divider_02
+    3300054: Divider_020
+    3300056: Divider_021
+    3300058: Divider_026
+    3300060: Divider_027
+    3300062: Divider_03
+    3300064: Divider_031
+    3300066: Divider_032
+    3300068: Divider_033
+    3300070: Divider_034
+    3300072: Divider_035
+    3300074: Divider_036
+    3300076: Divider_037
+    3300078: Divider_038
+    3300080: Divider_039
+    3300082: Divider_040
+    3300084: Divider_041
+    3300086: Divider_042
+    3300088: Divider_043
+    3300090: Divider_044
+    3300092: Divider_045
+    3300094: Divider_046
+    3300096: Divider_047
+    3300098: Divider_048
+    3300100: Divider_049
+    3300102: Divider_05
+    3300104: Divider_050
+    3300106: Divider_052
+    3300108: Divider_053
+    3300110: Divider_054
+    3300112: Divider_055
+    3300114: Divider_056
+    3300116: Divider_057
+    3300118: Divider_058
+    3300120: Divider_059
+    3300122: Divider_06
+    3300124: Divider_060
+    3300126: Divider_061
+    3300128: Divider_062
+    3300130: Divider_063
+    3300132: Divider_064
+    3300134: Divider_065
+    3300136: Divider_066
+    3300138: Divider_067
+    3300140: Divider_068
+    3300142: Divider_069
+    3300144: Divider_07
+    3300146: Divider_070
+    3300148: Divider_071
+    3300150: Divider_072
+    3300152: Divider_073
+    3300154: Divider_074
+    3300156: Divider_075
+    3300158: Divider_076
+    3300160: Divider_077
+    3300162: Divider_078
+    3300164: Divider_079
+    3300166: Divider_08
+    3300168: Divider_080
+    3300170: Divider_081
+    3300172: Divider_082
+    3300174: Divider_083
+    3300176: Divider_084
+    3300178: Divider_085
+    3300180: Divider_086
+    3300182: Divider_087
+    3300184: Divider_088
+    3300186: Divider_089
+    3300188: Divider_09
+    3300190: Divider_090
+    3300192: Divider_091
+    3300194: Divider_092
+    3300196: Divider_093
+    3300198: Divider_094
+    3300200: Divider_095
+    3300202: Divider_096
+    3300204: Divider_097
+    3300206: Divider_098
+    3300208: Door_Archway_001
+    3300210: Door_Archway_0010
+    3300212: Door_Archway_0011
+    3300214: Door_Archway_0012
+    3300216: Door_Archway_0013
+    3300218: Door_Archway_0014
+    3300220: Door_Archway_0015
+    3300222: Door_Archway_0016
+    3300224: Door_Archway_0017
+    3300226: Door_Archway_0018
+    3300228: Door_Archway_002
+    3300230: Door_Archway_0020
+    3300232: Door_Archway_0021
+    3300234: Door_Archway_0022
+    3300236: Door_Archway_0023
+    3300238: Door_Archway_0024
+    3300240: Door_Archway_0025
+    3300242: Door_Archway_0026
+    3300244: Door_Archway_0027
+    3300246: Door_Archway_0028
+    3300248: Door_Archway_0029
+    3300250: Door_Archway_003
+    3300252: Door_Archway_0030
+    3300254: Door_Archway_0032
+    3300256: Door_Archway_0033
+    3300258: Door_Archway_0034
+    3300260: Door_Archway_0035
+    3300262: Door_Archway_0036
+    3300264: Door_Archway_005
+    3300266: Door_Archway_006
+    3300268: Door_Archway_007
+    3300270: Door_Archway_008
+    3300272: Door_Archway_009
+    3300274: Gold_Pile_002
+    3300276: Gold_Pile_003
+    3300278: Gold_Pile_004
+    3300280: Gold_Pile_005
+    3300282: Gold_Pile_006
+    3300284: Inner_Bridge_Cliffs_01
+    3300286: Inner_Ground_Model_01
+    3300288: Inner_Ground_Model_02
+    3300290: Inner_Ground_Model_03
+    3300292: Inner_Ground_Secret_Room_01
+    3300294: Inner_Ground_Secret_Room_02
+    3300296: Inner_Ground_Secret_Room_03
+    3300298: Inner_Ground_Secret_Room_04
+    3300300: Inner_Ground_Secret_Room_05
+    3300302: Outside_3D_Cliff_01
+    3300304: Outside_3D_Cliff_02
+    3300306: Outside_Bridge_01
+    3300308: Outside_Bridge_02
+    3300310: Outside_Bridge_03
+    3300312: Outside_Bridge_04
+    3300314: Outside_Bridge_BG
+    3300316: Outside_Bridge_Rocks
+    3300318: Outside_Building_Model_01
+    3300320: pCube1
+    3300322: pCube1 1
+    3300324: pCube1 2
+    3300326: pCube1 3
+    3300328: pCube1 4
+    3300330: pCube10
+    3300332: pCube10 1
+    3300334: pCube10 2
+    3300336: pCube10 3
+    3300338: pCube10 4
+    3300340: pCube11
+    3300342: pCube11 1
+    3300344: pCube11 2
+    3300346: pCube11 3
+    3300348: pCube11 4
+    3300350: pCube12
+    3300352: pCube12 1
+    3300354: pCube12 2
+    3300356: pCube12 3
+    3300358: pCube12 4
+    3300360: pCube13
+    3300362: pCube13 1
+    3300364: pCube13 2
+    3300366: pCube13 3
+    3300368: pCube13 4
+    3300370: pCube14
+    3300372: pCube14 1
+    3300374: pCube14 2
+    3300376: pCube14 3
+    3300378: pCube14 4
+    3300380: pCube15
+    3300382: pCube15 1
+    3300384: pCube15 2
+    3300386: pCube15 3
+    3300388: pCube15 4
+    3300390: pCube16
+    3300392: pCube16 1
+    3300394: pCube16 2
+    3300396: pCube16 3
+    3300398: pCube16 4
+    3300400: pCube17
+    3300402: pCube17 1
+    3300404: pCube17 2
+    3300406: pCube17 3
+    3300408: pCube17 4
+    3300410: pCube18
+    3300412: pCube18 1
+    3300414: pCube18 2
+    3300416: pCube18 3
+    3300418: pCube18 4
+    3300420: pCube19
+    3300422: pCube19 1
+    3300424: pCube19 2
+    3300426: pCube19 3
+    3300428: pCube19 4
+    3300430: pCube2
+    3300432: pCube2 1
+    3300434: pCube2 2
+    3300436: pCube2 3
+    3300438: pCube2 4
+    3300440: pCube3
+    3300442: pCube3 1
+    3300444: pCube3 2
+    3300446: pCube3 3
+    3300448: pCube3 4
+    3300450: pCube5
+    3300452: pCube5 1
+    3300454: pCube5 2
+    3300456: pCube5 3
+    3300458: pCube5 4
+    3300460: pCube6
+    3300462: pCube6 1
+    3300464: pCube6 2
+    3300466: pCube6 3
+    3300468: pCube6 4
+    3300470: pCube7
+    3300472: pCube7 1
+    3300474: pCube7 2
+    3300476: pCube7 3
+    3300478: pCube7 4
+    3300480: pCube8
+    3300482: pCube8 1
+    3300484: pCube8 2
+    3300486: pCube8 3
+    3300488: pCube8 4
+    3300490: pCube9
+    3300492: pCube9 1
+    3300494: pCube9 2
+    3300496: pCube9 3
+    3300498: pCube9 4
+    3300500: pCylinder1
+    3300502: pCylinder10
+    3300504: pCylinder11
+    3300506: pCylinder12
+    3300508: pCylinder13
+    3300510: pCylinder14
+    3300512: pCylinder15
+    3300514: pCylinder16
+    3300516: pCylinder17
+    3300518: pCylinder18
+    3300520: pCylinder19
+    3300522: pCylinder2
+    3300524: pCylinder20
+    3300526: pCylinder21
+    3300528: pCylinder22
+    3300530: pCylinder3
+    3300532: pCylinder4
+    3300534: pCylinder5
+    3300536: pCylinder6
+    3300538: pCylinder7
+    3300540: pCylinder8
+    3300542: pCylinder9
+    3300544: Pillars
+    3300546: Pillars1
+    3300548: Platform_01
+    3300550: Platform_010
+    3300552: Platform_011
+    3300554: Platform_012
+    3300556: Platform_014
+    3300558: Platform_015
+    3300560: Platform_016
+    3300562: Platform_017
+    3300564: Platform_018
+    3300566: Platform_019
+    3300568: Platform_02
+    3300570: Platform_020
+    3300572: Platform_021
+    3300574: Platform_022
+    3300576: Platform_023
+    3300578: Platform_024
+    3300580: Platform_025
+    3300582: Platform_026
+    3300584: Platform_027
+    3300586: Platform_028
+    3300588: Platform_029
+    3300590: Platform_03
+    3300592: Platform_030
+    3300594: Platform_031
+    3300596: Platform_032
+    3300598: Platform_033
+    3300600: Platform_034
+    3300602: Platform_035
+    3300604: Platform_036
+    3300606: Platform_037
+    3300608: Platform_04
+    3300610: Platform_05
+    3300612: Platform_06
+    3300614: Platform_07
+    3300616: Platform_08
+    3300618: Platform_09
+    3300620: polySurface_01
+    3300622: polySurface_010
+    3300624: polySurface_011
+    3300626: polySurface_012
+    3300628: polySurface_02
+    3300630: polySurface_03
+    3300632: polySurface_04
+    3300634: polySurface_05
+    3300636: polySurface_06
+    3300638: polySurface_07
+    3300640: polySurface_08
+    3300642: polySurface_09
+    3300644: Prison_Back_Wall_001
+    3300646: Prison_Back_Wall_0010
+    3300648: Prison_Back_Wall_0011
+    3300650: Prison_Back_Wall_0012
+    3300652: Prison_Back_Wall_0013
+    3300654: Prison_Back_Wall_0014
+    3300656: Prison_Back_Wall_0015
+    3300658: Prison_Back_Wall_0016
+    3300660: Prison_Back_Wall_0017
+    3300662: Prison_Back_Wall_0018
+    3300664: Prison_Back_Wall_0019
+    3300666: Prison_Back_Wall_002
+    3300668: Prison_Back_Wall_0020
+    3300670: Prison_Back_Wall_0021
+    3300672: Prison_Back_Wall_0022
+    3300674: Prison_Back_Wall_0023
+    3300676: Prison_Back_Wall_0024
+    3300678: Prison_Back_Wall_0026
+    3300680: Prison_Back_Wall_0027
+    3300682: Prison_Back_Wall_0028
+    3300684: Prison_Back_Wall_0029
+    3300686: Prison_Back_Wall_003
+    3300688: Prison_Back_Wall_0030
+    3300690: Prison_Back_Wall_005
+    3300692: Prison_Back_Wall_006
+    3300694: Prison_Back_Wall_007
+    3300696: Prison_Back_Wall_008
+    3300698: Prison_Back_Wall_009
+    3300700: Prison_Bars_001
+    3300702: Prison_Bars_002
+    3300704: Prison_Bars_002 1
+    3300706: Prison_Bars_002 2
+    3300708: Prison_Bars_002 3
+    3300710: Prison_Bars_003
+    3300712: Prison_Bars_003 1
+    3300714: Prison_Bars_003 2
+    3300716: Prison_Bars_003 3
+    3300718: Prison_Door_Wall_001
+    3300720: Prison_Door_Wall_0010
+    3300722: Prison_Door_Wall_0011
+    3300724: Prison_Door_Wall_0012
+    3300726: Prison_Door_Wall_0013
+    3300728: Prison_Door_Wall_0014
+    3300730: Prison_Door_Wall_0015
+    3300732: Prison_Door_Wall_0016
+    3300734: Prison_Door_Wall_0017
+    3300736: Prison_Door_Wall_0018
+    3300738: Prison_Door_Wall_0019
+    3300740: Prison_Door_Wall_002
+    3300742: Prison_Door_Wall_0020
+    3300744: Prison_Door_Wall_0021
+    3300746: Prison_Door_Wall_0022
+    3300748: Prison_Door_Wall_0023
+    3300750: Prison_Door_Wall_0024
+    3300752: Prison_Door_Wall_0025
+    3300754: Prison_Door_Wall_0026
+    3300756: Prison_Door_Wall_0027
+    3300758: Prison_Door_Wall_0028
+    3300760: Prison_Door_Wall_0029
+    3300762: Prison_Door_Wall_003
+    3300764: Prison_Door_Wall_0031
+    3300766: Prison_Door_Wall_0032
+    3300768: Prison_Door_Wall_0033
+    3300770: Prison_Door_Wall_0034
+    3300772: Prison_Door_Wall_0035
+    3300774: Prison_Door_Wall_004
+    3300776: Prison_Door_Wall_005
+    3300778: Prison_Door_Wall_006
+    3300780: Prison_Door_Wall_007
+    3300782: Prison_Door_Wall_008
+    3300784: Prison_Door_Wall_009
+    3300786: Prison_Doorway_Wall_001
+    3300788: Prison_Doorway_Wall_0010
+    3300790: Prison_Doorway_Wall_0011
+    3300792: Prison_Doorway_Wall_0012
+    3300794: Prison_Doorway_Wall_0013
+    3300796: Prison_Doorway_Wall_0014
+    3300798: Prison_Doorway_Wall_0015
+    3300800: Prison_Doorway_Wall_0016
+    3300802: Prison_Doorway_Wall_0017
+    3300804: Prison_Doorway_Wall_0018
+    3300806: Prison_Doorway_Wall_002
+    3300808: Prison_Doorway_Wall_0020
+    3300810: Prison_Doorway_Wall_0021
+    3300812: Prison_Doorway_Wall_0022
+    3300814: Prison_Doorway_Wall_0023
+    3300816: Prison_Doorway_Wall_0024
+    3300818: Prison_Doorway_Wall_0025
+    3300820: Prison_Doorway_Wall_0026
+    3300822: Prison_Doorway_Wall_0027
+    3300824: Prison_Doorway_Wall_0028
+    3300826: Prison_Doorway_Wall_0029
+    3300828: Prison_Doorway_Wall_003
+    3300830: Prison_Doorway_Wall_0030
+    3300832: Prison_Doorway_Wall_0032
+    3300834: Prison_Doorway_Wall_0033
+    3300836: Prison_Doorway_Wall_0034
+    3300838: Prison_Doorway_Wall_0035
+    3300840: Prison_Doorway_Wall_0036
+    3300842: Prison_Doorway_Wall_005
+    3300844: Prison_Doorway_Wall_006
+    3300846: Prison_Doorway_Wall_007
+    3300848: Prison_Doorway_Wall_008
+    3300850: Prison_Doorway_Wall_009
+    3300852: Prison_Floor_001
+    3300854: Prison_Floor_0010
+    3300856: Prison_Floor_0011
+    3300858: Prison_Floor_0012
+    3300860: Prison_Floor_0013
+    3300862: Prison_Floor_0014
+    3300864: Prison_Floor_0015
+    3300866: Prison_Floor_0016
+    3300868: Prison_Floor_0017
+    3300870: Prison_Floor_0018
+    3300872: Prison_Floor_0019
+    3300874: Prison_Floor_002
+    3300876: Prison_Floor_0020
+    3300878: Prison_Floor_0021
+    3300880: Prison_Floor_0022
+    3300882: Prison_Floor_0023
+    3300884: Prison_Floor_0024
+    3300886: Prison_Floor_0025
+    3300888: Prison_Floor_0026
+    3300890: Prison_Floor_0027
+    3300892: Prison_Floor_0028
+    3300894: Prison_Floor_0029
+    3300896: Prison_Floor_003
+    3300898: Prison_Floor_0030
+    3300900: Prison_Floor_0031
+    3300902: Prison_Floor_0032
+    3300904: Prison_Floor_0033
+    3300906: Prison_Floor_0034
+    3300908: Prison_Floor_0038
+    3300910: Prison_Floor_0039
+    3300912: Prison_Floor_004
+    3300914: Prison_Floor_0040
+    3300916: Prison_Floor_0041
+    3300918: Prison_Floor_0042
+    3300920: Prison_Floor_0043
+    3300922: Prison_Floor_0044
+    3300924: Prison_Floor_0045
+    3300926: Prison_Floor_0046
+    3300928: Prison_Floor_0047
+    3300930: Prison_Floor_005
+    3300932: Prison_Floor_006
+    3300934: Prison_Floor_008
+    3300936: Prison_Floor_009
+    3300938: Prison_SupportBars_001
+    3300940: Prison_SupportBars_0010
+    3300942: Prison_SupportBars_0010 1
+    3300944: Prison_SupportBars_0010 2
+    3300946: Prison_SupportBars_0010 3
+    3300948: Prison_SupportBars_0011
+    3300950: Prison_SupportBars_0011 1
+    3300952: Prison_SupportBars_0011 2
+    3300954: Prison_SupportBars_0011 3
+    3300956: Prison_SupportBars_0012
+    3300958: Prison_SupportBars_0012 1
+    3300960: Prison_SupportBars_0012 2
+    3300962: Prison_SupportBars_0012 3
+    3300964: Prison_SupportBars_0013
+    3300966: Prison_SupportBars_0013 1
+    3300968: Prison_SupportBars_0013 2
+    3300970: Prison_SupportBars_0013 3
+    3300972: Prison_SupportBars_0014
+    3300974: Prison_SupportBars_0014 1
+    3300976: Prison_SupportBars_0014 2
+    3300978: Prison_SupportBars_0014 3
+    3300980: Prison_SupportBars_0015
+    3300982: Prison_SupportBars_0015 1
+    3300984: Prison_SupportBars_0015 2
+    3300986: Prison_SupportBars_0015 3
+    3300988: Prison_SupportBars_002
+    3300990: Prison_SupportBars_003
+    3300992: Prison_SupportBars_004
+    3300994: Prison_SupportBars_006
+    3300996: Prison_SupportBars_006 1
+    3300998: Prison_SupportBars_006 2
+    3301000: Prison_SupportBars_006 3
+    3301002: Prison_SupportBars_007
+    3301004: Prison_SupportBars_007 1
+    3301006: Prison_SupportBars_007 2
+    3301008: Prison_SupportBars_007 3
+    3301010: Prison_SupportBars_008
+    3301012: Prison_SupportBars_008 1
+    3301014: Prison_SupportBars_008 2
+    3301016: Prison_SupportBars_008 3
+    3301018: Prison_SupportBars_009
+    3301020: Prison_SupportBars_009 1
+    3301022: Prison_SupportBars_009 2
+    3301024: Prison_SupportBars_009 3
+    3301026: Prison_UpperDoor_Wall_001
+    3301028: Prison_UpperDoor_Wall_0010
+    3301030: Prison_UpperDoor_Wall_0011
+    3301032: Prison_UpperDoor_Wall_0012
+    3301034: Prison_UpperDoor_Wall_0013
+    3301036: Prison_UpperDoor_Wall_0014
+    3301038: Prison_UpperDoor_Wall_0015
+    3301040: Prison_UpperDoor_Wall_0016
+    3301042: Prison_UpperDoor_Wall_0017
+    3301044: Prison_UpperDoor_Wall_0018
+    3301046: Prison_UpperDoor_Wall_0019
+    3301048: Prison_UpperDoor_Wall_002
+    3301050: Prison_UpperDoor_Wall_0020
+    3301052: Prison_UpperDoor_Wall_0021
+    3301054: Prison_UpperDoor_Wall_0022
+    3301056: Prison_UpperDoor_Wall_0023
+    3301058: Prison_UpperDoor_Wall_0024
+    3301060: Prison_UpperDoor_Wall_0025
+    3301062: Prison_UpperDoor_Wall_003
+    3301064: Prison_UpperDoor_Wall_004
+    3301066: Prison_UpperDoor_Wall_005
+    3301068: Prison_UpperDoor_Wall_006
+    3301070: Prison_UpperDoor_Wall_007
+    3301072: Prison_UpperDoor_Wall_008
+    3301074: Prison_UpperDoor_Wall_009
+    3301076: Prison_Wall_001
+    3301078: Prison_Wall_0010
+    3301080: Prison_Wall_0011
+    3301082: Prison_Wall_0012
+    3301084: Prison_Wall_0013
+    3301086: Prison_Wall_0014
+    3301088: Prison_Wall_0015
+    3301090: Prison_Wall_0016
+    3301092: Prison_Wall_0017
+    3301094: Prison_Wall_0018
+    3301096: Prison_Wall_0019
+    3301098: Prison_Wall_002
+    3301100: Prison_Wall_0020
+    3301102: Prison_Wall_0021
+    3301104: Prison_Wall_0023
+    3301106: Prison_Wall_0024
+    3301108: Prison_Wall_0025
+    3301110: Prison_Wall_0026
+    3301112: Prison_Wall_0027
+    3301114: Prison_Wall_003
+    3301116: Prison_Wall_004
+    3301118: Prison_Wall_005
+    3301120: Prison_Wall_006
+    3301122: Prison_Wall_007
+    3301124: Prison_Wall_008
+    3301126: Prison_Wall_009
+    3301128: Skirt_Ledge_001
+    3301130: Skirt_Ledge_001 1
+    3301132: Skirt_Ledge_002
+    3301134: Tnt:pCylinder1
+    3301136: Tnt:pCylinder10
+    3301138: Tnt:pCylinder11
+    3301140: Tnt:pCylinder12
+    3301142: Tnt:pCylinder13
+    3301144: Tnt:pCylinder14
+    3301146: Tnt:pCylinder15
+    3301148: Tnt:pCylinder16
+    3301150: Tnt:pCylinder17
+    3301152: Tnt:pCylinder18
+    3301154: Tnt:pCylinder19
+    3301156: Tnt:pCylinder2
+    3301158: Tnt:pCylinder20
+    3301160: Tnt:pCylinder21
+    3301162: Tnt:pCylinder22
+    3301164: Tnt:pCylinder3
+    3301166: Tnt:pCylinder4
+    3301168: Tnt:pCylinder5
+    3301170: Tnt:pCylinder6
+    3301172: Tnt:pCylinder7
+    3301174: Tnt:pCylinder8
+    3301176: Tnt:pCylinder9
+    3301178: Tnt:TNT_Box
+    3301180: TNT_Box
+    3301182: Tower_01
+    3301184: Tower_Floor_01
+    3301186: Tower_Floor_02
+    3301188: Walkway_01
+    3301190: Walkway_02
+    3301192: Wall_Skirt_001
+    3301194: Wall_Skirt_001 1
+    3301196: Wall_Skirt_002
+    4300000: Tower_Floor_01
+    4300002: Tower_Floor_02
+    4300004: Tower_01
+    4300006: Prison_Wall_001
+    4300008: Prison_Wall_002
+    4300010: Prison_Wall_003
+    4300012: Prison_Wall_004
+    4300014: Prison_Wall_005
+    4300016: Prison_Wall_006
+    4300018: Prison_Wall_007
+    4300020: Prison_Wall_008
+    4300022: Prison_Wall_009
+    4300024: Prison_Wall_0010
+    4300026: Prison_Wall_0011
+    4300028: Prison_Wall_0012
+    4300030: Prison_Wall_0013
+    4300032: Prison_Wall_0014
+    4300034: Prison_Wall_0015
+    4300036: Prison_Wall_0016
+    4300038: Prison_Wall_0017
+    4300040: Prison_Wall_0018
+    4300042: Prison_Wall_0019
+    4300044: Prison_Wall_0020
+    4300046: Prison_Wall_0021
+    4300048: Prison_Back_Wall_001
+    4300050: Prison_Back_Wall_002
+    4300052: Prison_Back_Wall_003
+    4300054: Prison_Back_Wall_005
+    4300056: Prison_Back_Wall_006
+    4300058: Prison_Back_Wall_007
+    4300060: Prison_Back_Wall_008
+    4300062: Prison_Back_Wall_009
+    4300064: Prison_Back_Wall_0010
+    4300066: Prison_Back_Wall_0011
+    4300068: Prison_Back_Wall_0012
+    4300070: Prison_Back_Wall_0013
+    4300072: Prison_Back_Wall_0014
+    4300074: Prison_Back_Wall_0015
+    4300076: Prison_Back_Wall_0016
+    4300078: Prison_Back_Wall_0017
+    4300080: Prison_Back_Wall_0018
+    4300082: Prison_Back_Wall_0019
+    4300084: Prison_Back_Wall_0020
+    4300086: Prison_Back_Wall_0021
+    4300088: Prison_Back_Wall_0022
+    4300090: Prison_Back_Wall_0023
+    4300092: Prison_Back_Wall_0024
+    4300094: Prison_Door_Wall_001
+    4300096: Prison_Door_Wall_002
+    4300098: Prison_Door_Wall_003
+    4300100: Prison_Door_Wall_004
+    4300102: Prison_Door_Wall_005
+    4300104: Prison_Door_Wall_006
+    4300106: Prison_Door_Wall_007
+    4300108: Prison_Door_Wall_008
+    4300110: Prison_Door_Wall_009
+    4300112: Prison_Door_Wall_0010
+    4300114: Prison_Door_Wall_0011
+    4300116: Prison_Door_Wall_0012
+    4300118: Prison_Door_Wall_0013
+    4300120: Prison_Door_Wall_0014
+    4300122: Prison_Door_Wall_0015
+    4300124: Prison_Door_Wall_0016
+    4300126: Prison_Door_Wall_0017
+    4300128: Prison_Door_Wall_0018
+    4300130: Prison_Door_Wall_0019
+    4300132: Prison_Door_Wall_0020
+    4300134: Prison_Door_Wall_0021
+    4300136: Prison_Door_Wall_0022
+    4300138: Prison_Door_Wall_0023
+    4300140: Prison_Door_Wall_0024
+    4300142: Prison_Door_Wall_0025
+    4300144: Prison_Door_Wall_0026
+    4300146: Prison_Door_Wall_0027
+    4300148: Prison_Door_Wall_0028
+    4300150: Prison_Door_Wall_0029
+    4300152: Prison_UpperDoor_Wall_001
+    4300154: Prison_UpperDoor_Wall_002
+    4300156: Prison_UpperDoor_Wall_003
+    4300158: Prison_UpperDoor_Wall_004
+    4300160: Prison_UpperDoor_Wall_005
+    4300162: Prison_UpperDoor_Wall_006
+    4300164: Prison_UpperDoor_Wall_007
+    4300166: Prison_UpperDoor_Wall_008
+    4300168: Prison_UpperDoor_Wall_009
+    4300170: Prison_UpperDoor_Wall_0010
+    4300172: Prison_UpperDoor_Wall_0011
+    4300174: Prison_UpperDoor_Wall_0012
+    4300176: Prison_UpperDoor_Wall_0013
+    4300178: Prison_UpperDoor_Wall_0014
+    4300180: Prison_UpperDoor_Wall_0015
+    4300182: Prison_UpperDoor_Wall_0016
+    4300184: Prison_UpperDoor_Wall_0017
+    4300186: Prison_UpperDoor_Wall_0018
+    4300188: Prison_UpperDoor_Wall_0019
+    4300190: Prison_UpperDoor_Wall_0020
+    4300192: Prison_UpperDoor_Wall_0021
+    4300194: Prison_UpperDoor_Wall_0022
+    4300196: Prison_UpperDoor_Wall_0023
+    4300198: Prison_UpperDoor_Wall_0024
+    4300200: Prison_UpperDoor_Wall_0025
+    4300202: Prison_Floor_001
+    4300204: Prison_Floor_002
+    4300206: Prison_Floor_003
+    4300208: Prison_Floor_004
+    4300210: Prison_Floor_005
+    4300212: Prison_Floor_006
+    4300214: Prison_Floor_008
+    4300216: Prison_Floor_009
+    4300218: Prison_Floor_0010
+    4300220: Prison_Floor_0011
+    4300222: Prison_Floor_0012
+    4300224: Prison_Floor_0013
+    4300226: Prison_Floor_0014
+    4300228: Prison_Floor_0015
+    4300230: Prison_Floor_0016
+    4300232: Prison_Floor_0017
+    4300234: Prison_Floor_0018
+    4300236: Prison_Floor_0019
+    4300238: Prison_Floor_0020
+    4300240: Prison_Floor_0021
+    4300242: Prison_Floor_0022
+    4300244: Prison_Floor_0023
+    4300246: Prison_Floor_0024
+    4300248: Prison_Floor_0025
+    4300250: Prison_Floor_0026
+    4300252: Prison_Floor_0027
+    4300254: Prison_Floor_0028
+    4300256: Prison_Floor_0029
+    4300258: Prison_Floor_0030
+    4300260: Prison_Floor_0031
+    4300262: Prison_Floor_0032
+    4300264: Prison_Floor_0033
+    4300266: Prison_Floor_0034
+    4300268: Prison_Doorway_Wall_001
+    4300270: Prison_Doorway_Wall_007
+    4300272: Prison_Doorway_Wall_008
+    4300274: Prison_Doorway_Wall_009
+    4300276: Prison_Doorway_Wall_0010
+    4300278: Prison_Doorway_Wall_0011
+    4300280: Prison_Doorway_Wall_0012
+    4300282: Prison_Doorway_Wall_0013
+    4300284: Prison_Doorway_Wall_0014
+    4300286: Prison_Doorway_Wall_0015
+    4300288: Prison_Doorway_Wall_0016
+    4300290: Prison_Doorway_Wall_0017
+    4300292: Prison_Doorway_Wall_0018
+    4300294: Prison_Doorway_Wall_002
+    4300296: Prison_Doorway_Wall_003
+    4300298: Prison_Doorway_Wall_005
+    4300300: Prison_Doorway_Wall_0020
+    4300302: Prison_Doorway_Wall_006
+    4300304: Prison_Doorway_Wall_0021
+    4300306: Prison_Doorway_Wall_0022
+    4300308: Prison_Doorway_Wall_0023
+    4300310: Prison_Doorway_Wall_0024
+    4300312: Prison_Doorway_Wall_0025
+    4300314: Prison_Doorway_Wall_0026
+    4300316: Prison_Doorway_Wall_0027
+    4300318: Prison_Doorway_Wall_0028
+    4300320: Prison_Doorway_Wall_0029
+    4300322: Prison_Doorway_Wall_0030
+    4300324: Door_Archway_001
+    4300326: Door_Archway_007
+    4300328: Door_Archway_008
+    4300330: Door_Archway_009
+    4300332: Door_Archway_0010
+    4300334: Door_Archway_0011
+    4300336: Door_Archway_0012
+    4300338: Door_Archway_0013
+    4300340: Door_Archway_0014
+    4300342: Door_Archway_0015
+    4300344: Door_Archway_0016
+    4300346: Door_Archway_0017
+    4300348: Door_Archway_0018
+    4300350: Door_Archway_002
+    4300352: Door_Archway_003
+    4300354: Door_Archway_005
+    4300356: Door_Archway_0020
+    4300358: Door_Archway_006
+    4300360: Door_Archway_0021
+    4300362: Door_Archway_0022
+    4300364: Door_Archway_0023
+    4300366: Door_Archway_0024
+    4300368: Door_Archway_0025
+    4300370: Door_Archway_0026
+    4300372: Door_Archway_0027
+    4300374: Door_Archway_0028
+    4300376: Door_Archway_0029
+    4300378: Door_Archway_0030
+    4300380: Divider_02
+    4300382: Divider_03
+    4300384: Divider_05
+    4300386: Divider_06
+    4300388: Divider_07
+    4300390: Divider_08
+    4300392: Divider_09
+    4300394: Divider_010
+    4300396: Divider_011
+    4300398: Divider_012
+    4300400: Divider_013
+    4300402: Divider_014
+    4300404: Divider_016
+    4300406: Divider_017
+    4300408: Divider_019
+    4300410: Divider_020
+    4300412: Divider_021
+    4300414: Divider_026
+    4300416: Divider_027
+    4300418: Divider_031
+    4300420: Divider_032
+    4300422: Divider_033
+    4300424: Divider_034
+    4300426: Divider_035
+    4300428: Divider_036
+    4300430: Divider_037
+    4300432: Divider_038
+    4300434: Divider_039
+    4300436: Divider_040
+    4300438: Divider_041
+    4300440: Divider_042
+    4300442: Divider_043
+    4300444: Divider_044
+    4300446: Divider_045
+    4300448: Divider_046
+    4300450: Divider_047
+    4300452: Divider_048
+    4300454: Divider_049
+    4300456: Divider_050
+    4300458: Divider_052
+    4300460: Divider_053
+    4300462: Divider_054
+    4300464: Divider_055
+    4300466: Divider_056
+    4300468: Divider_057
+    4300470: Divider_058
+    4300472: Divider_059
+    4300474: Divider_060
+    4300476: Divider_061
+    4300478: Divider_062
+    4300480: Divider_063
+    4300482: Divider_064
+    4300484: Divider_065
+    4300486: Divider_066
+    4300488: Divider_067
+    4300490: Divider_068
+    4300492: Divider_069
+    4300494: Divider_070
+    4300496: Divider_071
+    4300498: Divider_072
+    4300500: Divider_073
+    4300502: Divider_074
+    4300504: Divider_075
+    4300506: Divider_076
+    4300508: Divider_077
+    4300510: Divider_078
+    4300512: Divider_079
+    4300514: Divider_080
+    4300516: Divider_081
+    4300518: Divider_082
+    4300520: Divider_083
+    4300522: Divider_084
+    4300524: Divider_085
+    4300526: Divider_086
+    4300528: Divider_087
+    4300530: Divider_088
+    4300532: Divider_089
+    4300534: Divider_090
+    4300536: Divider_091
+    4300538: Divider_092
+    4300540: Divider_093
+    4300542: Divider_094
+    4300544: Divider_095
+    4300546: Divider_096
+    4300548: Divider_097
+    4300550: Divider_098
+    4300552: Divider_0103
+    4300554: Divider_0104
+    4300556: Platform_01
+    4300558: Platform_02
+    4300560: Platform_03
+    4300562: Platform_04
+    4300564: Platform_05
+    4300566: Platform_06
+    4300568: Platform_07
+    4300570: Platform_08
+    4300572: Platform_09
+    4300574: Platform_010
+    4300576: Platform_011
+    4300578: Platform_012
+    4300580: Platform_014
+    4300582: Platform_015
+    4300584: Platform_016
+    4300586: Platform_017
+    4300588: Platform_018
+    4300590: Platform_019
+    4300592: Platform_020
+    4300594: Platform_021
+    4300596: Platform_022
+    4300598: Platform_023
+    4300600: Platform_024
+    4300602: Platform_025
+    4300604: Platform_026
+    4300606: Platform_027
+    4300608: Platform_028
+    4300610: Platform_029
+    4300612: Platform_030
+    4300614: Platform_031
+    4300616: Platform_032
+    4300618: Platform_033
+    4300620: Platform_034
+    4300622: Platform_035
+    4300624: Platform_036
+    4300626: Platform_037
+    4300628: polySurface_01
+    4300630: polySurface_02
+    4300632: polySurface_03
+    4300634: polySurface_04
+    4300636: polySurface_05
+    4300638: polySurface_06
+    4300640: polySurface_07
+    4300642: polySurface_08
+    4300644: polySurface_09
+    4300646: polySurface_010
+    4300648: polySurface_011
+    4300650: polySurface_012
+    4300652: Wall_Skirt_001
+    4300654: Skirt_Ledge_001
+    4300656: Wall_Skirt_001
+    4300658: Wall_Skirt_002
+    4300660: Skirt_Ledge_001
+    4300662: Skirt_Ledge_002
+    4300664: Prison_Bars_001
+    4300666: Prison_SupportBars_001
+    4300668: Prison_SupportBars_002
+    4300670: Prison_SupportBars_003
+    4300672: Prison_SupportBars_004
+    4300674: Prison_SupportBars_006
+    4300676: Prison_SupportBars_0010
+    4300678: Prison_SupportBars_007
+    4300680: Prison_Bars_002
+    4300682: Prison_SupportBars_008
+    4300684: Prison_SupportBars_009
+    4300686: Prison_Bars_003
+    4300688: Prison_SupportBars_0013
+    4300690: Prison_SupportBars_0012
+    4300692: Prison_SupportBars_0014
+    4300694: Prison_SupportBars_0015
+    4300696: Prison_SupportBars_0011
+    4300698: Prison_SupportBars_006
+    4300700: Prison_SupportBars_0010
+    4300702: Prison_SupportBars_007
+    4300704: Prison_Bars_002
+    4300706: Prison_SupportBars_008
+    4300708: Prison_SupportBars_009
+    4300710: Prison_Bars_003
+    4300712: Prison_SupportBars_0013
+    4300714: Prison_SupportBars_0012
+    4300716: Prison_SupportBars_0014
+    4300718: Prison_SupportBars_0015
+    4300720: Prison_SupportBars_0011
+    4300722: Prison_SupportBars_006
+    4300724: Prison_SupportBars_0010
+    4300726: Prison_SupportBars_007
+    4300728: Prison_Bars_002
+    4300730: Prison_SupportBars_008
+    4300732: Prison_SupportBars_009
+    4300734: Prison_Bars_003
+    4300736: Prison_SupportBars_0013
+    4300738: Prison_SupportBars_0012
+    4300740: Prison_SupportBars_0014
+    4300742: Prison_SupportBars_0015
+    4300744: Prison_SupportBars_0011
+    4300746: Prison_SupportBars_006
+    4300748: Prison_SupportBars_0010
+    4300750: Prison_SupportBars_007
+    4300752: Prison_Bars_002
+    4300754: Prison_SupportBars_008
+    4300756: Prison_SupportBars_009
+    4300758: Prison_Bars_003
+    4300760: Prison_SupportBars_0013
+    4300762: Prison_SupportBars_0012
+    4300764: Prison_SupportBars_0014
+    4300766: Prison_SupportBars_0015
+    4300768: Prison_SupportBars_0011
+    4300770: Tnt:TNT_Box
+    4300772: Tnt:pCylinder1
+    4300774: Tnt:pCylinder2
+    4300776: Tnt:pCylinder3
+    4300778: Tnt:pCylinder4
+    4300780: Tnt:pCylinder5
+    4300782: Tnt:pCylinder6
+    4300784: Tnt:pCylinder7
+    4300786: Tnt:pCylinder8
+    4300788: Tnt:pCylinder9
+    4300790: Tnt:pCylinder10
+    4300792: Tnt:pCylinder11
+    4300794: Tnt:pCylinder12
+    4300796: Tnt:pCylinder13
+    4300798: Tnt:pCylinder14
+    4300800: Tnt:pCylinder15
+    4300802: Tnt:pCylinder16
+    4300804: Tnt:pCylinder17
+    4300806: Tnt:pCylinder18
+    4300808: Tnt:pCylinder19
+    4300810: Tnt:pCylinder20
+    4300812: Tnt:pCylinder21
+    4300814: Tnt:pCylinder22
+    4300816: TNT_Box
+    4300818: pCylinder1
+    4300820: pCylinder2
+    4300822: pCylinder3
+    4300824: pCylinder4
+    4300826: pCylinder5
+    4300828: pCylinder6
+    4300830: pCylinder7
+    4300832: pCylinder8
+    4300834: pCylinder9
+    4300836: pCylinder10
+    4300838: pCylinder11
+    4300840: pCylinder12
+    4300842: pCylinder13
+    4300844: pCylinder14
+    4300846: pCylinder15
+    4300848: pCylinder16
+    4300850: pCylinder17
+    4300852: pCylinder18
+    4300854: pCylinder19
+    4300856: pCylinder20
+    4300858: pCylinder21
+    4300860: pCylinder22
+    4300862: Inner_Ground_Model_01
+    4300864: Inner_Ground_Model_02
+    4300866: Inner_Ground_Model_03
+    4300868: Inner_Ground_Secret_Room_01
+    4300870: Inner_Ground_Secret_Room_02
+    4300872: Inner_Ground_Secret_Room_03
+    4300874: Inner_Ground_Secret_Room_04
+    4300876: Inner_Ground_Secret_Room_05
+    4300878: Prison_Wall_0027
+    4300880: Prison_Back_Wall_0030
+    4300882: Prison_Door_Wall_0035
+    4300884: Prison_Floor_0046
+    4300886: Prison_Floor_0047
+    4300888: Prison_Doorway_Wall_0036
+    4300890: Door_Archway_0036
+    4300892: Divider_0111
+    4300894: Divider_0112
+    4300896: Gold_Pile_006
+    4300898: Prison_Wall_0026
+    4300900: Prison_Back_Wall_0029
+    4300902: Prison_Door_Wall_0034
+    4300904: Prison_Floor_0044
+    4300906: Prison_Floor_0045
+    4300908: Prison_Doorway_Wall_0035
+    4300910: Door_Archway_0035
+    4300912: Divider_0109
+    4300914: Divider_0110
+    4300916: Gold_Pile_005
+    4300918: Prison_Wall_0025
+    4300920: Prison_Back_Wall_0028
+    4300922: Prison_Door_Wall_0033
+    4300924: Prison_Floor_0042
+    4300926: Prison_Floor_0043
+    4300928: Prison_Doorway_Wall_0034
+    4300930: Door_Archway_0034
+    4300932: Divider_0107
+    4300934: Divider_0108
+    4300936: Gold_Pile_004
+    4300938: Prison_Wall_0023
+    4300940: Prison_Back_Wall_0026
+    4300942: Prison_Door_Wall_0031
+    4300944: Prison_Floor_0038
+    4300946: Prison_Floor_0039
+    4300948: Prison_Doorway_Wall_0032
+    4300950: Door_Archway_0032
+    4300952: Divider_0101
+    4300954: Divider_0102
+    4300956: Gold_Pile_002
+    4300958: Prison_Wall_0024
+    4300960: Prison_Back_Wall_0027
+    4300962: Prison_Door_Wall_0032
+    4300964: Prison_Floor_0040
+    4300966: Prison_Floor_0041
+    4300968: Prison_Doorway_Wall_0033
+    4300970: Door_Archway_0033
+    4300972: Divider_0105
+    4300974: Divider_0106
+    4300976: Gold_Pile_003
+    4300978: Inner_Bridge_Cliffs_01
+    4300980: Outside_Bridge_BG
+    4300982: Outside_Bridge_03
+    4300984: Outside_Bridge_02
+    4300986: Outside_Bridge_01
+    4300988: Outside_Bridge_Rocks
+    4300990: Outside_Bridge_04
+    4300992: Bridge_Blocks_001
+    4300994: Bridge_Blocks_002
+    4300996: Bridge_Blocks_003
+    4300998: Bridge_Blocks_004
+    4301000: Bridge_Blocks_005
+    4301002: Bridge_Blocks_006
+    4301004: Walkway_01
+    4301006: Walkway_02
+    4301008: Pillars
+    4301010: Pillars1
+    4301012: Outside_Building_Model_01
+    4301014: Outside_3D_Cliff_01
+    4301016: Outside_3D_Cliff_02
+    4301018: pCube1
+    4301020: pCube2
+    4301022: pCube3
+    4301024: pCube5
+    4301026: pCube6
+    4301028: pCube7
+    4301030: pCube8
+    4301032: pCube9
+    4301034: pCube10
+    4301036: pCube11
+    4301038: pCube12
+    4301040: pCube13
+    4301042: pCube14
+    4301044: pCube15
+    4301046: pCube16
+    4301048: pCube17
+    4301050: pCube18
+    4301052: pCube19
+    4301054: pCube1
+    4301056: pCube2
+    4301058: pCube3
+    4301060: pCube5
+    4301062: pCube6
+    4301064: pCube7
+    4301066: pCube8
+    4301068: pCube9
+    4301070: pCube10
+    4301072: pCube11
+    4301074: pCube12
+    4301076: pCube13
+    4301078: pCube14
+    4301080: pCube15
+    4301082: pCube16
+    4301084: pCube17
+    4301086: pCube18
+    4301088: pCube19
+    4301090: pCube1
+    4301092: pCube2
+    4301094: pCube3
+    4301096: pCube5
+    4301098: pCube6
+    4301100: pCube7
+    4301102: pCube8
+    4301104: pCube9
+    4301106: pCube10
+    4301108: pCube11
+    4301110: pCube12
+    4301112: pCube13
+    4301114: pCube14
+    4301116: pCube15
+    4301118: pCube16
+    4301120: pCube17
+    4301122: pCube18
+    4301124: pCube19
+    4301126: pCube1
+    4301128: pCube2
+    4301130: pCube3
+    4301132: pCube5
+    4301134: pCube6
+    4301136: pCube7
+    4301138: pCube8
+    4301140: pCube9
+    4301142: pCube10
+    4301144: pCube11
+    4301146: pCube12
+    4301148: pCube13
+    4301150: pCube14
+    4301152: pCube15
+    4301154: pCube16
+    4301156: pCube17
+    4301158: pCube18
+    4301160: pCube19
+    4301162: pCube1
+    4301164: pCube2
+    4301166: pCube3
+    4301168: pCube5
+    4301170: pCube6
+    4301172: pCube7
+    4301174: pCube8
+    4301176: pCube9
+    4301178: pCube10
+    4301180: pCube11
+    4301182: pCube12
+    4301184: pCube13
+    4301186: pCube14
+    4301188: pCube15
+    4301190: pCube16
+    4301192: pCube17
+    4301194: pCube18
+    4301196: pCube19
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

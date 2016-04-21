@@ -461,6 +461,221 @@ ModelImporter:
     100906: polySurface_03 2
     100908: polySurface_04 1
     100910: polySurface_04 2
+    100912: ambientLight1
+    100914: Outside_Bridge_04
+    100916: pCube1
+    100918: pCube1 1
+    100920: pCube1 2
+    100922: pCube1 3
+    100924: pCube1 4
+    100926: pCube10
+    100928: pCube10 1
+    100930: pCube10 2
+    100932: pCube10 3
+    100934: pCube10 4
+    100936: pCube11
+    100938: pCube11 1
+    100940: pCube11 2
+    100942: pCube11 3
+    100944: pCube11 4
+    100946: pCube12
+    100948: pCube12 1
+    100950: pCube12 2
+    100952: pCube12 3
+    100954: pCube12 4
+    100956: pCube13
+    100958: pCube13 1
+    100960: pCube13 2
+    100962: pCube13 3
+    100964: pCube13 4
+    100966: pCube14
+    100968: pCube14 1
+    100970: pCube14 2
+    100972: pCube14 3
+    100974: pCube14 4
+    100976: pCube15
+    100978: pCube15 1
+    100980: pCube15 2
+    100982: pCube15 3
+    100984: pCube15 4
+    100986: pCube16
+    100988: pCube16 1
+    100990: pCube16 2
+    100992: pCube16 3
+    100994: pCube16 4
+    100996: pCube17
+    100998: pCube17 1
+    101000: pCube17 2
+    101002: pCube17 3
+    101004: pCube17 4
+    101006: pCube18
+    101008: pCube18 1
+    101010: pCube18 2
+    101012: pCube18 3
+    101014: pCube18 4
+    101016: pCube19
+    101018: pCube19 1
+    101020: pCube19 2
+    101022: pCube19 3
+    101024: pCube19 4
+    101026: pCube2
+    101028: pCube2 1
+    101030: pCube2 2
+    101032: pCube2 3
+    101034: pCube2 4
+    101036: pCube3
+    101038: pCube3 1
+    101040: pCube3 2
+    101042: pCube3 3
+    101044: pCube3 4
+    101046: pCube5
+    101048: pCube5 1
+    101050: pCube5 2
+    101052: pCube5 3
+    101054: pCube5 4
+    101056: pCube6
+    101058: pCube6 1
+    101060: pCube6 2
+    101062: pCube6 3
+    101064: pCube6 4
+    101066: pCube7
+    101068: pCube7 1
+    101070: pCube7 2
+    101072: pCube7 3
+    101074: pCube7 4
+    101076: pCube8
+    101078: pCube8 1
+    101080: pCube8 2
+    101082: pCube8 3
+    101084: pCube8 4
+    101086: pCube9
+    101088: pCube9 1
+    101090: pCube9 2
+    101092: pCube9 3
+    101094: pCube9 4
+    101096: Platform_010
+    101098: Platform_011
+    101100: Platform_012
+    101102: Platform_014
+    101104: Platform_015
+    101106: Platform_016
+    101108: Platform_017
+    101110: Platform_018
+    101112: Platform_019
+    101114: Platform_02
+    101116: Platform_020
+    101118: Platform_021
+    101120: Platform_022
+    101122: Platform_023
+    101124: Platform_024
+    101126: Platform_025
+    101128: Platform_026
+    101130: Platform_027
+    101132: Platform_028
+    101134: Platform_029
+    101136: Platform_03
+    101138: Platform_030
+    101140: Platform_031
+    101142: Platform_032
+    101144: Platform_033
+    101146: Platform_034
+    101148: Platform_035
+    101150: Platform_036
+    101152: Platform_037
+    101154: Platform_04
+    101156: Platform_05
+    101158: Platform_06
+    101160: Platform_07
+    101162: Platform_08
+    101164: Platform_09
+    101166: pointLight1
+    101168: pointLight2
+    101170: pointLight3
+    101172: pointLight4
+    101174: polySurface_010
+    101176: polySurface_011
+    101178: polySurface_012
+    101180: polySurface_05
+    101182: polySurface_06
+    101184: polySurface_07
+    101186: polySurface_08
+    101188: polySurface_09
+    101190: Prison_Bars_002
+    101192: Prison_Bars_002 1
+    101194: Prison_Bars_002 2
+    101196: Prison_Bars_002 3
+    101198: Prison_Bars_003
+    101200: Prison_Bars_003 1
+    101202: Prison_Bars_003 2
+    101204: Prison_Bars_003 3
+    101206: Prison_SupportBars_001
+    101208: Prison_SupportBars_0010
+    101210: Prison_SupportBars_0010 1
+    101212: Prison_SupportBars_0010 2
+    101214: Prison_SupportBars_0010 3
+    101216: Prison_SupportBars_0011
+    101218: Prison_SupportBars_0011 1
+    101220: Prison_SupportBars_0011 2
+    101222: Prison_SupportBars_0011 3
+    101224: Prison_SupportBars_0012
+    101226: Prison_SupportBars_0012 1
+    101228: Prison_SupportBars_0012 2
+    101230: Prison_SupportBars_0012 3
+    101232: Prison_SupportBars_0013
+    101234: Prison_SupportBars_0013 1
+    101236: Prison_SupportBars_0013 2
+    101238: Prison_SupportBars_0013 3
+    101240: Prison_SupportBars_0014
+    101242: Prison_SupportBars_0014 1
+    101244: Prison_SupportBars_0014 2
+    101246: Prison_SupportBars_0014 3
+    101248: Prison_SupportBars_0015
+    101250: Prison_SupportBars_0015 1
+    101252: Prison_SupportBars_0015 2
+    101254: Prison_SupportBars_0015 3
+    101256: Prison_SupportBars_002
+    101258: Prison_SupportBars_003
+    101260: Prison_SupportBars_004
+    101262: Prison_SupportBars_006
+    101264: Prison_SupportBars_006 1
+    101266: Prison_SupportBars_006 2
+    101268: Prison_SupportBars_006 3
+    101270: Prison_SupportBars_007
+    101272: Prison_SupportBars_007 1
+    101274: Prison_SupportBars_007 2
+    101276: Prison_SupportBars_007 3
+    101278: Prison_SupportBars_008
+    101280: Prison_SupportBars_008 1
+    101282: Prison_SupportBars_008 2
+    101284: Prison_SupportBars_008 3
+    101286: Prison_SupportBars_009
+    101288: Prison_SupportBars_009 1
+    101290: Prison_SupportBars_009 2
+    101292: Prison_SupportBars_009 3
+    101294: PrisonBars_001
+    101296: PrisonBars_002
+    101298: PrisonBars_003
+    101300: PrisonBars_004
+    101302: PrisonBars_005
+    101304: PrisonBars_006
+    101306: PrisonBars_007
+    101308: PrisonBars_008
+    101310: PrisonBars_009
+    101312: Skirt_Ledge_001
+    101314: Skirt_Ledge_001 1
+    101316: Skirt_Ledge_002
+    101318: Skirt_Ledges
+    101320: Skirt_Ledges1
+    101322: Wall_Skirt_001 1
+    101324: Wall_Skirt_002
+    101326: Wall_Skirts 1
+    101328: Wall_Skirts1
+    101330: Wooden_Platform_001
+    101332: Wooden_Platform_002
+    101334: Wooden_Platform_003
+    101336: Wooden_Platform_004
+    101338: Wooden_Platform_005
+    101340: Wooden_Platform_Prefabs
     400000: bottom
     400002: Bridge_Blocks
     400004: Bridge_Blocks_001
@@ -917,6 +1132,221 @@ ModelImporter:
     400906: polySurface_03 2
     400908: polySurface_04 1
     400910: polySurface_04 2
+    400912: ambientLight1
+    400914: Outside_Bridge_04
+    400916: pCube1
+    400918: pCube1 1
+    400920: pCube1 2
+    400922: pCube1 3
+    400924: pCube1 4
+    400926: pCube10
+    400928: pCube10 1
+    400930: pCube10 2
+    400932: pCube10 3
+    400934: pCube10 4
+    400936: pCube11
+    400938: pCube11 1
+    400940: pCube11 2
+    400942: pCube11 3
+    400944: pCube11 4
+    400946: pCube12
+    400948: pCube12 1
+    400950: pCube12 2
+    400952: pCube12 3
+    400954: pCube12 4
+    400956: pCube13
+    400958: pCube13 1
+    400960: pCube13 2
+    400962: pCube13 3
+    400964: pCube13 4
+    400966: pCube14
+    400968: pCube14 1
+    400970: pCube14 2
+    400972: pCube14 3
+    400974: pCube14 4
+    400976: pCube15
+    400978: pCube15 1
+    400980: pCube15 2
+    400982: pCube15 3
+    400984: pCube15 4
+    400986: pCube16
+    400988: pCube16 1
+    400990: pCube16 2
+    400992: pCube16 3
+    400994: pCube16 4
+    400996: pCube17
+    400998: pCube17 1
+    401000: pCube17 2
+    401002: pCube17 3
+    401004: pCube17 4
+    401006: pCube18
+    401008: pCube18 1
+    401010: pCube18 2
+    401012: pCube18 3
+    401014: pCube18 4
+    401016: pCube19
+    401018: pCube19 1
+    401020: pCube19 2
+    401022: pCube19 3
+    401024: pCube19 4
+    401026: pCube2
+    401028: pCube2 1
+    401030: pCube2 2
+    401032: pCube2 3
+    401034: pCube2 4
+    401036: pCube3
+    401038: pCube3 1
+    401040: pCube3 2
+    401042: pCube3 3
+    401044: pCube3 4
+    401046: pCube5
+    401048: pCube5 1
+    401050: pCube5 2
+    401052: pCube5 3
+    401054: pCube5 4
+    401056: pCube6
+    401058: pCube6 1
+    401060: pCube6 2
+    401062: pCube6 3
+    401064: pCube6 4
+    401066: pCube7
+    401068: pCube7 1
+    401070: pCube7 2
+    401072: pCube7 3
+    401074: pCube7 4
+    401076: pCube8
+    401078: pCube8 1
+    401080: pCube8 2
+    401082: pCube8 3
+    401084: pCube8 4
+    401086: pCube9
+    401088: pCube9 1
+    401090: pCube9 2
+    401092: pCube9 3
+    401094: pCube9 4
+    401096: Platform_010
+    401098: Platform_011
+    401100: Platform_012
+    401102: Platform_014
+    401104: Platform_015
+    401106: Platform_016
+    401108: Platform_017
+    401110: Platform_018
+    401112: Platform_019
+    401114: Platform_02
+    401116: Platform_020
+    401118: Platform_021
+    401120: Platform_022
+    401122: Platform_023
+    401124: Platform_024
+    401126: Platform_025
+    401128: Platform_026
+    401130: Platform_027
+    401132: Platform_028
+    401134: Platform_029
+    401136: Platform_03
+    401138: Platform_030
+    401140: Platform_031
+    401142: Platform_032
+    401144: Platform_033
+    401146: Platform_034
+    401148: Platform_035
+    401150: Platform_036
+    401152: Platform_037
+    401154: Platform_04
+    401156: Platform_05
+    401158: Platform_06
+    401160: Platform_07
+    401162: Platform_08
+    401164: Platform_09
+    401166: pointLight1
+    401168: pointLight2
+    401170: pointLight3
+    401172: pointLight4
+    401174: polySurface_010
+    401176: polySurface_011
+    401178: polySurface_012
+    401180: polySurface_05
+    401182: polySurface_06
+    401184: polySurface_07
+    401186: polySurface_08
+    401188: polySurface_09
+    401190: Prison_Bars_002
+    401192: Prison_Bars_002 1
+    401194: Prison_Bars_002 2
+    401196: Prison_Bars_002 3
+    401198: Prison_Bars_003
+    401200: Prison_Bars_003 1
+    401202: Prison_Bars_003 2
+    401204: Prison_Bars_003 3
+    401206: Prison_SupportBars_001
+    401208: Prison_SupportBars_0010
+    401210: Prison_SupportBars_0010 1
+    401212: Prison_SupportBars_0010 2
+    401214: Prison_SupportBars_0010 3
+    401216: Prison_SupportBars_0011
+    401218: Prison_SupportBars_0011 1
+    401220: Prison_SupportBars_0011 2
+    401222: Prison_SupportBars_0011 3
+    401224: Prison_SupportBars_0012
+    401226: Prison_SupportBars_0012 1
+    401228: Prison_SupportBars_0012 2
+    401230: Prison_SupportBars_0012 3
+    401232: Prison_SupportBars_0013
+    401234: Prison_SupportBars_0013 1
+    401236: Prison_SupportBars_0013 2
+    401238: Prison_SupportBars_0013 3
+    401240: Prison_SupportBars_0014
+    401242: Prison_SupportBars_0014 1
+    401244: Prison_SupportBars_0014 2
+    401246: Prison_SupportBars_0014 3
+    401248: Prison_SupportBars_0015
+    401250: Prison_SupportBars_0015 1
+    401252: Prison_SupportBars_0015 2
+    401254: Prison_SupportBars_0015 3
+    401256: Prison_SupportBars_002
+    401258: Prison_SupportBars_003
+    401260: Prison_SupportBars_004
+    401262: Prison_SupportBars_006
+    401264: Prison_SupportBars_006 1
+    401266: Prison_SupportBars_006 2
+    401268: Prison_SupportBars_006 3
+    401270: Prison_SupportBars_007
+    401272: Prison_SupportBars_007 1
+    401274: Prison_SupportBars_007 2
+    401276: Prison_SupportBars_007 3
+    401278: Prison_SupportBars_008
+    401280: Prison_SupportBars_008 1
+    401282: Prison_SupportBars_008 2
+    401284: Prison_SupportBars_008 3
+    401286: Prison_SupportBars_009
+    401288: Prison_SupportBars_009 1
+    401290: Prison_SupportBars_009 2
+    401292: Prison_SupportBars_009 3
+    401294: PrisonBars_001
+    401296: PrisonBars_002
+    401298: PrisonBars_003
+    401300: PrisonBars_004
+    401302: PrisonBars_005
+    401304: PrisonBars_006
+    401306: PrisonBars_007
+    401308: PrisonBars_008
+    401310: PrisonBars_009
+    401312: Skirt_Ledge_001
+    401314: Skirt_Ledge_001 1
+    401316: Skirt_Ledge_002
+    401318: Skirt_Ledges
+    401320: Skirt_Ledges1
+    401322: Wall_Skirt_001 1
+    401324: Wall_Skirt_002
+    401326: Wall_Skirts 1
+    401328: Wall_Skirts1
+    401330: Wooden_Platform_001
+    401332: Wooden_Platform_002
+    401334: Wooden_Platform_003
+    401336: Wooden_Platform_004
+    401338: Wooden_Platform_005
+    401340: Wooden_Platform_Prefabs
     2300000: Bridge_Blocks_001
     2300002: Bridge_Blocks_002
     2300004: Bridge_Blocks_003
@@ -1333,6 +1763,197 @@ ModelImporter:
     2300826: polySurface_03 2
     2300828: polySurface_04 1
     2300830: polySurface_04 2
+    2300832: Outside_Bridge_04
+    2300834: pCube1
+    2300836: pCube1 1
+    2300838: pCube1 2
+    2300840: pCube1 3
+    2300842: pCube1 4
+    2300844: pCube10
+    2300846: pCube10 1
+    2300848: pCube10 2
+    2300850: pCube10 3
+    2300852: pCube10 4
+    2300854: pCube11
+    2300856: pCube11 1
+    2300858: pCube11 2
+    2300860: pCube11 3
+    2300862: pCube11 4
+    2300864: pCube12
+    2300866: pCube12 1
+    2300868: pCube12 2
+    2300870: pCube12 3
+    2300872: pCube12 4
+    2300874: pCube13
+    2300876: pCube13 1
+    2300878: pCube13 2
+    2300880: pCube13 3
+    2300882: pCube13 4
+    2300884: pCube14
+    2300886: pCube14 1
+    2300888: pCube14 2
+    2300890: pCube14 3
+    2300892: pCube14 4
+    2300894: pCube15
+    2300896: pCube15 1
+    2300898: pCube15 2
+    2300900: pCube15 3
+    2300902: pCube15 4
+    2300904: pCube16
+    2300906: pCube16 1
+    2300908: pCube16 2
+    2300910: pCube16 3
+    2300912: pCube16 4
+    2300914: pCube17
+    2300916: pCube17 1
+    2300918: pCube17 2
+    2300920: pCube17 3
+    2300922: pCube17 4
+    2300924: pCube18
+    2300926: pCube18 1
+    2300928: pCube18 2
+    2300930: pCube18 3
+    2300932: pCube18 4
+    2300934: pCube19
+    2300936: pCube19 1
+    2300938: pCube19 2
+    2300940: pCube19 3
+    2300942: pCube19 4
+    2300944: pCube2
+    2300946: pCube2 1
+    2300948: pCube2 2
+    2300950: pCube2 3
+    2300952: pCube2 4
+    2300954: pCube3
+    2300956: pCube3 1
+    2300958: pCube3 2
+    2300960: pCube3 3
+    2300962: pCube3 4
+    2300964: pCube5
+    2300966: pCube5 1
+    2300968: pCube5 2
+    2300970: pCube5 3
+    2300972: pCube5 4
+    2300974: pCube6
+    2300976: pCube6 1
+    2300978: pCube6 2
+    2300980: pCube6 3
+    2300982: pCube6 4
+    2300984: pCube7
+    2300986: pCube7 1
+    2300988: pCube7 2
+    2300990: pCube7 3
+    2300992: pCube7 4
+    2300994: pCube8
+    2300996: pCube8 1
+    2300998: pCube8 2
+    2301000: pCube8 3
+    2301002: pCube8 4
+    2301004: pCube9
+    2301006: pCube9 1
+    2301008: pCube9 2
+    2301010: pCube9 3
+    2301012: pCube9 4
+    2301014: Platform_010
+    2301016: Platform_011
+    2301018: Platform_012
+    2301020: Platform_014
+    2301022: Platform_015
+    2301024: Platform_016
+    2301026: Platform_017
+    2301028: Platform_018
+    2301030: Platform_019
+    2301032: Platform_02
+    2301034: Platform_020
+    2301036: Platform_021
+    2301038: Platform_022
+    2301040: Platform_023
+    2301042: Platform_024
+    2301044: Platform_025
+    2301046: Platform_026
+    2301048: Platform_027
+    2301050: Platform_028
+    2301052: Platform_029
+    2301054: Platform_03
+    2301056: Platform_030
+    2301058: Platform_031
+    2301060: Platform_032
+    2301062: Platform_033
+    2301064: Platform_034
+    2301066: Platform_035
+    2301068: Platform_036
+    2301070: Platform_037
+    2301072: Platform_04
+    2301074: Platform_05
+    2301076: Platform_06
+    2301078: Platform_07
+    2301080: Platform_08
+    2301082: Platform_09
+    2301084: polySurface_010
+    2301086: polySurface_011
+    2301088: polySurface_012
+    2301090: polySurface_05
+    2301092: polySurface_06
+    2301094: polySurface_07
+    2301096: polySurface_08
+    2301098: polySurface_09
+    2301100: Prison_Bars_002
+    2301102: Prison_Bars_002 1
+    2301104: Prison_Bars_002 2
+    2301106: Prison_Bars_002 3
+    2301108: Prison_Bars_003
+    2301110: Prison_Bars_003 1
+    2301112: Prison_Bars_003 2
+    2301114: Prison_Bars_003 3
+    2301116: Prison_SupportBars_001
+    2301118: Prison_SupportBars_0010
+    2301120: Prison_SupportBars_0010 1
+    2301122: Prison_SupportBars_0010 2
+    2301124: Prison_SupportBars_0010 3
+    2301126: Prison_SupportBars_0011
+    2301128: Prison_SupportBars_0011 1
+    2301130: Prison_SupportBars_0011 2
+    2301132: Prison_SupportBars_0011 3
+    2301134: Prison_SupportBars_0012
+    2301136: Prison_SupportBars_0012 1
+    2301138: Prison_SupportBars_0012 2
+    2301140: Prison_SupportBars_0012 3
+    2301142: Prison_SupportBars_0013
+    2301144: Prison_SupportBars_0013 1
+    2301146: Prison_SupportBars_0013 2
+    2301148: Prison_SupportBars_0013 3
+    2301150: Prison_SupportBars_0014
+    2301152: Prison_SupportBars_0014 1
+    2301154: Prison_SupportBars_0014 2
+    2301156: Prison_SupportBars_0014 3
+    2301158: Prison_SupportBars_0015
+    2301160: Prison_SupportBars_0015 1
+    2301162: Prison_SupportBars_0015 2
+    2301164: Prison_SupportBars_0015 3
+    2301166: Prison_SupportBars_002
+    2301168: Prison_SupportBars_003
+    2301170: Prison_SupportBars_004
+    2301172: Prison_SupportBars_006
+    2301174: Prison_SupportBars_006 1
+    2301176: Prison_SupportBars_006 2
+    2301178: Prison_SupportBars_006 3
+    2301180: Prison_SupportBars_007
+    2301182: Prison_SupportBars_007 1
+    2301184: Prison_SupportBars_007 2
+    2301186: Prison_SupportBars_007 3
+    2301188: Prison_SupportBars_008
+    2301190: Prison_SupportBars_008 1
+    2301192: Prison_SupportBars_008 2
+    2301194: Prison_SupportBars_008 3
+    2301196: Prison_SupportBars_009
+    2301198: Prison_SupportBars_009 1
+    2301200: Prison_SupportBars_009 2
+    2301202: Prison_SupportBars_009 3
+    2301204: Skirt_Ledge_001
+    2301206: Skirt_Ledge_001 1
+    2301208: Skirt_Ledge_002
+    2301210: Wall_Skirt_001 1
+    2301212: Wall_Skirt_002
     3300000: Bridge_Blocks_001
     3300002: Bridge_Blocks_002
     3300004: Bridge_Blocks_003
@@ -1749,6 +2370,197 @@ ModelImporter:
     3300826: polySurface_03 2
     3300828: polySurface_04 1
     3300830: polySurface_04 2
+    3300832: Outside_Bridge_04
+    3300834: pCube1
+    3300836: pCube1 1
+    3300838: pCube1 2
+    3300840: pCube1 3
+    3300842: pCube1 4
+    3300844: pCube10
+    3300846: pCube10 1
+    3300848: pCube10 2
+    3300850: pCube10 3
+    3300852: pCube10 4
+    3300854: pCube11
+    3300856: pCube11 1
+    3300858: pCube11 2
+    3300860: pCube11 3
+    3300862: pCube11 4
+    3300864: pCube12
+    3300866: pCube12 1
+    3300868: pCube12 2
+    3300870: pCube12 3
+    3300872: pCube12 4
+    3300874: pCube13
+    3300876: pCube13 1
+    3300878: pCube13 2
+    3300880: pCube13 3
+    3300882: pCube13 4
+    3300884: pCube14
+    3300886: pCube14 1
+    3300888: pCube14 2
+    3300890: pCube14 3
+    3300892: pCube14 4
+    3300894: pCube15
+    3300896: pCube15 1
+    3300898: pCube15 2
+    3300900: pCube15 3
+    3300902: pCube15 4
+    3300904: pCube16
+    3300906: pCube16 1
+    3300908: pCube16 2
+    3300910: pCube16 3
+    3300912: pCube16 4
+    3300914: pCube17
+    3300916: pCube17 1
+    3300918: pCube17 2
+    3300920: pCube17 3
+    3300922: pCube17 4
+    3300924: pCube18
+    3300926: pCube18 1
+    3300928: pCube18 2
+    3300930: pCube18 3
+    3300932: pCube18 4
+    3300934: pCube19
+    3300936: pCube19 1
+    3300938: pCube19 2
+    3300940: pCube19 3
+    3300942: pCube19 4
+    3300944: pCube2
+    3300946: pCube2 1
+    3300948: pCube2 2
+    3300950: pCube2 3
+    3300952: pCube2 4
+    3300954: pCube3
+    3300956: pCube3 1
+    3300958: pCube3 2
+    3300960: pCube3 3
+    3300962: pCube3 4
+    3300964: pCube5
+    3300966: pCube5 1
+    3300968: pCube5 2
+    3300970: pCube5 3
+    3300972: pCube5 4
+    3300974: pCube6
+    3300976: pCube6 1
+    3300978: pCube6 2
+    3300980: pCube6 3
+    3300982: pCube6 4
+    3300984: pCube7
+    3300986: pCube7 1
+    3300988: pCube7 2
+    3300990: pCube7 3
+    3300992: pCube7 4
+    3300994: pCube8
+    3300996: pCube8 1
+    3300998: pCube8 2
+    3301000: pCube8 3
+    3301002: pCube8 4
+    3301004: pCube9
+    3301006: pCube9 1
+    3301008: pCube9 2
+    3301010: pCube9 3
+    3301012: pCube9 4
+    3301014: Platform_010
+    3301016: Platform_011
+    3301018: Platform_012
+    3301020: Platform_014
+    3301022: Platform_015
+    3301024: Platform_016
+    3301026: Platform_017
+    3301028: Platform_018
+    3301030: Platform_019
+    3301032: Platform_02
+    3301034: Platform_020
+    3301036: Platform_021
+    3301038: Platform_022
+    3301040: Platform_023
+    3301042: Platform_024
+    3301044: Platform_025
+    3301046: Platform_026
+    3301048: Platform_027
+    3301050: Platform_028
+    3301052: Platform_029
+    3301054: Platform_03
+    3301056: Platform_030
+    3301058: Platform_031
+    3301060: Platform_032
+    3301062: Platform_033
+    3301064: Platform_034
+    3301066: Platform_035
+    3301068: Platform_036
+    3301070: Platform_037
+    3301072: Platform_04
+    3301074: Platform_05
+    3301076: Platform_06
+    3301078: Platform_07
+    3301080: Platform_08
+    3301082: Platform_09
+    3301084: polySurface_010
+    3301086: polySurface_011
+    3301088: polySurface_012
+    3301090: polySurface_05
+    3301092: polySurface_06
+    3301094: polySurface_07
+    3301096: polySurface_08
+    3301098: polySurface_09
+    3301100: Prison_Bars_002
+    3301102: Prison_Bars_002 1
+    3301104: Prison_Bars_002 2
+    3301106: Prison_Bars_002 3
+    3301108: Prison_Bars_003
+    3301110: Prison_Bars_003 1
+    3301112: Prison_Bars_003 2
+    3301114: Prison_Bars_003 3
+    3301116: Prison_SupportBars_001
+    3301118: Prison_SupportBars_0010
+    3301120: Prison_SupportBars_0010 1
+    3301122: Prison_SupportBars_0010 2
+    3301124: Prison_SupportBars_0010 3
+    3301126: Prison_SupportBars_0011
+    3301128: Prison_SupportBars_0011 1
+    3301130: Prison_SupportBars_0011 2
+    3301132: Prison_SupportBars_0011 3
+    3301134: Prison_SupportBars_0012
+    3301136: Prison_SupportBars_0012 1
+    3301138: Prison_SupportBars_0012 2
+    3301140: Prison_SupportBars_0012 3
+    3301142: Prison_SupportBars_0013
+    3301144: Prison_SupportBars_0013 1
+    3301146: Prison_SupportBars_0013 2
+    3301148: Prison_SupportBars_0013 3
+    3301150: Prison_SupportBars_0014
+    3301152: Prison_SupportBars_0014 1
+    3301154: Prison_SupportBars_0014 2
+    3301156: Prison_SupportBars_0014 3
+    3301158: Prison_SupportBars_0015
+    3301160: Prison_SupportBars_0015 1
+    3301162: Prison_SupportBars_0015 2
+    3301164: Prison_SupportBars_0015 3
+    3301166: Prison_SupportBars_002
+    3301168: Prison_SupportBars_003
+    3301170: Prison_SupportBars_004
+    3301172: Prison_SupportBars_006
+    3301174: Prison_SupportBars_006 1
+    3301176: Prison_SupportBars_006 2
+    3301178: Prison_SupportBars_006 3
+    3301180: Prison_SupportBars_007
+    3301182: Prison_SupportBars_007 1
+    3301184: Prison_SupportBars_007 2
+    3301186: Prison_SupportBars_007 3
+    3301188: Prison_SupportBars_008
+    3301190: Prison_SupportBars_008 1
+    3301192: Prison_SupportBars_008 2
+    3301194: Prison_SupportBars_008 3
+    3301196: Prison_SupportBars_009
+    3301198: Prison_SupportBars_009 1
+    3301200: Prison_SupportBars_009 2
+    3301202: Prison_SupportBars_009 3
+    3301204: Skirt_Ledge_001
+    3301206: Skirt_Ledge_001 1
+    3301208: Skirt_Ledge_002
+    3301210: Wall_Skirt_001 1
+    3301212: Wall_Skirt_002
     4300000: Tower_Floor_01
     4300002: Tower_Floor_02
     4300004: Tower_01
@@ -2165,6 +2977,197 @@ ModelImporter:
     4300826: polySurface_02
     4300828: polySurface_03
     4300830: polySurface_04
+    4300832: Platform_02
+    4300834: Platform_03
+    4300836: Platform_04
+    4300838: Platform_05
+    4300840: Platform_06
+    4300842: Platform_07
+    4300844: Platform_08
+    4300846: Platform_09
+    4300848: Platform_010
+    4300850: Platform_011
+    4300852: Platform_012
+    4300854: Platform_014
+    4300856: Platform_015
+    4300858: Platform_016
+    4300860: Platform_017
+    4300862: Platform_018
+    4300864: Platform_019
+    4300866: Platform_020
+    4300868: Platform_021
+    4300870: Platform_022
+    4300872: Platform_023
+    4300874: Platform_024
+    4300876: Platform_025
+    4300878: Platform_026
+    4300880: Platform_027
+    4300882: Platform_028
+    4300884: Platform_029
+    4300886: Platform_030
+    4300888: Platform_031
+    4300890: Platform_032
+    4300892: Platform_033
+    4300894: Platform_034
+    4300896: Platform_035
+    4300898: Platform_036
+    4300900: Platform_037
+    4300902: polySurface_05
+    4300904: polySurface_06
+    4300906: polySurface_07
+    4300908: polySurface_08
+    4300910: polySurface_09
+    4300912: polySurface_010
+    4300914: polySurface_011
+    4300916: polySurface_012
+    4300918: Skirt_Ledge_001
+    4300920: Wall_Skirt_001
+    4300922: Wall_Skirt_002
+    4300924: Skirt_Ledge_001
+    4300926: Skirt_Ledge_002
+    4300928: Prison_SupportBars_001
+    4300930: Prison_SupportBars_002
+    4300932: Prison_SupportBars_003
+    4300934: Prison_SupportBars_004
+    4300936: Prison_SupportBars_006
+    4300938: Prison_SupportBars_0010
+    4300940: Prison_SupportBars_007
+    4300942: Prison_Bars_002
+    4300944: Prison_SupportBars_008
+    4300946: Prison_SupportBars_009
+    4300948: Prison_Bars_003
+    4300950: Prison_SupportBars_0013
+    4300952: Prison_SupportBars_0012
+    4300954: Prison_SupportBars_0014
+    4300956: Prison_SupportBars_0015
+    4300958: Prison_SupportBars_0011
+    4300960: Prison_SupportBars_006
+    4300962: Prison_SupportBars_0010
+    4300964: Prison_SupportBars_007
+    4300966: Prison_Bars_002
+    4300968: Prison_SupportBars_008
+    4300970: Prison_SupportBars_009
+    4300972: Prison_Bars_003
+    4300974: Prison_SupportBars_0013
+    4300976: Prison_SupportBars_0012
+    4300978: Prison_SupportBars_0014
+    4300980: Prison_SupportBars_0015
+    4300982: Prison_SupportBars_0011
+    4300984: Prison_SupportBars_006
+    4300986: Prison_SupportBars_0010
+    4300988: Prison_SupportBars_007
+    4300990: Prison_Bars_002
+    4300992: Prison_SupportBars_008
+    4300994: Prison_SupportBars_009
+    4300996: Prison_Bars_003
+    4300998: Prison_SupportBars_0013
+    4301000: Prison_SupportBars_0012
+    4301002: Prison_SupportBars_0014
+    4301004: Prison_SupportBars_0015
+    4301006: Prison_SupportBars_0011
+    4301008: Prison_SupportBars_006
+    4301010: Prison_SupportBars_0010
+    4301012: Prison_SupportBars_007
+    4301014: Prison_Bars_002
+    4301016: Prison_SupportBars_008
+    4301018: Prison_SupportBars_009
+    4301020: Prison_Bars_003
+    4301022: Prison_SupportBars_0013
+    4301024: Prison_SupportBars_0012
+    4301026: Prison_SupportBars_0014
+    4301028: Prison_SupportBars_0015
+    4301030: Prison_SupportBars_0011
+    4301032: Outside_Bridge_04
+    4301034: pCube1
+    4301036: pCube2
+    4301038: pCube3
+    4301040: pCube5
+    4301042: pCube6
+    4301044: pCube7
+    4301046: pCube8
+    4301048: pCube9
+    4301050: pCube10
+    4301052: pCube11
+    4301054: pCube12
+    4301056: pCube13
+    4301058: pCube14
+    4301060: pCube15
+    4301062: pCube16
+    4301064: pCube17
+    4301066: pCube18
+    4301068: pCube19
+    4301070: pCube1
+    4301072: pCube2
+    4301074: pCube3
+    4301076: pCube5
+    4301078: pCube6
+    4301080: pCube7
+    4301082: pCube8
+    4301084: pCube9
+    4301086: pCube10
+    4301088: pCube11
+    4301090: pCube12
+    4301092: pCube13
+    4301094: pCube14
+    4301096: pCube15
+    4301098: pCube16
+    4301100: pCube17
+    4301102: pCube18
+    4301104: pCube19
+    4301106: pCube1
+    4301108: pCube2
+    4301110: pCube3
+    4301112: pCube5
+    4301114: pCube6
+    4301116: pCube7
+    4301118: pCube8
+    4301120: pCube9
+    4301122: pCube10
+    4301124: pCube11
+    4301126: pCube12
+    4301128: pCube13
+    4301130: pCube14
+    4301132: pCube15
+    4301134: pCube16
+    4301136: pCube17
+    4301138: pCube18
+    4301140: pCube19
+    4301142: pCube1
+    4301144: pCube2
+    4301146: pCube3
+    4301148: pCube5
+    4301150: pCube6
+    4301152: pCube7
+    4301154: pCube8
+    4301156: pCube9
+    4301158: pCube10
+    4301160: pCube11
+    4301162: pCube12
+    4301164: pCube13
+    4301166: pCube14
+    4301168: pCube15
+    4301170: pCube16
+    4301172: pCube17
+    4301174: pCube18
+    4301176: pCube19
+    4301178: pCube1
+    4301180: pCube2
+    4301182: pCube3
+    4301184: pCube5
+    4301186: pCube6
+    4301188: pCube7
+    4301190: pCube8
+    4301192: pCube9
+    4301194: pCube10
+    4301196: pCube11
+    4301198: pCube12
+    4301200: pCube13
+    4301202: pCube14
+    4301204: pCube15
+    4301206: pCube16
+    4301208: pCube17
+    4301210: pCube18
+    4301212: pCube19
     9500000: //RootNode
   materials:
     importMaterials: 1
