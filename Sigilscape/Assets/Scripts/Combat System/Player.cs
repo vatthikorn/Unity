@@ -39,6 +39,8 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+    public Animator anim;
+
     //Needs to be referenced prior
     public GameObject equipment;
 
@@ -66,7 +68,7 @@ public class Player : MonoBehaviour {
     public const float shieldTime = 0.2f;
 
     public const float playerHurtTime = 0.2f;
-    public const float playerDodgeTime = 0.2f;
+    public const float playerDodgeTime = 0.37f;
 
     //KnockBack to player by an enemy attack
     public Vector2 PlayerKnockBack = new Vector2(2000f, 100f);
@@ -166,6 +168,7 @@ public class Player : MonoBehaviour {
     {
         leftDodging = false;
         rightDodging = false;
+        anim.SetBool("dodging", false);
     }
 
     void EnableAction()
@@ -392,30 +395,35 @@ public class Player : MonoBehaviour {
     {
         smallestMelee.SetActive(false);
         this.GetComponent<PlayerController>().action = true;
+        anim.SetBool("attacking", false);
     }
 
     void DisableSmallMelee()
     {
         smallMelee.SetActive(false);
         this.GetComponent<PlayerController>().action = true;
+        anim.SetBool("attacking", false);
     }
 
     void DisableMediumMelee()
     {
         mediumMelee.SetActive(false);
         this.GetComponent<PlayerController>().action = true;
+        anim.SetBool("attacking", false);
     }
 
     void DisableLargeMelee()
     {
         largeMelee.SetActive(false);
         this.GetComponent<PlayerController>().action = true;
+        anim.SetBool("attacking", false);
     }
 
     void DisableLargestMelee()
     {
         largestMelee.SetActive(false);
         this.GetComponent<PlayerController>().action = true;
+        anim.SetBool("attacking", false);
     }
     //end DisableWeapons
     
@@ -494,6 +502,7 @@ public class Player : MonoBehaviour {
     //Damage Receiver, Can be called by Shield
     public void ReceiveDamage(int damage)
     {
+        GetsHurtAnim();
         int reducedDamage = damageReductionByArmor(damage);
         reducedDamage = EternasBlessingSigil.ReduceDamage(damage);
         reducedDamage = MaskOfFearSigil.ReduceDamage(damage);
@@ -502,16 +511,15 @@ public class Player : MonoBehaviour {
 
         if (health < 0)
             health = 0;
-
-        if(health == 0)
-        {
-            //CALL GAMEOVER SOMETHING
-        }
     }
 
     //Handles damage reduction by armor
     int damageReductionByArmor(int damage)
     {
         return (int) (damage * (1.0f - (float) (equipment.GetComponent<Equipment>().armor.defense) / (float) (equipment.GetComponent<Equipment>().armor.defense + 100)));
+    }
+
+    void GetsHurtAnim()
+    {
     }
 }

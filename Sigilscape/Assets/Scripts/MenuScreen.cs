@@ -11,6 +11,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -24,14 +25,13 @@ public class MenuScreen : MonoBehaviour {
     public GUISkin buttonSkin;
 
     public const float centerAnchor = 0.5f;
+    
+    public const float topAnchorY = 255;
 
-    public const float buttonX = centerAnchor - buttonWidth / 2;
-    public const float firstButtonY = 0.3f;
+    public const float buttonWidth = 400;
+    public const float buttonHeight = 100;
 
-    public const float buttonWidth = 0.35f;
-    public const float buttonHeight = 0.1f;
-
-    public const float buttonSpacingY = 1.5f;
+    public const float buttonSpacingY = 50;
 
 	void OnGUI()
     {
@@ -45,19 +45,17 @@ public class MenuScreen : MonoBehaviour {
 	{
 		GUI.skin = buttonSkin;
 
-		Rect button = new Rect(buttonX * Screen.width, firstButtonY * Screen.height, buttonWidth * Screen.width, buttonHeight * Screen.height);
+		Rect button = new Rect(Screen.width/2 - buttonWidth/2, Screen.height / 2 - topAnchorY, buttonWidth, buttonHeight);
 		if (GUI.Button(button, "Save Game"))
 		{
 			//CALL THE FUNCTION TO SAVE THE GAME HERE
 			gameControl.GetComponent<GameControl>().SaveGameData();
 			#if UNITY_EDITOR
 			EditorUtility.DisplayDialog ("Saving", "Game Data Saved", "OK");
-			#else
-			Application.Quit();
 			#endif
 		}
 
-		button = new Rect(buttonX * Screen.width, firstButtonY * Screen.height + buttonHeight * Screen.height * buttonSpacingY, buttonWidth * Screen.width, buttonHeight * Screen.height);
+		button = new Rect(Screen.width / 2 - buttonWidth / 2, Screen.height / 2 - topAnchorY + buttonHeight + buttonSpacingY, buttonWidth, buttonHeight);
 		if(GUI.Button(button, "Load Game"))
 		{
 			//CALL THE FUNCTION TO SAVE THE GAME HERE
@@ -68,6 +66,18 @@ public class MenuScreen : MonoBehaviour {
 			// I changed the button to a "Load Game" button just to test loading
 			gameControl.GetComponent<GameControl>().LoadGameData ();
 		}
+
+        button = new Rect(Screen.width / 2 - buttonWidth / 2, Screen.height / 2 - topAnchorY + buttonHeight * 2 + buttonSpacingY * 2, buttonWidth, buttonHeight);
+        if (GUI.Button(button, "Quit to Main Screen"))
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        button = new Rect(Screen.width / 2 - buttonWidth / 2, Screen.height / 2 - topAnchorY + buttonHeight * 3 + buttonSpacingY * 3, buttonWidth, buttonHeight);
+        if (GUI.Button(button, "Quit to Home"))
+        {
+            Application.Quit();
+        }
 
 	}
 }

@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AI.cs" />
     <Compile Include="Assets\Scripts\BossBattleActivate.cs" />
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\Combat System\AttackVars.cs" />

@@ -9,7 +9,7 @@ public class HiddenRoomTrigger : MonoBehaviour {
 	public GameObject musicController;
 
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerStay2D(Collider2D other) {
 
 		if (other.tag == "Player") {
 

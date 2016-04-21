@@ -52,6 +52,8 @@ public class PlayerController : MonoBehaviour {
     public Transform leftWallCheck;
     public Transform rightWallCheck;
 
+    public float deathAnimTime = .95f;
+
     //Limits movement
     public const float moveForce = 300f;//Horizontal Force
     public const float maxSpeed = 5f;//Horizontal Speed
@@ -123,17 +125,27 @@ public class PlayerController : MonoBehaviour {
 
         //Down - Jump: Checks if the player is on the ground to enable jumping
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
+        //GROUNDED ANIM
         anim.SetBool("grounded", grounded);
+
+        if(facingRight)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
 
         if (!pauseGame)
         {
 			//if player health is 0 call game over
 			if (player.GetComponent<Player>().health <= 0) {
 
-				Time.timeScale = 0;
-				panel.SetActive (true);
-				exitButton.interactable = true;
-				restartButton.interactable = true;
+                action = false;
+                anim.SetBool("alive", false);
+                Invoke("DeathIsDying", deathAnimTime);
 			}
 
             //Jump
@@ -172,6 +184,7 @@ public class PlayerController : MonoBehaviour {
             else if(action && ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K))))
             {
                 action = false;
+                anim.SetBool("attacking", true);
                 this.gameObject.GetComponent<Player>().Attack();
             }
             else if (action && equipment.GetComponent<Equipment>().shield.itemID != 0 && ((Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.J))))
@@ -182,13 +195,27 @@ public class PlayerController : MonoBehaviour {
             //Dodging
             else if(action && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.A))
             {
+                anim.SetBool("dodging", true);
                 action = false;
+                facingRight = false;
                 this.gameObject.GetComponent<Player>().DodgeLeft();
             }
             else if(action && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.D))
             {
+                anim.SetBool("dodging", true);
                 action = false;
+                facingRight = true;
                 this.gameObject.GetComponent<Player>().DodgeRight();
+            }
+
+            //MOVING ANIM
+            if (action && Math.Abs(Input.GetAxis("Horizontal")) > 0)
+            {
+                anim.SetBool("moving", true);
+            }
+            else
+            {
+                anim.SetBool("moving", false);
             }
         }
 
@@ -245,22 +272,10 @@ public class PlayerController : MonoBehaviour {
             if(action && h > 0)
             {
                 facingRight = true;
-                this.GetComponent<Player>().smallestMelee.transform.localPosition = new Vector2(smallestMeleeOffsetRight, 0);
-                this.GetComponent<Player>().smallMelee.transform.localPosition = new Vector2(smallMeleeOffsetRight, 0);
-                this.GetComponent<Player>().mediumMelee.transform.localPosition = new Vector2(mediumMeleeOffsetRight, 0);
-                this.GetComponent<Player>().largeMelee.transform.localPosition = new Vector2(largeMeleeOffsetRight, 0);
-                this.GetComponent<Player>().largestMelee.transform.localPosition = new Vector2(largestMeleeOffsetRight, 0);
-                this.GetComponent<Player>().shield.transform.localPosition = new Vector2(shieldOffsetRight, 0);
             }
             else if (action && h < 0)
             {
                 facingRight = false;
-                this.GetComponent<Player>().smallestMelee.transform.localPosition = new Vector2(smallestMeleeOffsetLeft, 0);
-                this.GetComponent<Player>().smallMelee.transform.localPosition = new Vector2(smallMeleeOffsetLeft, 0);
-                this.GetComponent<Player>().mediumMelee.transform.localPosition = new Vector2(mediumMeleeOffsetLeft, 0);
-                this.GetComponent<Player>().largeMelee.transform.localPosition = new Vector2(largeMeleeOffsetLeft, 0);
-                this.GetComponent<Player>().largestMelee.transform.localPosition = new Vector2(largestMeleeOffsetLeft, 0);
-                this.GetComponent<Player>().shield.transform.localPosition = new Vector2(shieldOffsetLeft, 0);
             }
 
             //Limits horizontal speed
@@ -369,5 +384,13 @@ public class PlayerController : MonoBehaviour {
                 LargeMapView();
                 break;
         }
+    }
+
+    void DeathIsDying()
+    {
+        Time.timeScale = 0;
+        panel.SetActive(true);
+        exitButton.interactable = true;
+        restartButton.interactable = true;
     }
 }
