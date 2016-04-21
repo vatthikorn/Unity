@@ -57,28 +57,115 @@ public class Equipment : MonoBehaviour {
     public const string healthPotionName = "Healing Potion";
     public const string greaterHealthPotionName = "Greater Healing Potion";
 
-    //For loading the game
-    public void LoadEquipment(Equipment savedEquipment)
-    {
-        weapon = savedEquipment.weapon;
-        armor = savedEquipment.armor;
-        shield = savedEquipment.shield;
-        activeSigil1 = savedEquipment.activeSigil1;
-        activeSigil2 = savedEquipment.activeSigil2;
-        activeSigil3 = savedEquipment.activeSigil3;
-        activeSigil4 = savedEquipment.activeSigil4;
-        passiveSigil1 = savedEquipment.passiveSigil1;
-        passiveSigil2 = savedEquipment.passiveSigil2;
-        passiveSigil3 = savedEquipment.passiveSigil3;
-        healthPotions = savedEquipment.healthPotions;
-        sigilPotions = savedEquipment.sigilPotions;
-    }
+	//For loading the game
+	public void LoadEquipment(List<int> x)
+	{
 
-    //For saving the game
-    public Equipment SaveEquipment()
-    {
-        return this;
-    }
+		if (x[0] != -1) 
+			weapon = itemDatabase.GetComponent<ItemDatabase> ().items [x[0]];
+		else
+			weapon = new Item ();
+		if (x[1] != -1)
+			armor = itemDatabase.GetComponent<ItemDatabase> ().items [x[1]];
+		else
+			armor = new Item ();
+		if (x[2] != -1)
+			shield = itemDatabase.GetComponent<ItemDatabase> ().items [x[2]];
+		else
+			shield = new Item ();
+		if (x[3] != -1)
+			activeSigil1 = itemDatabase.GetComponent<ItemDatabase> ().items [x[3]];
+		else
+			activeSigil1 = new Item ();
+		if (x[4] != -1)
+			activeSigil2 = itemDatabase.GetComponent<ItemDatabase> ().items [x[4]];
+		else
+			activeSigil2 = new Item ();
+		if (x[5] != -1)
+			activeSigil3 = itemDatabase.GetComponent<ItemDatabase> ().items [x[5]];
+		else
+			activeSigil3 = new Item ();
+		if (x[6] != -1)
+			activeSigil4 = itemDatabase.GetComponent<ItemDatabase> ().items [x[6]];
+		else
+			activeSigil4 = new Item ();
+		if (x[7] != -1)
+			passiveSigil1 = itemDatabase.GetComponent<ItemDatabase> ().items [x[7]];
+		else
+			passiveSigil1 = new Item ();
+		if (x[8] != -1)
+			passiveSigil2 = itemDatabase.GetComponent<ItemDatabase> ().items [x[8]];
+		else
+			passiveSigil2 = new Item ();
+		if (x[9] != -1)
+			passiveSigil3 = itemDatabase.GetComponent<ItemDatabase> ().items [x[9]];
+		else
+			passiveSigil3 = new Item ();
+		if (x[10] != -1)
+			healthPotions = itemDatabase.GetComponent<ItemDatabase> ().items [x[10]];
+		else
+			healthPotions = new Item ();
+		if (x[11] != -1)
+			sigilPotions = itemDatabase.GetComponent<ItemDatabase> ().items [x[11]];
+		else
+			sigilPotions = new Item ();
+	}
+
+	//For saving the game
+	public List<int> SaveEquipment()
+	{
+		List<int> x = new List<int>();
+		if (weapon.itemName != null) {
+			x.Add (weapon.itemID);
+		}   else
+			x.Add (-1);
+		if (armor.itemName != null)
+			x.Add (armor.itemID);
+		else
+			x.Add (-1);
+		if (shield.itemName != null)
+			x.Add (shield.itemID);
+		else
+			x.Add (-1);
+		if (activeSigil1.itemName != null)
+			x.Add (activeSigil1.itemID);
+		else
+			x.Add (-1);
+		if (activeSigil2.itemName != null)
+			x.Add (activeSigil2.itemID);
+		else
+			x.Add (-1);
+		if (activeSigil3.itemName != null)
+			x.Add (activeSigil3.itemID);
+		else
+			x.Add (-1);
+		if (activeSigil4.itemName != null)
+			x.Add (activeSigil4.itemID);
+		else
+			x.Add (-1);
+		if (passiveSigil1.itemName != null)
+			x.Add (passiveSigil1.itemID);
+		else
+			x.Add (-1);
+		if (passiveSigil2.itemName != null)
+			x.Add (passiveSigil2.itemID);
+		else
+			x.Add (-1);
+		if (passiveSigil3.itemName != null)
+			x.Add (passiveSigil3.itemID);
+		else
+			x.Add (-1);
+		if (healthPotions.itemName != null)
+			x.Add (healthPotions.itemID);
+		else
+			x.Add (-1);
+		if (sigilPotions.itemName != null)
+			x.Add (sigilPotions.itemID);
+		else
+			x.Add (-1);
+
+		return x;
+	}
 
     //TEST VALUES
     void Start()

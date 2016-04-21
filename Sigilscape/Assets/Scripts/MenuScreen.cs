@@ -11,10 +11,15 @@
 
 using UnityEngine;
 using System.Collections;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class MenuScreen : MonoBehaviour {
 
     public GameObject player;
+	public GameControl gameControl;
+	public MainMenuControl mainMenu;
 
     public GUISkin buttonSkin;
 
@@ -36,20 +41,33 @@ public class MenuScreen : MonoBehaviour {
         }
     }
 
-    void DrawMenuScreen()
-    {
-        GUI.skin = buttonSkin;
+	void DrawMenuScreen()
+	{
+		GUI.skin = buttonSkin;
 
-        Rect button = new Rect(buttonX * Screen.width, firstButtonY * Screen.height, buttonWidth * Screen.width, buttonHeight * Screen.height);
-        if (GUI.Button(button, "Save Game"))
-        {
-            //CALL THE FUNCTION TO SAVE THE GAME HERE
-        }
-        button = new Rect(buttonX * Screen.width, firstButtonY * Screen.height + buttonHeight * Screen.height * buttonSpacingY, buttonWidth * Screen.width, buttonHeight * Screen.height);
-        if(GUI.Button(button, "Quit Game"))
-        {
-            //CALL THE FUNCTION TO SAVE THE GAME HERE
-            //CALL THE FUNCTION TO QUT THE GAME HERE TO LOAD THE MAIN MENU SCREEN
-        }
-    }
+		Rect button = new Rect(buttonX * Screen.width, firstButtonY * Screen.height, buttonWidth * Screen.width, buttonHeight * Screen.height);
+		if (GUI.Button(button, "Save Game"))
+		{
+			//CALL THE FUNCTION TO SAVE THE GAME HERE
+			gameControl.GetComponent<GameControl>().SaveGameData();
+			#if UNITY_EDITOR
+			EditorUtility.DisplayDialog ("Saving", "Game Data Saved", "OK");
+			#else
+			Application.Quit();
+			#endif
+		}
+
+		button = new Rect(buttonX * Screen.width, firstButtonY * Screen.height + buttonHeight * Screen.height * buttonSpacingY, buttonWidth * Screen.width, buttonHeight * Screen.height);
+		if(GUI.Button(button, "Load Game"))
+		{
+			//CALL THE FUNCTION TO SAVE THE GAME HERE
+			//CALL THE FUNCTION TO QUT THE GAME HERE TO LOAD THE MAIN MENU SCREEN
+//			mainMenu.enabled = true;
+//			mainMenu.GetComponent<MainMenuControl>().ShowImage();
+
+			// I changed the button to a "Load Game" button just to test loading
+			gameControl.GetComponent<GameControl>().LoadGameData ();
+		}
+
+	}
 }

@@ -123,6 +123,18 @@ public class Player : MonoBehaviour {
         }
     }
 
+	//For saving, returns players current health
+	public int GetPlayerHealth()
+	{
+		return this.health;
+	}
+
+	//For loading, sets players health
+	public void SetHealth(int playerHealth)
+	{
+		this.health = playerHealth;
+	}
+
     //Called by Enemy.cs when Enemy switches to hunting mode
     public void Hunted()
     {
