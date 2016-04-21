@@ -125,7 +125,7 @@ public class Equipment : MonoBehaviour {
         //Thye punch if they got no weapon
         else
         {
-            return new Item(-1, null, null, Item.ItemType.weapon, 1, 0, Item.AttackSpeed.fastest, Item.Range.Smallest, Item.Knockback.smallest, Item.WeaponType.Melee);
+            return new Item(-1, null, null, Item.ItemType.weapon, 1, 0, Item.AttackSpeed.fastest, Item.Range.Smallest, Item.Knockback.Smallest, Item.WeaponType.Melee);
         }
     }
 

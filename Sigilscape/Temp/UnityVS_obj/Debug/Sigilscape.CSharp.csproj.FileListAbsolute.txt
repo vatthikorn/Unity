@@ -1,0 +1,13 @@
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_bin\Debug\UnityEngine.Networking.dll
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_bin\Debug\UnityEngine.Networking.xml
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_obj\Debug\Sigilscape.CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_obj\Debug\Assembly-CSharp.dll
+C:\Users\Mitchell\Documents\GitHub\Unity\Sigilscape\Temp\UnityVS_obj\Debug\Assembly-CSharp.pdb

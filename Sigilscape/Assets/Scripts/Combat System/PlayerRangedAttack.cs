@@ -77,22 +77,22 @@ public class PlayerRangedAttack : AttackVars {
             //Apply KnockBack to enemy
             switch (knockback)
             {
-                case Item.Knockback.smallest:
+                case Item.Knockback.Smallest:
                     other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction * smallestKnockBack, knockBackY));
                     break;
-                case Item.Knockback.smaller:
+                case Item.Knockback.Smaller:
                     other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction * smallerKnockBack, knockBackY));
                     break;
-                case Item.Knockback.small:
+                case Item.Knockback.Small:
                     other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction * smallKnockBack, knockBackY));
                     break;
-                case Item.Knockback.medium:
+                case Item.Knockback.Medium:
                     other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction * mediumKnockBack, knockBackY));
                     break;
-                case Item.Knockback.large:
+                case Item.Knockback.Large:
                     other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction * largeKnockBack, knockBackY));
                     break;
-                case Item.Knockback.largest:
+                case Item.Knockback.Largest:
                     other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction * largestKnockBack, knockBackY));
                     break;
             }

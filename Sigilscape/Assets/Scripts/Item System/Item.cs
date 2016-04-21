@@ -51,13 +51,13 @@ public class Item
 
     public enum Knockback
     {
-        none,
-        smallest,
-        smaller,
-        small,
-        medium,
-        large,
-        largest
+        None,
+        Smallest,
+        Smaller,
+        Small,
+        Medium,
+        Large,
+        Largest
     };
 
     public enum WeaponType
@@ -173,7 +173,7 @@ public class Item
         this.defense = 0;
     }
 
-    public string toString()
+    public System.String toString()
     {
         switch (this.itemType)
         {
@@ -184,6 +184,47 @@ public class Item
             default:
                 {
                     return this.itemName;
+                }
+        }
+    }
+
+    public float getAttackSpeed()
+    {
+        switch (this.itemType)
+        {
+            case ItemType.weapon:
+                {
+                    switch (this.attackSpeed)
+                    {
+                        case AttackSpeed.slowest:
+                            {
+                                return 0.35f;
+                            }
+                        case AttackSpeed.slow:
+                            {
+                                return 0.27f;
+                            }
+                        case AttackSpeed.medium:
+                            {
+                                return 0.20f;
+                            }
+                        case AttackSpeed.fast:
+                            {
+                                return 0.12f;
+                            }
+                        case AttackSpeed.fastest:
+                            {
+                                return 0.05f;
+                            }
+                        default:
+                            {
+                                return 0;
+                            }
+                    };
+                }
+            default:
+                {
+                    return 0;
                 }
         }
     }
