@@ -56,6 +56,12 @@ public class FireBall : MonoBehaviour {
             impact = true;
             Invoke("Impact", animTime);
         }
+
+        else if (other.gameObject.name.Contains("TNT"))
+        {
+            impact = true;
+            Invoke("Impact", animTime);
+        }
     }
 
     //Gets direction

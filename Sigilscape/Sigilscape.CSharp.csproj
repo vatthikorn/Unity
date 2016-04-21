@@ -63,8 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Camera.cs" />
-    <Compile Include="Assets\GameOver.cs" />
+    <Compile Include="Assets\Scripts\BossBattleActivate.cs" />
+    <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\Combat System\AttackVars.cs" />
     <Compile Include="Assets\Scripts\Combat System\Enemy.cs" />
     <Compile Include="Assets\Scripts\Combat System\EnemyHuntingDetector.cs" />
@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Controls\NewGame.cs" />
     <Compile Include="Assets\Scripts\Controls\PlayerController.cs" />
     <Compile Include="Assets\Scripts\FightScreenManager.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\Inventory System\Inventory.cs" />
     <Compile Include="Assets\Scripts\Item Drop System\Chest.cs" />
     <Compile Include="Assets\Scripts\Item Drop System\ChestManager.cs" />
@@ -110,8 +111,8 @@
     <Compile Include="Assets\Scripts\Sigils\The Fister\TheFisterSigil.cs" />
     <Compile Include="Assets\Scripts\Sigils\TheKeySigil.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\TNTExplosion.cs" />
     <Compile Include="Assets\Scripts\Zone Switching\ZoneLoader.cs" />
-    <Compile Include="Assets\TNTExplosion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Treasurechest\Read me\readme.txt" />

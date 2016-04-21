@@ -4,6 +4,7 @@ using System.Collections;
 public class SoundManager : MonoBehaviour {
 
 	public GameObject player;
+    public GameObject bossObject;
 
 	public AudioSource peaceTime;
 	public AudioSource combat;
@@ -22,7 +23,7 @@ public class SoundManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (this.player.GetComponent<Player> ().inCombat) {
+		if (this.player.GetComponent<Player> ().inCombat && bossObject && !bossObject.GetComponent<Enemy>().hunting) {
 
 
 			//if (peaceTime.isPlaying) {
@@ -38,6 +39,11 @@ public class SoundManager : MonoBehaviour {
 			if (combat.isPlaying) {
 				combat.Stop ();
 			}
+
+            if(boss.isPlaying && !bossObject)
+            {
+                boss.Stop();
+            }
 
 			if (!this.preBoss.isPlaying && !peaceTime.isPlaying && !boss.isPlaying && !hiddenRoom.isPlaying) {
 				peaceTime.Play ();

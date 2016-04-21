@@ -26,7 +26,7 @@ public class bossTrigger : MonoBehaviour {
 
 			this.peaceTime.Stop ();
 			this.preBoss.Stop ();
-
+            this.musicController.GetComponent<SoundManager>().combat.Stop();
 
 			this.boss.Play ();
 
