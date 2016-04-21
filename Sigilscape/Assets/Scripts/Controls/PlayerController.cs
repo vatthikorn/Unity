@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour {
     public enum ScreenState { fight, inventory, pause };//If the player is in combat, in the invnetory, or the pause menu
     public enum MapState { none, mini, large };//If the player has the no map, the miniMap, or largeMap on display
 
+    public Animator anim;
+
     //All of these must be referenced
     public GameObject equipment;
     public GameObject player;
@@ -92,6 +94,7 @@ public class PlayerController : MonoBehaviour {
 
     //Dislays miniMap, fight screen on startup
 	void Start () {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         MiniMapView();
         DisablePauseScreen();
@@ -103,6 +106,7 @@ public class PlayerController : MonoBehaviour {
 
         //Down - Jump: Checks if the player is on the ground to enable jumping
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        anim.SetBool("grounded", grounded);
 
         if (!pauseGame)
         {
