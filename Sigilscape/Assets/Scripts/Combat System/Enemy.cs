@@ -29,8 +29,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour {
-
+public class Enemy : MonoBehaviour
+{
     //Must be referenced beforehand(only if you want the enemy to drop an item)
     public GameObject itemDrop;
 

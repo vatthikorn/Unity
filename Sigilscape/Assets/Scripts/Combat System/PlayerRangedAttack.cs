@@ -45,11 +45,11 @@ public class PlayerRangedAttack : AttackVars {
         this.GetComponent<Rigidbody2D>().velocity = new Vector2(direction * rangedWeaponSpeed.x, rangedWeaponSpeed.y);
         distanceTraveled = Mathf.Abs(this.gameObject.transform.position.x - initialPositionX);
 
-        if(range == Item.Range.longs && distanceTraveled > longsRange)
+        if(range == Item.Range.Longs && distanceTraveled > longsRange)
         {
             Destroy(this.gameObject);
         }
-        else if(range == Item.Range.longest && distanceTraveled > longestRange)
+        else if(range == Item.Range.Longest && distanceTraveled > longestRange)
         {
             Destroy(this.gameObject);
         }

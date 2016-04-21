@@ -168,11 +168,11 @@ public class Player : MonoBehaviour {
         Item weapon = equipment.GetComponent<Equipment>().GetWeapon();
         
         //Enables the PlayerAttack gameobject for appropriate range
-        if(weapon.weaponType == Item.WeaponType.melee)
+        if(weapon.weaponType == Item.WeaponType.Melee)
         {
             switch (weapon.range)
             {
-                case Item.Range.smallest:
+                case Item.Range.Smallest:
                     switch (weapon.attackSpeed)
                     {
                         case Item.AttackSpeed.slowest:
@@ -192,7 +192,7 @@ public class Player : MonoBehaviour {
                             break;
                     }
                     break;
-                case Item.Range.small:
+                case Item.Range.Small:
                     switch (weapon.attackSpeed)
                     {
                         case Item.AttackSpeed.slowest:
@@ -212,7 +212,7 @@ public class Player : MonoBehaviour {
                             break;
                     }
                     break;
-                case Item.Range.medium:
+                case Item.Range.Medium:
                     switch (weapon.attackSpeed)
                     {
                         case Item.AttackSpeed.slowest:
@@ -232,7 +232,7 @@ public class Player : MonoBehaviour {
                             break;
                     }
                     break;
-                case Item.Range.large:
+                case Item.Range.Large:
                     switch (weapon.attackSpeed)
                     {
                         case Item.AttackSpeed.slowest:
@@ -252,7 +252,7 @@ public class Player : MonoBehaviour {
                             break;
                     }
                     break;
-                case Item.Range.largest:
+                case Item.Range.Largest:
                     switch (weapon.attackSpeed)
                     {
                         case Item.AttackSpeed.slowest:
@@ -274,7 +274,7 @@ public class Player : MonoBehaviour {
                     break;
             }
         }
-        else if(weapon.weaponType == Item.WeaponType.range)
+        else if(weapon.weaponType == Item.WeaponType.Range)
         {
             switch (weapon.attackSpeed)
             {
@@ -486,12 +486,11 @@ public class Player : MonoBehaviour {
         reducedDamage = EternasBlessingSigil.ReduceDamage(damage);
         reducedDamage = MaskOfFearSigil.ReduceDamage(damage);
 
-        health -= reducedDamage;
+        this.health -= reducedDamage;
 
-        if (health < 0)
-            health = 0;
+        this.health = this.health < 0 ? 0 : this.health;
 
-        if(health == 0)
+        if(this.health == 0)
         {
             //CALL GAMEOVER SOMETHING
         }

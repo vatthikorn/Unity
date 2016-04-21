@@ -15,13 +15,57 @@ using UnityEngine;
 using System.Collections;
 
 [System.Serializable]
-public class Item {
+public class Item
+{
+    public enum ItemType
+    {
+        weapon,
+        shield,
+        armor,
+        sigil,
+        consumable,
+        keyItem
+    };
 
-    public enum ItemType { weapon, shield, armor, sigil, consumable, keyItem };
-    public enum AttackSpeed { none, slowest, slow, medium, fast, fastest };
-    public enum Range { none, smallest, small, medium, large, largest, longs, longest };
-    public enum Knockback { none, smallest, smaller, small, medium, large, largest };
-    public enum WeaponType { none, melee, range };
+    public enum AttackSpeed
+    {
+        none,
+        slowest,
+        slow,
+        medium,
+        fast,
+        fastest
+    };
+
+    public enum Range
+    {
+        None,
+        Smallest,
+        Small,
+        Medium,
+        Large,
+        Largest,
+        Longs,
+        Longest
+    };
+
+    public enum Knockback
+    {
+        none,
+        smallest,
+        smaller,
+        small,
+        medium,
+        large,
+        largest
+    };
+
+    public enum WeaponType
+    {
+        None,
+        Melee,
+        Range
+    };
 
     [HideInInspector] public int itemID;
     [HideInInspector] public string itemName;
@@ -55,10 +99,7 @@ public class Item {
     //Called by Equipment.cs, for when the player is using their fist
     public Item(int ID, string name, string desc, ItemType itemType, int dmg, float crtChnce, AttackSpeed attspd, Range range, Knockback knockback, WeaponType weaponType)
     {
-        this.itemID = ID;
-        this.itemName = name;
-        this.itemDesc = desc;
-        this.itemType = itemType;
+        addItemInfo(ID, name, desc, itemType);  
         this.damage = dmg;
         this.criticalChance = crtChnce;
         this.attackSpeed = attspd;
@@ -73,10 +114,7 @@ public class Item {
     //Item initialization for Weapons
     public void addItemInfo(int ID, string name, string desc, ItemType itemType, int dmg, float crtChnce, AttackSpeed attspd, Range range, Knockback knockback, WeaponType weaponType)
     {
-        this.itemID = ID;
-        this.itemName = name;
-        this.itemDesc = desc;
-        this.itemType = itemType;
+        addItemInfo(ID, name, desc, itemType);
         this.damage = dmg;
         this.criticalChance = crtChnce;
         this.attackSpeed = attspd;
@@ -91,16 +129,13 @@ public class Item {
     //Item initialization for Shields
     public void addItemInfo(int ID, string name, string desc, ItemType itemType, float dmgMitigation)
     {
-        this.itemID = ID;
-        this.itemName = name;
-        this.itemDesc = desc;
-        this.itemType = itemType;
+        addItemInfo(ID, name, desc, itemType);
         this.damage = 0;
         this.criticalChance = 0;
         this.attackSpeed = 0;
         this.range = 0;
         this.knockback = 0;
-        this.weaponType = WeaponType.none;
+        this.weaponType = WeaponType.None;
         this.damageMitigation = dmgMitigation;
         this.defense = 0;
         this.sigil = null;
@@ -109,16 +144,13 @@ public class Item {
     //Item initialization for Armor
     public void addItemInfo(int ID, string name, string desc, ItemType itemType, int defense)
     {
-        this.itemID = ID;
-        this.itemName = name;
-        this.itemDesc = desc;
-        this.itemType = itemType;
+        addItemInfo(ID, name, desc, itemType);
         this.damage = 0;
         this.criticalChance = 0;
         this.attackSpeed = 0;
         this.range = 0;
         this.knockback = 0;
-        this.weaponType = WeaponType.none;
+        this.weaponType = WeaponType.None;
         this.damageMitigation = 0;
         this.defense = defense;
         this.sigil = null;
@@ -131,13 +163,28 @@ public class Item {
         this.itemName = name;
         this.itemDesc = desc;
         this.itemType = itemType;
-        this.damage = 0;
+        this.damage = 0;            
         this.criticalChance = 0;
         this.attackSpeed = 0;
         this.range = 0;
         this.knockback = 0;
-        this.weaponType = WeaponType.none;
+        this.weaponType = WeaponType.None;
         this.damageMitigation = 0;
         this.defense = 0;
+    }
+
+    public string toString()
+    {
+        switch (this.itemType)
+        {
+            case ItemType.weapon:
+                {
+                    return this.range.ToString() + this.weaponType.ToString();
+                }
+            default:
+                {
+                    return this.itemName;
+                }
+        }
     }
 }

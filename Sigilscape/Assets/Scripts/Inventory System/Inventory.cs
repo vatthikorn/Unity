@@ -1763,7 +1763,7 @@ public class Inventory : MonoBehaviour {
                 info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].criticalChance;
                 info += "\n";
                 info += "Range: ";
-                if (itemDatabase.GetComponent<ItemDatabase>().items[itemID].range == Item.Range.longs)
+                if (itemDatabase.GetComponent<ItemDatabase>().items[itemID].range == Item.Range.Longs)
                     info += "long";
                 else 
                     info += itemDatabase.GetComponent<ItemDatabase>().items[itemID].range;
